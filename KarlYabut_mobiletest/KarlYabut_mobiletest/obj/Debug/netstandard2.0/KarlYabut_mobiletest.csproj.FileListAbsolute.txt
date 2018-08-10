@@ -1,0 +1,24 @@
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest\bin\Debug\netstandard2.0\KarlYabut_mobiletest.deps.json
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest\bin\Debug\netstandard2.0\KarlYabut_mobiletest.dll
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest\bin\Debug\netstandard2.0\KarlYabut_mobiletest.pdb
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\KarlYabut_mobiletest.csproj.CoreCompileInputs.cache
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\KarlYabut_mobiletest.AssemblyInfoInputs.cache
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\KarlYabut_mobiletest.AssemblyInfo.cs
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\XamlC.stamp
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\KarlYabut_mobiletest.dll
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\KarlYabut_mobiletest.pdb
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\KarlYabut_mobiletest.csprojResolveAssemblyReference.cache
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest\bin\Debug\netstandard2.0\KarlYabut_mobiletest.deps.json
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest\bin\Debug\netstandard2.0\KarlYabut_mobiletest.dll
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest\bin\Debug\netstandard2.0\KarlYabut_mobiletest.pdb
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\KarlYabut_mobiletest.csprojResolveAssemblyReference.cache
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\KarlYabut_mobiletest.csproj.CoreCompileInputs.cache
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\KarlYabut_mobiletest.AssemblyInfoInputs.cache
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\KarlYabut_mobiletest.AssemblyInfo.cs
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\XamlC.stamp
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\KarlYabut_mobiletest.dll
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest\obj\Debug\netstandard2.0\KarlYabut_mobiletest.pdb

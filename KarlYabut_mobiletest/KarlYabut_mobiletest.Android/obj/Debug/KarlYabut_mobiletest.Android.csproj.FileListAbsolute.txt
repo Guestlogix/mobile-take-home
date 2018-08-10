@@ -1,0 +1,111 @@
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\KarlYabut_mobiletest.Android.dll
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\KarlYabut_mobiletest.Android.pdb
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\com.geologix.KarlYabut_mobiletest.apk
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\com.geologix.KarlYabut_mobiletest-Signed.apk
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\KarlYabut_mobiletest.dll
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\KarlYabut_mobiletest.pdb
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\KarlYabut_mobiletest.Android.csprojResolveAssemblyReference.cache
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\XbdMerge\Xamarin.GooglePlayServices.Basement.dll
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\XbdMerge\Xamarin.GooglePlayServices.Tasks.dll
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\XbdMerge\Xamarin.GooglePlayServices.Base.dll
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\XbdMerge\Xamarin.GooglePlayServices.Maps.dll
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\KarlYabut_mobiletest.Android.csproj.CoreCompileInputs.cache
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\XamlC.stamp
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\KarlYabut_mobiletest.Android.dll
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\KarlYabut_mobiletest.Android.pdb
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\android\bin\com.geologix.KarlYabut_mobiletest.apk
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\drawable\icon.png
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\drawable-hdpi\icon.png
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\drawable-xhdpi\icon.png
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\drawable-xxhdpi\icon.png
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\layout\tabbar.xml
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\layout\toolbar.xml
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\values\styles.xml
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\R.cs.flag
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\uploadflags.txt
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\FormsViewGroup.dll.mdb
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\KarlYabut_mobiletest.Android.dll.mdb
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\Xamarin.Forms.Platform.Android.dll.mdb
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\android\assets\FormsViewGroup.dll.mdb
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\android\assets\KarlYabut_mobiletest.Android.dll.mdb
+D:\Visual Studio Projects\KarlYabut_mobiletest\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\KarlYabut_mobiletest.Android.dll
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\KarlYabut_mobiletest.Android.pdb
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\com.geologix.KarlYabut_mobiletest.apk
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\com.geologix.KarlYabut_mobiletest-Signed.apk
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\KarlYabut_mobiletest.dll
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\KarlYabut_mobiletest.pdb
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\KarlYabut_mobiletest.Android.csprojResolveAssemblyReference.cache
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\XbdMerge\Xamarin.GooglePlayServices.Basement.dll
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\XbdMerge\Xamarin.GooglePlayServices.Tasks.dll
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\XbdMerge\Xamarin.GooglePlayServices.Base.dll
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\XbdMerge\Xamarin.GooglePlayServices.Maps.dll
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\KarlYabut_mobiletest.Android.csproj.CoreCompileInputs.cache
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\XamlC.stamp
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\KarlYabut_mobiletest.Android.dll
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\KarlYabut_mobiletest.Android.pdb
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\android\bin\com.geologix.KarlYabut_mobiletest.apk
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\drawable\icon.png
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\drawable-hdpi\icon.png
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\drawable-xhdpi\icon.png
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\drawable-xxhdpi\icon.png
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\layout\tabbar.xml
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\layout\toolbar.xml
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\res\values\styles.xml
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\R.cs.flag
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\uploadflags.txt
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\FormsViewGroup.dll.mdb
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\KarlYabut_mobiletest.Android.dll.mdb
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\Xamarin.Forms.Platform.Android.dll.mdb
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\android\assets\FormsViewGroup.dll.mdb
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\android\assets\KarlYabut_mobiletest.Android.dll.mdb
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
+D:\GithubProjects\mobile-take-home\KarlYabut_mobiletest\KarlYabut_mobiletest.Android\bin\Debug\KarlYabut_mobiletest.Android.dll
+bin\Debug\FormsViewGroup.dll.mdb
+bin\Debug\Xamarin.Forms.Platform.Android.dll.mdb
+bin\Debug\Microsoft.CSharp.pdb
+bin\Debug\Mono.Android.pdb
+bin\Debug\mscorlib.pdb
+bin\Debug\System.Core.pdb
+bin\Debug\System.pdb
+bin\Debug\System.Xml.pdb
+bin\Debug\System.Xml.Linq.pdb
+bin\Debug\Xamarin.Forms.Core.pdb
+bin\Debug\Xamarin.Forms.Xaml.pdb
+bin\Debug\System.Data.pdb
+bin\Debug\System.Numerics.pdb
+bin\Debug\System.Transactions.pdb
+bin\Debug\Mono.Data.Tds.pdb
+bin\Debug\Mono.Security.pdb
+bin\Debug\System.IO.Compression.pdb
+bin\Debug\System.IO.Compression.FileSystem.pdb
+bin\Debug\System.ComponentModel.Composition.pdb
+bin\Debug\System.Net.Http.pdb
+bin\Debug\System.Runtime.Serialization.pdb
+bin\Debug\System.ServiceModel.Internals.pdb
+bin\Debug\System.Web.Services.pdb
+obj\Debug\linksrc\KarlYabut_mobiletest.Android.dll.mdb
+obj\Debug\linksrc\FormsViewGroup.dll.mdb
+obj\Debug\linksrc\Xamarin.Forms.Platform.Android.dll.mdb
+obj\Debug\linksrc\KarlYabut_mobiletest.pdb
+obj\Debug\linksrc\Microsoft.CSharp.pdb
+obj\Debug\linksrc\Mono.Android.pdb
+obj\Debug\linksrc\mscorlib.pdb
+obj\Debug\linksrc\System.Core.pdb
+obj\Debug\linksrc\System.pdb
+obj\Debug\linksrc\System.Xml.pdb
+obj\Debug\linksrc\System.Xml.Linq.pdb
+obj\Debug\linksrc\Xamarin.Forms.Core.pdb
+obj\Debug\linksrc\Xamarin.Forms.Xaml.pdb
+obj\Debug\linksrc\System.Data.pdb
+obj\Debug\linksrc\System.Numerics.pdb
+obj\Debug\linksrc\System.Transactions.pdb
+obj\Debug\linksrc\Mono.Data.Tds.pdb
+obj\Debug\linksrc\Mono.Security.pdb
+obj\Debug\linksrc\System.IO.Compression.pdb
+obj\Debug\linksrc\System.IO.Compression.FileSystem.pdb
+obj\Debug\linksrc\System.ComponentModel.Composition.pdb
+obj\Debug\linksrc\System.Net.Http.pdb
+obj\Debug\linksrc\System.Runtime.Serialization.pdb
+obj\Debug\linksrc\System.ServiceModel.Internals.pdb
+obj\Debug\linksrc\System.Web.Services.pdb

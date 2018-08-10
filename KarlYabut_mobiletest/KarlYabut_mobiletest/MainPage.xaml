@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:KarlYabut_mobiletest"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="KarlYabut_mobiletest.MainPage">
+
+    <StackLayout>
+        <Entry x:Name="originIATA" Placeholder="Enter origin" Text=""></Entry>
+        <Entry x:Name="destinationIATA" Placeholder="Enter destination" Text=""></Entry>
+        <Button Text="Search" Clicked="SendButton_Pressed"></Button>
+        <Label x:Name="errorLbl" TextColor="Red"></Label>
+        <maps:Map HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+             x:Name="AirportMap"
+             IsShowingUser="True"
+             MapType="Satellite"/>
+    </StackLayout>
+
+</ContentPage>

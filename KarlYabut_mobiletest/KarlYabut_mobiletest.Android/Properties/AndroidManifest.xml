@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.geologix.KarlYabut_mobiletest" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="15" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<application android:label="KarlYabut_mobiletest.Android">
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDjfQgNx9pdUd18l6kuwklR5p3Hb2Cbtuo" />
+	</application>
+</manifest>
