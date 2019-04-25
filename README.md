@@ -1,8 +1,5 @@
 # Guestlogix Take Home Test - Mobile
 
-
-# Original instructions below. 
-
 # Characteristics
 
 This project was written in Swift 5 using XCode 10.2
@@ -38,6 +35,7 @@ This controller receives a route from the Airport Selection View Controller and 
 
 This controller also prints the route into a label for clarity purposes. 
 
+# Original instructions below. 
 
 ------------------------------------------------------------------------
 
