@@ -1,5 +1,46 @@
 # Guestlogix Take Home Test - Mobile
 
+
+# Original instructions below. 
+
+# Characteristics
+
+This project was written in Swift 5 using XCode 10.2
+
+# Required dependencies:
+
+This project uses the Mapbox SDK to display a map and the route. As such it is necessary to integrate it using cocoapods. To do so navigate to the project folder and execute "pod install" in the command line to install this dependency. The project will not compile without this dependency. 
+
+# Usage: 
+
+To run the project open the workspace called "guesLogixChallenge.xcworkspace" in XCode and run in the simulator. 
+
+# Architecture
+
+This project follws the MVC architecture, with careful attention to separation of concerns, modularity and reusability. 
+The project has two main controllers, associated to two screens. The first one receives input from the user as stated in the instructions and the second one displays a route in a map. Below more information on each controller. 
+
+--- Airport Selection View Controller :
+
+This controller is in charge of receiving user input, sanitizing it and calculating the route between two airports if it exists. Route calculation is done using Dijkstra's shortest path algorithm.
+
+To perform the calculation, the data provided in this challenge is loaded in two different data structures. A dictionary for airports and airline information and a graph for route information. 
+
+These data structures are built at the moment the view controller loads. 
+
+In essence, when the user inputs two iata codes, the controller checks that they are available in the data (by querying the dictionaries) and then looks for the shortest path (if any) using a routing manager. If input is incomplete or iata codes are invalid then an alert will display with the appropriate response. 
+
+Each task (loading data, parsing data, and searching for routes) is performed by an individual manager e.g (loading manager, parsing manager and routing manager). These managers are located in the Utils folder. 
+
+--- Route View Controller: 
+
+This controller receives a route from the Airport Selection View Controller and parses the edges of the graph into coordinates to be displayed in the map. 
+
+This controller also prints the route into a label for clarity purposes. 
+
+
+------------------------------------------------------------------------
+
 At Guestlogix we feel that putting developers on the spot with advanced algorithmic puzzles doesn’t exactly highlight one’s true skillset. The intention of this assessment is to see how you approach and tackle a problem in the real world, not quivering in front of a whiteboard.
 
 ### What is the test?
