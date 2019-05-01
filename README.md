@@ -6,7 +6,9 @@ This project was written in Swift 5 using XCode 10.2
 
 # Required dependencies:
 
-This project uses the Mapbox SDK to display a map and the route. As such it is necessary to integrate it using cocoapods. To do so navigate to the project folder and execute "pod install" in the command line to install this dependency. The project will not compile without this dependency. 
+This project uses the Mapbox SDK to display a map and the route. As such it is necessary to integrate it using Cocoapods. To do so navigate to the project directory and execute :
+$pod install 
+in the command line to install this dependency. The project will not compile without this dependency. 
 
 # Usage: 
 
