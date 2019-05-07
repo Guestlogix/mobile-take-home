@@ -1,0 +1,986 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0782918922811B1C005E224D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782918822811B1C005E224D /* AppDelegate.swift */; };
+		0782918B22811B1C005E224D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782918A22811B1C005E224D /* ViewController.swift */; };
+		0782918E22811B1C005E224D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0782918C22811B1C005E224D /* Main.storyboard */; };
+		0782919022811B1D005E224D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0782918F22811B1D005E224D /* Assets.xcassets */; };
+		0782919322811B1D005E224D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0782919122811B1D005E224D /* LaunchScreen.storyboard */; };
+		0782919E22811B1D005E224D /* Guestlogix_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782919D22811B1D005E224D /* Guestlogix_AppTests.swift */; };
+		078291A922811B1D005E224D /* Guestlogix_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291A822811B1D005E224D /* Guestlogix_AppUITests.swift */; };
+		078291BC22812361005E224D /* AppUtility+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291B722812361005E224D /* AppUtility+String.swift */; };
+		078291BD22812361005E224D /* AppUtility+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291B822812361005E224D /* AppUtility+UIImage.swift */; };
+		078291BE22812361005E224D /* AppUtility+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291B922812361005E224D /* AppUtility+Color.swift */; };
+		078291BF22812361005E224D /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291BA22812361005E224D /* AppUtility.swift */; };
+		078291C022812361005E224D /* AppUtility+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291BB22812361005E224D /* AppUtility+UIImageView.swift */; };
+		078291C3228123A5005E224D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291C2228123A5005E224D /* CardView.swift */; };
+		078291C5228123D5005E224D /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291C4228123D5005E224D /* AppTextField.swift */; };
+		078291C7228123EE005E224D /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291C6228123EE005E224D /* AppButton.swift */; };
+		078291C92281245B005E224D /* FAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291C82281245B005E224D /* FAB.swift */; };
+		078291CC228124D4005E224D /* ViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291CB228124D4005E224D /* ViewModelBased.swift */; };
+		078291CF2281254D005E224D /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291CE2281254D005E224D /* AppStep.swift */; };
+		078291D122812681005E224D /* AppStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291D022812681005E224D /* AppStepper.swift */; };
+		078291D3228126EA005E224D /* MapStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291D2228126EA005E224D /* MapStepper.swift */; };
+		078291D62281272F005E224D /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291D52281272F005E224D /* AppFlow.swift */; };
+		078291D8228127AC005E224D /* MapFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291D7228127AC005E224D /* MapFlow.swift */; };
+		078291DB2281281F005E224D /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291DA2281281F005E224D /* AppServices.swift */; };
+		078291DD22812858005E224D /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291DC22812858005E224D /* MapService.swift */; };
+		078291E722812B21005E224D /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078291E422812B21005E224D /* MapViewController.storyboard */; };
+		078291E822812B21005E224D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291E522812B21005E224D /* MapViewController.swift */; };
+		078291E922812B21005E224D /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291E622812B21005E224D /* MapViewModel.swift */; };
+		078291EB22813249005E224D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 078291EA22813249005E224D /* logo.png */; };
+		19BA80036A249752A10C1BEA /* Pods_Guestlogix_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8708E911168A1448D686BBCF /* Pods_Guestlogix_AppTests.framework */; };
+		35C30B45B9AA62DDA876EA10 /* Pods_Guestlogix_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A17DA43752CA7AE779C92A4 /* Pods_Guestlogix_AppUITests.framework */; };
+		C54B7C4C9BE9C21FC144F2FB /* Pods_Guestlogix_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038A4656F55E56BA483DDB70 /* Pods_Guestlogix_App.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0782919A22811B1D005E224D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0782917D22811B1C005E224D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0782918422811B1C005E224D;
+			remoteInfo = "Guestlogix App";
+		};
+		078291A522811B1D005E224D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0782917D22811B1C005E224D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0782918422811B1C005E224D;
+			remoteInfo = "Guestlogix App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		038A4656F55E56BA483DDB70 /* Pods_Guestlogix_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guestlogix_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0782918522811B1C005E224D /* Guestlogix App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guestlogix App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0782918822811B1C005E224D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0782918A22811B1C005E224D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0782918D22811B1C005E224D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0782918F22811B1D005E224D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0782919222811B1D005E224D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0782919422811B1D005E224D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0782919922811B1D005E224D /* Guestlogix AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Guestlogix AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0782919D22811B1D005E224D /* Guestlogix_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guestlogix_AppTests.swift; sourceTree = "<group>"; };
+		0782919F22811B1D005E224D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		078291A422811B1D005E224D /* Guestlogix AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Guestlogix AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		078291A822811B1D005E224D /* Guestlogix_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guestlogix_AppUITests.swift; sourceTree = "<group>"; };
+		078291AA22811B1D005E224D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		078291B722812361005E224D /* AppUtility+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppUtility+String.swift"; sourceTree = "<group>"; };
+		078291B822812361005E224D /* AppUtility+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppUtility+UIImage.swift"; sourceTree = "<group>"; };
+		078291B922812361005E224D /* AppUtility+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppUtility+Color.swift"; sourceTree = "<group>"; };
+		078291BA22812361005E224D /* AppUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
+		078291BB22812361005E224D /* AppUtility+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppUtility+UIImageView.swift"; sourceTree = "<group>"; };
+		078291C2228123A5005E224D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		078291C4228123D5005E224D /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
+		078291C6228123EE005E224D /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		078291C82281245B005E224D /* FAB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAB.swift; sourceTree = "<group>"; };
+		078291CB228124D4005E224D /* ViewModelBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBased.swift; sourceTree = "<group>"; };
+		078291CE2281254D005E224D /* AppStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
+		078291D022812681005E224D /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
+		078291D2228126EA005E224D /* MapStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStepper.swift; sourceTree = "<group>"; };
+		078291D52281272F005E224D /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		078291D7228127AC005E224D /* MapFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFlow.swift; sourceTree = "<group>"; };
+		078291DA2281281F005E224D /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		078291DC22812858005E224D /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
+		078291E422812B21005E224D /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
+		078291E522812B21005E224D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		078291E622812B21005E224D /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		078291EA22813249005E224D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		133138F7BA474DAA43D17B02 /* Pods-Guestlogix AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guestlogix AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Guestlogix AppTests/Pods-Guestlogix AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		18773CBC28C6BDBF2FEFEA21 /* Pods-Guestlogix App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guestlogix App.release.xcconfig"; path = "Target Support Files/Pods-Guestlogix App/Pods-Guestlogix App.release.xcconfig"; sourceTree = "<group>"; };
+		5A17DA43752CA7AE779C92A4 /* Pods_Guestlogix_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guestlogix_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AC9FF8E21F682AEB7E11CCF /* Pods-Guestlogix AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guestlogix AppTests.release.xcconfig"; path = "Target Support Files/Pods-Guestlogix AppTests/Pods-Guestlogix AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		8708E911168A1448D686BBCF /* Pods_Guestlogix_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guestlogix_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A2D7310A8C05BD9FF314FFB /* Pods-Guestlogix AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guestlogix AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Guestlogix AppUITests/Pods-Guestlogix AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EA3E1E7EA91D494963AC1E61 /* Pods-Guestlogix AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guestlogix AppUITests.release.xcconfig"; path = "Target Support Files/Pods-Guestlogix AppUITests/Pods-Guestlogix AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EA9B8A4F948A3F047A285C9F /* Pods-Guestlogix App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guestlogix App.debug.xcconfig"; path = "Target Support Files/Pods-Guestlogix App/Pods-Guestlogix App.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0782918222811B1C005E224D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C54B7C4C9BE9C21FC144F2FB /* Pods_Guestlogix_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0782919622811B1D005E224D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19BA80036A249752A10C1BEA /* Pods_Guestlogix_AppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		078291A122811B1D005E224D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35C30B45B9AA62DDA876EA10 /* Pods_Guestlogix_AppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0782917C22811B1C005E224D = {
+			isa = PBXGroup;
+			children = (
+				0782918722811B1C005E224D /* Guestlogix App */,
+				0782919C22811B1D005E224D /* Guestlogix AppTests */,
+				078291A722811B1D005E224D /* Guestlogix AppUITests */,
+				0782918622811B1C005E224D /* Products */,
+				1FE1C1D7AA2C3FD627FA9978 /* Pods */,
+				7DD2097F1660B8A7AA6DE5BA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0782918622811B1C005E224D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0782918522811B1C005E224D /* Guestlogix App.app */,
+				0782919922811B1D005E224D /* Guestlogix AppTests.xctest */,
+				078291A422811B1D005E224D /* Guestlogix AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0782918722811B1C005E224D /* Guestlogix App */ = {
+			isa = PBXGroup;
+			children = (
+				078291E222812A99005E224D /* Features */,
+				078291E122812A53005E224D /* Model */,
+				078291DE22812A39005E224D /* Resources */,
+				078291D92281280C005E224D /* Services */,
+				078291D422812714005E224D /* Flows */,
+				078291CD22812500005E224D /* Steppers */,
+				078291CA228124C0005E224D /* Protocols */,
+				078291B62281234B005E224D /* Utils */,
+				0782918822811B1C005E224D /* AppDelegate.swift */,
+				0782918A22811B1C005E224D /* ViewController.swift */,
+				0782918C22811B1C005E224D /* Main.storyboard */,
+				0782918F22811B1D005E224D /* Assets.xcassets */,
+				0782919122811B1D005E224D /* LaunchScreen.storyboard */,
+				0782919422811B1D005E224D /* Info.plist */,
+			);
+			path = "Guestlogix App";
+			sourceTree = "<group>";
+		};
+		0782919C22811B1D005E224D /* Guestlogix AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				0782919D22811B1D005E224D /* Guestlogix_AppTests.swift */,
+				0782919F22811B1D005E224D /* Info.plist */,
+			);
+			path = "Guestlogix AppTests";
+			sourceTree = "<group>";
+		};
+		078291A722811B1D005E224D /* Guestlogix AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				078291A822811B1D005E224D /* Guestlogix_AppUITests.swift */,
+				078291AA22811B1D005E224D /* Info.plist */,
+			);
+			path = "Guestlogix AppUITests";
+			sourceTree = "<group>";
+		};
+		078291B62281234B005E224D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				078291C122812389005E224D /* Custom Views */,
+				078291B722812361005E224D /* AppUtility+String.swift */,
+				078291B822812361005E224D /* AppUtility+UIImage.swift */,
+				078291B922812361005E224D /* AppUtility+Color.swift */,
+				078291BA22812361005E224D /* AppUtility.swift */,
+				078291BB22812361005E224D /* AppUtility+UIImageView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		078291C122812389005E224D /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				078291C2228123A5005E224D /* CardView.swift */,
+				078291C4228123D5005E224D /* AppTextField.swift */,
+				078291C6228123EE005E224D /* AppButton.swift */,
+				078291C82281245B005E224D /* FAB.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		078291CA228124C0005E224D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				078291CB228124D4005E224D /* ViewModelBased.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		078291CD22812500005E224D /* Steppers */ = {
+			isa = PBXGroup;
+			children = (
+				078291CE2281254D005E224D /* AppStep.swift */,
+				078291D022812681005E224D /* AppStepper.swift */,
+				078291D2228126EA005E224D /* MapStepper.swift */,
+			);
+			path = Steppers;
+			sourceTree = "<group>";
+		};
+		078291D422812714005E224D /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				078291D52281272F005E224D /* AppFlow.swift */,
+				078291D7228127AC005E224D /* MapFlow.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		078291D92281280C005E224D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				078291DA2281281F005E224D /* AppServices.swift */,
+				078291DC22812858005E224D /* MapService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		078291DE22812A39005E224D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				078291E022812A4B005E224D /* Fonts */,
+				078291DF22812A42005E224D /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		078291DF22812A42005E224D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				078291EA22813249005E224D /* logo.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		078291E022812A4B005E224D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		078291E122812A53005E224D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		078291E222812A99005E224D /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				078291E322812B00005E224D /* Map */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		078291E322812B00005E224D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				078291E422812B21005E224D /* MapViewController.storyboard */,
+				078291E522812B21005E224D /* MapViewController.swift */,
+				078291E622812B21005E224D /* MapViewModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		1FE1C1D7AA2C3FD627FA9978 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA9B8A4F948A3F047A285C9F /* Pods-Guestlogix App.debug.xcconfig */,
+				18773CBC28C6BDBF2FEFEA21 /* Pods-Guestlogix App.release.xcconfig */,
+				133138F7BA474DAA43D17B02 /* Pods-Guestlogix AppTests.debug.xcconfig */,
+				5AC9FF8E21F682AEB7E11CCF /* Pods-Guestlogix AppTests.release.xcconfig */,
+				8A2D7310A8C05BD9FF314FFB /* Pods-Guestlogix AppUITests.debug.xcconfig */,
+				EA3E1E7EA91D494963AC1E61 /* Pods-Guestlogix AppUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7DD2097F1660B8A7AA6DE5BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				038A4656F55E56BA483DDB70 /* Pods_Guestlogix_App.framework */,
+				8708E911168A1448D686BBCF /* Pods_Guestlogix_AppTests.framework */,
+				5A17DA43752CA7AE779C92A4 /* Pods_Guestlogix_AppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0782918422811B1C005E224D /* Guestlogix App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 078291AD22811B1D005E224D /* Build configuration list for PBXNativeTarget "Guestlogix App" */;
+			buildPhases = (
+				1CF0D8F2371B905060469017 /* [CP] Check Pods Manifest.lock */,
+				0782918122811B1C005E224D /* Sources */,
+				0782918222811B1C005E224D /* Frameworks */,
+				0782918322811B1C005E224D /* Resources */,
+				ABB568E76ECFBE74BFF0BA0B /* [CP] Embed Pods Frameworks */,
+				EAEF63C063D222677534880E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Guestlogix App";
+			productName = "Guestlogix App";
+			productReference = 0782918522811B1C005E224D /* Guestlogix App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0782919822811B1D005E224D /* Guestlogix AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 078291B022811B1D005E224D /* Build configuration list for PBXNativeTarget "Guestlogix AppTests" */;
+			buildPhases = (
+				EC4A0B9425010C440F1E3FE6 /* [CP] Check Pods Manifest.lock */,
+				0782919522811B1D005E224D /* Sources */,
+				0782919622811B1D005E224D /* Frameworks */,
+				0782919722811B1D005E224D /* Resources */,
+				33046F7615AE51DCF74B3E65 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0782919B22811B1D005E224D /* PBXTargetDependency */,
+			);
+			name = "Guestlogix AppTests";
+			productName = "Guestlogix AppTests";
+			productReference = 0782919922811B1D005E224D /* Guestlogix AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		078291A322811B1D005E224D /* Guestlogix AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 078291B322811B1D005E224D /* Build configuration list for PBXNativeTarget "Guestlogix AppUITests" */;
+			buildPhases = (
+				6D0335EDCF5FCF30F0ACB961 /* [CP] Check Pods Manifest.lock */,
+				078291A022811B1D005E224D /* Sources */,
+				078291A122811B1D005E224D /* Frameworks */,
+				078291A222811B1D005E224D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				078291A622811B1D005E224D /* PBXTargetDependency */,
+			);
+			name = "Guestlogix AppUITests";
+			productName = "Guestlogix AppUITests";
+			productReference = 078291A422811B1D005E224D /* Guestlogix AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0782917D22811B1C005E224D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Adeyinka Adediji";
+				TargetAttributes = {
+					0782918422811B1C005E224D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					0782919822811B1D005E224D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 0782918422811B1C005E224D;
+					};
+					078291A322811B1D005E224D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 0782918422811B1C005E224D;
+					};
+				};
+			};
+			buildConfigurationList = 0782918022811B1C005E224D /* Build configuration list for PBXProject "Guestlogix App" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0782917C22811B1C005E224D;
+			productRefGroup = 0782918622811B1C005E224D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0782918422811B1C005E224D /* Guestlogix App */,
+				0782919822811B1D005E224D /* Guestlogix AppTests */,
+				078291A322811B1D005E224D /* Guestlogix AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0782918322811B1C005E224D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				078291E722812B21005E224D /* MapViewController.storyboard in Resources */,
+				078291EB22813249005E224D /* logo.png in Resources */,
+				0782919322811B1D005E224D /* LaunchScreen.storyboard in Resources */,
+				0782919022811B1D005E224D /* Assets.xcassets in Resources */,
+				0782918E22811B1C005E224D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0782919722811B1D005E224D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		078291A222811B1D005E224D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1CF0D8F2371B905060469017 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Guestlogix App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33046F7615AE51DCF74B3E65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Guestlogix AppTests/Pods-Guestlogix AppTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxNimble/RxNimble.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxNimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Guestlogix AppTests/Pods-Guestlogix AppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D0335EDCF5FCF30F0ACB961 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Guestlogix AppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABB568E76ECFBE74BFF0BA0B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Guestlogix App/Pods-Guestlogix App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-ModelMapper/Moya_ModelMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxFlow/RxFlow.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ModelMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxFlow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Guestlogix App/Pods-Guestlogix App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAEF63C063D222677534880E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Guestlogix App/Pods-Guestlogix App-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Guestlogix App/Pods-Guestlogix App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC4A0B9425010C440F1E3FE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Guestlogix AppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0782918122811B1C005E224D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				078291C92281245B005E224D /* FAB.swift in Sources */,
+				078291D62281272F005E224D /* AppFlow.swift in Sources */,
+				078291DD22812858005E224D /* MapService.swift in Sources */,
+				078291E822812B21005E224D /* MapViewController.swift in Sources */,
+				078291BE22812361005E224D /* AppUtility+Color.swift in Sources */,
+				078291C022812361005E224D /* AppUtility+UIImageView.swift in Sources */,
+				078291D8228127AC005E224D /* MapFlow.swift in Sources */,
+				078291C5228123D5005E224D /* AppTextField.swift in Sources */,
+				078291BD22812361005E224D /* AppUtility+UIImage.swift in Sources */,
+				078291BF22812361005E224D /* AppUtility.swift in Sources */,
+				078291CF2281254D005E224D /* AppStep.swift in Sources */,
+				078291E922812B21005E224D /* MapViewModel.swift in Sources */,
+				0782918B22811B1C005E224D /* ViewController.swift in Sources */,
+				0782918922811B1C005E224D /* AppDelegate.swift in Sources */,
+				078291C3228123A5005E224D /* CardView.swift in Sources */,
+				078291BC22812361005E224D /* AppUtility+String.swift in Sources */,
+				078291D122812681005E224D /* AppStepper.swift in Sources */,
+				078291D3228126EA005E224D /* MapStepper.swift in Sources */,
+				078291DB2281281F005E224D /* AppServices.swift in Sources */,
+				078291CC228124D4005E224D /* ViewModelBased.swift in Sources */,
+				078291C7228123EE005E224D /* AppButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0782919522811B1D005E224D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0782919E22811B1D005E224D /* Guestlogix_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		078291A022811B1D005E224D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				078291A922811B1D005E224D /* Guestlogix_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0782919B22811B1D005E224D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0782918422811B1C005E224D /* Guestlogix App */;
+			targetProxy = 0782919A22811B1D005E224D /* PBXContainerItemProxy */;
+		};
+		078291A622811B1D005E224D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0782918422811B1C005E224D /* Guestlogix App */;
+			targetProxy = 078291A522811B1D005E224D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0782918C22811B1C005E224D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0782918D22811B1C005E224D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0782919122811B1D005E224D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0782919222811B1D005E224D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		078291AB22811B1D005E224D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		078291AC22811B1D005E224D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		078291AE22811B1D005E224D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA9B8A4F948A3F047A285C9F /* Pods-Guestlogix App.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MDCJGSLNV9;
+				INFOPLIST_FILE = "Guestlogix App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Guestlogix-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		078291AF22811B1D005E224D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18773CBC28C6BDBF2FEFEA21 /* Pods-Guestlogix App.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MDCJGSLNV9;
+				INFOPLIST_FILE = "Guestlogix App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Guestlogix-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		078291B122811B1D005E224D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 133138F7BA474DAA43D17B02 /* Pods-Guestlogix AppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MDCJGSLNV9;
+				INFOPLIST_FILE = "Guestlogix AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Guestlogix-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guestlogix App.app/Guestlogix App";
+			};
+			name = Debug;
+		};
+		078291B222811B1D005E224D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AC9FF8E21F682AEB7E11CCF /* Pods-Guestlogix AppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MDCJGSLNV9;
+				INFOPLIST_FILE = "Guestlogix AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Guestlogix-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guestlogix App.app/Guestlogix App";
+			};
+			name = Release;
+		};
+		078291B422811B1D005E224D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A2D7310A8C05BD9FF314FFB /* Pods-Guestlogix AppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MDCJGSLNV9;
+				INFOPLIST_FILE = "Guestlogix AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Guestlogix-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Guestlogix App";
+			};
+			name = Debug;
+		};
+		078291B522811B1D005E224D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA3E1E7EA91D494963AC1E61 /* Pods-Guestlogix AppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MDCJGSLNV9;
+				INFOPLIST_FILE = "Guestlogix AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Guestlogix-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Guestlogix App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0782918022811B1C005E224D /* Build configuration list for PBXProject "Guestlogix App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				078291AB22811B1D005E224D /* Debug */,
+				078291AC22811B1D005E224D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		078291AD22811B1D005E224D /* Build configuration list for PBXNativeTarget "Guestlogix App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				078291AE22811B1D005E224D /* Debug */,
+				078291AF22811B1D005E224D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		078291B022811B1D005E224D /* Build configuration list for PBXNativeTarget "Guestlogix AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				078291B122811B1D005E224D /* Debug */,
+				078291B222811B1D005E224D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		078291B322811B1D005E224D /* Build configuration list for PBXNativeTarget "Guestlogix AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				078291B422811B1D005E224D /* Debug */,
+				078291B522811B1D005E224D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0782917D22811B1C005E224D /* Project object */;
+}
