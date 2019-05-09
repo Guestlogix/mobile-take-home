@@ -18,5 +18,9 @@ class MapViewController: UIViewController, StoryboardBased, ViewModelBased {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.q()
     }
+    
+    
 }

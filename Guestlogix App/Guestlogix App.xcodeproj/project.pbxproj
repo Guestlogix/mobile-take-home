@@ -35,6 +35,25 @@
 		078291E822812B21005E224D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291E522812B21005E224D /* MapViewController.swift */; };
 		078291E922812B21005E224D /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291E622812B21005E224D /* MapViewModel.swift */; };
 		078291EB22813249005E224D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 078291EA22813249005E224D /* logo.png */; };
+		078291F122816C16005E224D /* routes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 078291EE22816C16005E224D /* routes.csv */; };
+		078291F222816C16005E224D /* airlines.csv in Resources */ = {isa = PBXBuildFile; fileRef = 078291EF22816C16005E224D /* airlines.csv */; };
+		078291F322816C16005E224D /* airports.csv in Resources */ = {isa = PBXBuildFile; fileRef = 078291F022816C16005E224D /* airports.csv */; };
+		078291F722826651005E224D /* MapViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291F622826651005E224D /* MapViewModelSpec.swift */; };
+		078291FB228267D7005E224D /* MapServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291FA228267D7005E224D /* MapServiceSpec.swift */; };
+		078291FD22827A70005E224D /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291FC22827A70005E224D /* Airport.swift */; };
+		078291FF22827A7D005E224D /* Airline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291FE22827A7D005E224D /* Airline.swift */; };
+		0782920122827A8E005E224D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782920022827A8E005E224D /* Route.swift */; };
+		078292042283729D005E224D /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078292032283729C005E224D /* Vertex.swift */; };
+		07829206228372DB005E224D /* DirectedEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07829205228372DB005E224D /* DirectedEdge.swift */; };
+		0782920822837322005E224D /* EdgeWeightedDigraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782920722837322005E224D /* EdgeWeightedDigraph.swift */; };
+		0782920A22837890005E224D /* QueueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782920922837890005E224D /* QueueItem.swift */; };
+		0782920C228378AE005E224D /* SimplePriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782920B228378AE005E224D /* SimplePriorityQueue.swift */; };
+		0782920E228378EF005E224D /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782920D228378EF005E224D /* Destination.swift */; };
+		0782921022837953005E224D /* DijkstraShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782920F22837953005E224D /* DijkstraShortestPath.swift */; };
+		0782921222837D33005E224D /* EdgeWeightedDirectedCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782921122837D33005E224D /* EdgeWeightedDirectedCycle.swift */; };
+		0782921422837E46005E224D /* BellmanFordShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782921322837E46005E224D /* BellmanFordShortestPath.swift */; };
+		0782921622837E7D005E224D /* ATStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782921522837E7D005E224D /* ATStack.swift */; };
+		078292182283800F005E224D /* ATQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078292172283800F005E224D /* ATQueue.swift */; };
 		19BA80036A249752A10C1BEA /* Pods_Guestlogix_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8708E911168A1448D686BBCF /* Pods_Guestlogix_AppTests.framework */; };
 		35C30B45B9AA62DDA876EA10 /* Pods_Guestlogix_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A17DA43752CA7AE779C92A4 /* Pods_Guestlogix_AppUITests.framework */; };
 		C54B7C4C9BE9C21FC144F2FB /* Pods_Guestlogix_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038A4656F55E56BA483DDB70 /* Pods_Guestlogix_App.framework */; };
@@ -93,6 +112,25 @@
 		078291E522812B21005E224D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		078291E622812B21005E224D /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		078291EA22813249005E224D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		078291EE22816C16005E224D /* routes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.csv; sourceTree = "<group>"; };
+		078291EF22816C16005E224D /* airlines.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airlines.csv; sourceTree = "<group>"; };
+		078291F022816C16005E224D /* airports.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airports.csv; sourceTree = "<group>"; };
+		078291F622826651005E224D /* MapViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelSpec.swift; sourceTree = "<group>"; };
+		078291FA228267D7005E224D /* MapServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapServiceSpec.swift; sourceTree = "<group>"; };
+		078291FC22827A70005E224D /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
+		078291FE22827A7D005E224D /* Airline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airline.swift; sourceTree = "<group>"; };
+		0782920022827A8E005E224D /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		078292032283729C005E224D /* Vertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		07829205228372DB005E224D /* DirectedEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectedEdge.swift; sourceTree = "<group>"; };
+		0782920722837322005E224D /* EdgeWeightedDigraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeWeightedDigraph.swift; sourceTree = "<group>"; };
+		0782920922837890005E224D /* QueueItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueItem.swift; sourceTree = "<group>"; };
+		0782920B228378AE005E224D /* SimplePriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePriorityQueue.swift; sourceTree = "<group>"; };
+		0782920D228378EF005E224D /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		0782920F22837953005E224D /* DijkstraShortestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DijkstraShortestPath.swift; sourceTree = "<group>"; };
+		0782921122837D33005E224D /* EdgeWeightedDirectedCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeWeightedDirectedCycle.swift; sourceTree = "<group>"; };
+		0782921322837E46005E224D /* BellmanFordShortestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BellmanFordShortestPath.swift; sourceTree = "<group>"; };
+		0782921522837E7D005E224D /* ATStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATStack.swift; sourceTree = "<group>"; };
+		078292172283800F005E224D /* ATQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATQueue.swift; sourceTree = "<group>"; };
 		133138F7BA474DAA43D17B02 /* Pods-Guestlogix AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guestlogix AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Guestlogix AppTests/Pods-Guestlogix AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		18773CBC28C6BDBF2FEFEA21 /* Pods-Guestlogix App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guestlogix App.release.xcconfig"; path = "Target Support Files/Pods-Guestlogix App/Pods-Guestlogix App.release.xcconfig"; sourceTree = "<group>"; };
 		5A17DA43752CA7AE779C92A4 /* Pods_Guestlogix_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guestlogix_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +194,7 @@
 		0782918722811B1C005E224D /* Guestlogix App */ = {
 			isa = PBXGroup;
 			children = (
+				078291EC22816BF4005E224D /* Repository */,
 				078291E222812A99005E224D /* Features */,
 				078291E122812A53005E224D /* Model */,
 				078291DE22812A39005E224D /* Resources */,
@@ -177,6 +216,8 @@
 		0782919C22811B1D005E224D /* Guestlogix AppTests */ = {
 			isa = PBXGroup;
 			children = (
+				078291F9228266CA005E224D /* Services */,
+				078291F8228266BF005E224D /* ViewModels */,
 				0782919D22811B1D005E224D /* Guestlogix_AppTests.swift */,
 				0782919F22811B1D005E224D /* Info.plist */,
 			);
@@ -246,6 +287,7 @@
 		078291D92281280C005E224D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				07829202228370ED005E224D /* Graphing Algorithms */,
 				078291DA2281281F005E224D /* AppServices.swift */,
 				078291DC22812858005E224D /* MapService.swift */,
 			);
@@ -279,6 +321,9 @@
 		078291E122812A53005E224D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				078291FC22827A70005E224D /* Airport.swift */,
+				078291FE22827A7D005E224D /* Airline.swift */,
+				0782920022827A8E005E224D /* Route.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +344,59 @@
 				078291E622812B21005E224D /* MapViewModel.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		078291EC22816BF4005E224D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				078291ED22816C16005E224D /* data */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		078291ED22816C16005E224D /* data */ = {
+			isa = PBXGroup;
+			children = (
+				078291EE22816C16005E224D /* routes.csv */,
+				078291EF22816C16005E224D /* airlines.csv */,
+				078291F022816C16005E224D /* airports.csv */,
+			);
+			name = data;
+			path = ../../../data;
+			sourceTree = "<group>";
+		};
+		078291F8228266BF005E224D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				078291F622826651005E224D /* MapViewModelSpec.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		078291F9228266CA005E224D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				078291FA228267D7005E224D /* MapServiceSpec.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		07829202228370ED005E224D /* Graphing Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				078292032283729C005E224D /* Vertex.swift */,
+				07829205228372DB005E224D /* DirectedEdge.swift */,
+				0782920722837322005E224D /* EdgeWeightedDigraph.swift */,
+				0782920922837890005E224D /* QueueItem.swift */,
+				0782920B228378AE005E224D /* SimplePriorityQueue.swift */,
+				0782920D228378EF005E224D /* Destination.swift */,
+				0782920F22837953005E224D /* DijkstraShortestPath.swift */,
+				0782921122837D33005E224D /* EdgeWeightedDirectedCycle.swift */,
+				0782921322837E46005E224D /* BellmanFordShortestPath.swift */,
+				0782921522837E7D005E224D /* ATStack.swift */,
+				078292172283800F005E224D /* ATQueue.swift */,
+			);
+			path = "Graphing Algorithms";
 			sourceTree = "<group>";
 		};
 		1FE1C1D7AA2C3FD627FA9978 /* Pods */ = {
@@ -434,11 +532,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078291F122816C16005E224D /* routes.csv in Resources */,
 				078291E722812B21005E224D /* MapViewController.storyboard in Resources */,
+				078291F322816C16005E224D /* airports.csv in Resources */,
 				078291EB22813249005E224D /* logo.png in Resources */,
 				0782919322811B1D005E224D /* LaunchScreen.storyboard in Resources */,
 				0782919022811B1D005E224D /* Assets.xcassets in Resources */,
 				0782918E22811B1C005E224D /* Main.storyboard in Resources */,
+				078291F222816C16005E224D /* airlines.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,23 +729,37 @@
 			files = (
 				078291C92281245B005E224D /* FAB.swift in Sources */,
 				078291D62281272F005E224D /* AppFlow.swift in Sources */,
+				0782920E228378EF005E224D /* Destination.swift in Sources */,
 				078291DD22812858005E224D /* MapService.swift in Sources */,
+				078292042283729D005E224D /* Vertex.swift in Sources */,
+				0782921622837E7D005E224D /* ATStack.swift in Sources */,
 				078291E822812B21005E224D /* MapViewController.swift in Sources */,
+				078292182283800F005E224D /* ATQueue.swift in Sources */,
 				078291BE22812361005E224D /* AppUtility+Color.swift in Sources */,
+				0782920A22837890005E224D /* QueueItem.swift in Sources */,
+				07829206228372DB005E224D /* DirectedEdge.swift in Sources */,
+				0782920C228378AE005E224D /* SimplePriorityQueue.swift in Sources */,
 				078291C022812361005E224D /* AppUtility+UIImageView.swift in Sources */,
 				078291D8228127AC005E224D /* MapFlow.swift in Sources */,
 				078291C5228123D5005E224D /* AppTextField.swift in Sources */,
 				078291BD22812361005E224D /* AppUtility+UIImage.swift in Sources */,
 				078291BF22812361005E224D /* AppUtility.swift in Sources */,
 				078291CF2281254D005E224D /* AppStep.swift in Sources */,
+				0782921422837E46005E224D /* BellmanFordShortestPath.swift in Sources */,
+				0782921022837953005E224D /* DijkstraShortestPath.swift in Sources */,
 				078291E922812B21005E224D /* MapViewModel.swift in Sources */,
 				0782918B22811B1C005E224D /* ViewController.swift in Sources */,
+				078291FD22827A70005E224D /* Airport.swift in Sources */,
+				0782921222837D33005E224D /* EdgeWeightedDirectedCycle.swift in Sources */,
+				0782920822837322005E224D /* EdgeWeightedDigraph.swift in Sources */,
 				0782918922811B1C005E224D /* AppDelegate.swift in Sources */,
+				078291FF22827A7D005E224D /* Airline.swift in Sources */,
 				078291C3228123A5005E224D /* CardView.swift in Sources */,
 				078291BC22812361005E224D /* AppUtility+String.swift in Sources */,
 				078291D122812681005E224D /* AppStepper.swift in Sources */,
 				078291D3228126EA005E224D /* MapStepper.swift in Sources */,
 				078291DB2281281F005E224D /* AppServices.swift in Sources */,
+				0782920122827A8E005E224D /* Route.swift in Sources */,
 				078291CC228124D4005E224D /* ViewModelBased.swift in Sources */,
 				078291C7228123EE005E224D /* AppButton.swift in Sources */,
 			);
@@ -654,6 +769,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078291FB228267D7005E224D /* MapServiceSpec.swift in Sources */,
+				078291F722826651005E224D /* MapViewModelSpec.swift in Sources */,
 				0782919E22811B1D005E224D /* Guestlogix_AppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
