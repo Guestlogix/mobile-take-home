@@ -1,3 +1,10 @@
+## Setup
+This is an iOS project
+Navigate into the "Guestlogix App" folder.
+Run `pod init`  to setup dependencies for the project.
+Open `Guestlogix App.xcworkspace` with xCode and run on a simulator or real device. Don't forget to also run all the test cases 😎
+
+
 # Guestlogix Take Home Test - Mobile
 
 At Guestlogix we feel that putting developers on the spot with advanced algorithmic puzzles doesn’t exactly highlight one’s true skillset. The intention of this assessment is to see how you approach and tackle a problem in the real world, not quivering in front of a whiteboard.

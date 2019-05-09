@@ -106,7 +106,7 @@ class AppTextField: UIView {
         // ****************************************************************** //
         shell.frame = CGRect(x: 0, y: 0, width: width, height: height)
         shell.layer.borderWidth = CGFloat(1.5)
-        shell.layer.borderColor = UIColor("#979797").cgColor
+        shell.layer.borderColor = UIColor.primary.cgColor
         shell.layer.cornerRadius = shell.frame.height / 2
         shell.backgroundColor = backGroundColor
         addSubview(shell)
@@ -114,7 +114,7 @@ class AppTextField: UIView {
         // ****************************************************************** //
         if image != nil {
             imageView.image = image?.withRenderingMode(.alwaysTemplate)
-            imageView.tint(color: "#969696")
+            imageView.tint(color: .black)
         }
         
         imageView.removeFromSuperview()
@@ -129,7 +129,7 @@ class AppTextField: UIView {
         let elementWidth = width - elementMargin - xMargin
         element.frame = CGRect(x: elementMargin, y: shellPadding, width: elementWidth, height: height - (shellPadding * 2))
         element.placeholder = placeHolderText
-        element.attributedPlaceholder = NSAttributedString(string: placeHolderText, attributes: [NSAttributedString.Key.foregroundColor: UIColor("#303030")])
+        element.attributedPlaceholder = NSAttributedString(string: placeHolderText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         element.textColor = textColor
         element.font = .systemFont(ofSize: fontSize)
         addSubview(element)

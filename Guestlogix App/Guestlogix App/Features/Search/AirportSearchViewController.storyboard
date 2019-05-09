@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bF6-ib-Cjz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Airport Search View Controller-->
+        <scene sceneID="YaS-2h-QUv">
+            <objects>
+                <viewController storyboardIdentifier="AirportSearchViewController" id="bF6-ib-Cjz" customClass="AirportSearchViewController" customModule="Guestlogix_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bj4-rP-O34">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YlL-9i-bPz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-bs-G6F" customClass="AppTextField" customModule="Guestlogix_App" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="335" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="OEV-yV-Pdw"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolderText" value="Flying From"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasImage" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="ic_action_flight_takeoff.png"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-2o-bO2" customClass="AppTextField" customModule="Guestlogix_App" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="90" width="335" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="gUi-CQ-3C1"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolderText" value="Flying To"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasImage" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="ic_action_flight_land.png"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JT6-Mc-5eZ" customClass="AppButton" customModule="Guestlogix_App" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="160" width="335" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="PbB-Zd-Dmf"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isActive" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Show Flight Route"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qra-U2-u0D" customClass="AppCancelButton" customModule="Guestlogix_App" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="230" width="335" height="50"/>
+                                        <color key="backgroundColor" red="0.97647058823529409" green="0.56862745098039214" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="eJQ-e1-nRu"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Cancel"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JT6-Mc-5eZ" secondAttribute="trailing" constant="20" id="8F1-E4-HA3"/>
+                                    <constraint firstItem="qra-U2-u0D" firstAttribute="leading" secondItem="YlL-9i-bPz" secondAttribute="leading" constant="20" id="Bfb-TN-g75"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fho-2o-bO2" secondAttribute="trailing" constant="20" id="EOd-DS-5Xb"/>
+                                    <constraint firstItem="cPn-bs-G6F" firstAttribute="leading" secondItem="YlL-9i-bPz" secondAttribute="leading" constant="20" id="KFk-R6-2OP"/>
+                                    <constraint firstItem="JT6-Mc-5eZ" firstAttribute="top" secondItem="Fho-2o-bO2" secondAttribute="bottom" constant="20" id="Sg3-XU-crA"/>
+                                    <constraint firstItem="qra-U2-u0D" firstAttribute="top" secondItem="JT6-Mc-5eZ" secondAttribute="bottom" constant="20" id="Za1-85-8Mx"/>
+                                    <constraint firstAttribute="trailing" secondItem="qra-U2-u0D" secondAttribute="trailing" constant="20" id="bOD-Gx-yM1"/>
+                                    <constraint firstItem="Fho-2o-bO2" firstAttribute="leading" secondItem="YlL-9i-bPz" secondAttribute="leading" constant="20" id="dVa-AM-CC9"/>
+                                    <constraint firstItem="cPn-bs-G6F" firstAttribute="top" secondItem="YlL-9i-bPz" secondAttribute="top" constant="20" id="gdm-Kh-2v3"/>
+                                    <constraint firstItem="Fho-2o-bO2" firstAttribute="top" secondItem="cPn-bs-G6F" secondAttribute="bottom" constant="20" id="j08-67-Rqx"/>
+                                    <constraint firstItem="JT6-Mc-5eZ" firstAttribute="leading" secondItem="YlL-9i-bPz" secondAttribute="leading" constant="20" id="tpC-rC-zFH"/>
+                                    <constraint firstAttribute="trailing" secondItem="cPn-bs-G6F" secondAttribute="trailing" constant="20" id="vOH-3t-RYn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YlL-9i-bPz" firstAttribute="leading" secondItem="eNV-xC-Db3" secondAttribute="leading" id="21b-j5-9zh"/>
+                            <constraint firstItem="eNV-xC-Db3" firstAttribute="trailing" secondItem="YlL-9i-bPz" secondAttribute="trailing" id="29b-Wh-oOl"/>
+                            <constraint firstItem="YlL-9i-bPz" firstAttribute="top" secondItem="eNV-xC-Db3" secondAttribute="top" id="FIA-mP-7Xv"/>
+                            <constraint firstItem="eNV-xC-Db3" firstAttribute="bottom" secondItem="YlL-9i-bPz" secondAttribute="bottom" id="Kvs-Hv-VFH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eNV-xC-Db3"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="qra-U2-u0D" id="luy-Cg-aYi"/>
+                        <outlet property="destinationTextField" destination="Fho-2o-bO2" id="mQ9-Ut-nUi"/>
+                        <outlet property="showRouteButton" destination="JT6-Mc-5eZ" id="a6w-2p-I2p"/>
+                        <outlet property="sourceTextField" destination="cPn-bs-G6F" id="eX1-ha-ZOu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wTm-J7-2YQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-255.19999999999999" y="-103.89805097451276"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_action_flight_land.png" width="96" height="96"/>
+        <image name="ic_action_flight_takeoff.png" width="96" height="96"/>
+    </resources>
+</document>

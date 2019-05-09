@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0782918922811B1C005E224D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782918822811B1C005E224D /* AppDelegate.swift */; };
-		0782918B22811B1C005E224D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782918A22811B1C005E224D /* ViewController.swift */; };
-		0782918E22811B1C005E224D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0782918C22811B1C005E224D /* Main.storyboard */; };
 		0782919022811B1D005E224D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0782918F22811B1D005E224D /* Assets.xcassets */; };
 		0782919322811B1D005E224D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0782919122811B1D005E224D /* LaunchScreen.storyboard */; };
 		0782919E22811B1D005E224D /* Guestlogix_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782919D22811B1D005E224D /* Guestlogix_AppTests.swift */; };
@@ -22,7 +20,6 @@
 		078291C3228123A5005E224D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291C2228123A5005E224D /* CardView.swift */; };
 		078291C5228123D5005E224D /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291C4228123D5005E224D /* AppTextField.swift */; };
 		078291C7228123EE005E224D /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291C6228123EE005E224D /* AppButton.swift */; };
-		078291C92281245B005E224D /* FAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291C82281245B005E224D /* FAB.swift */; };
 		078291CC228124D4005E224D /* ViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291CB228124D4005E224D /* ViewModelBased.swift */; };
 		078291CF2281254D005E224D /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291CE2281254D005E224D /* AppStep.swift */; };
 		078291D122812681005E224D /* AppStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291D022812681005E224D /* AppStepper.swift */; };
@@ -38,7 +35,6 @@
 		078291F122816C16005E224D /* routes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 078291EE22816C16005E224D /* routes.csv */; };
 		078291F222816C16005E224D /* airlines.csv in Resources */ = {isa = PBXBuildFile; fileRef = 078291EF22816C16005E224D /* airlines.csv */; };
 		078291F322816C16005E224D /* airports.csv in Resources */ = {isa = PBXBuildFile; fileRef = 078291F022816C16005E224D /* airports.csv */; };
-		078291F722826651005E224D /* MapViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291F622826651005E224D /* MapViewModelSpec.swift */; };
 		078291FB228267D7005E224D /* MapServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291FA228267D7005E224D /* MapServiceSpec.swift */; };
 		078291FD22827A70005E224D /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291FC22827A70005E224D /* Airport.swift */; };
 		078291FF22827A7D005E224D /* Airline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078291FE22827A7D005E224D /* Airline.swift */; };
@@ -54,6 +50,18 @@
 		0782921422837E46005E224D /* BellmanFordShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782921322837E46005E224D /* BellmanFordShortestPath.swift */; };
 		0782921622837E7D005E224D /* ATStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782921522837E7D005E224D /* ATStack.swift */; };
 		078292182283800F005E224D /* ATQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078292172283800F005E224D /* ATQueue.swift */; };
+		0782921A22842BF9005E224D /* airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 0782921922842BF8005E224D /* airplane.png */; };
+		0782921C22843651005E224D /* AirportMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782921B22843651005E224D /* AirportMarker.swift */; };
+		0782922022845A2E005E224D /* AirportSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782921F22845A2E005E224D /* AirportSearchViewController.swift */; };
+		0782922522845DCC005E224D /* AirportSearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0782922422845DCC005E224D /* AirportSearchViewController.storyboard */; };
+		0782922922846048005E224D /* ic_action_flight_takeoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 0782922622846047005E224D /* ic_action_flight_takeoff.png */; };
+		0782922A22846048005E224D /* ic_action_flight_land.png in Resources */ = {isa = PBXBuildFile; fileRef = 0782922722846048005E224D /* ic_action_flight_land.png */; };
+		0782922E2284675E005E224D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782922D2284675E005E224D /* LoadingViewController.swift */; };
+		0782923022846782005E224D /* LoadingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0782922F22846782005E224D /* LoadingViewController.storyboard */; };
+		07829232228469CE005E224D /* AirportSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07829231228469CE005E224D /* AirportSearchViewModel.swift */; };
+		078292352284950C005E224D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078292342284950C005E224D /* R.generated.swift */; };
+		078292372284A2E7005E224D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078292362284A2E7005E224D /* LoadingView.swift */; };
+		078292392284A990005E224D /* AppCancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078292382284A990005E224D /* AppCancelButton.swift */; };
 		19BA80036A249752A10C1BEA /* Pods_Guestlogix_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8708E911168A1448D686BBCF /* Pods_Guestlogix_AppTests.framework */; };
 		35C30B45B9AA62DDA876EA10 /* Pods_Guestlogix_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A17DA43752CA7AE779C92A4 /* Pods_Guestlogix_AppUITests.framework */; };
 		C54B7C4C9BE9C21FC144F2FB /* Pods_Guestlogix_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038A4656F55E56BA483DDB70 /* Pods_Guestlogix_App.framework */; };
@@ -80,8 +88,6 @@
 		038A4656F55E56BA483DDB70 /* Pods_Guestlogix_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guestlogix_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0782918522811B1C005E224D /* Guestlogix App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guestlogix App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0782918822811B1C005E224D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0782918A22811B1C005E224D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0782918D22811B1C005E224D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0782918F22811B1D005E224D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0782919222811B1D005E224D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0782919422811B1D005E224D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,7 +105,6 @@
 		078291C2228123A5005E224D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		078291C4228123D5005E224D /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		078291C6228123EE005E224D /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
-		078291C82281245B005E224D /* FAB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAB.swift; sourceTree = "<group>"; };
 		078291CB228124D4005E224D /* ViewModelBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBased.swift; sourceTree = "<group>"; };
 		078291CE2281254D005E224D /* AppStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
 		078291D022812681005E224D /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
@@ -115,7 +120,6 @@
 		078291EE22816C16005E224D /* routes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.csv; sourceTree = "<group>"; };
 		078291EF22816C16005E224D /* airlines.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airlines.csv; sourceTree = "<group>"; };
 		078291F022816C16005E224D /* airports.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airports.csv; sourceTree = "<group>"; };
-		078291F622826651005E224D /* MapViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelSpec.swift; sourceTree = "<group>"; };
 		078291FA228267D7005E224D /* MapServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapServiceSpec.swift; sourceTree = "<group>"; };
 		078291FC22827A70005E224D /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
 		078291FE22827A7D005E224D /* Airline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airline.swift; sourceTree = "<group>"; };
@@ -131,6 +135,18 @@
 		0782921322837E46005E224D /* BellmanFordShortestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BellmanFordShortestPath.swift; sourceTree = "<group>"; };
 		0782921522837E7D005E224D /* ATStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATStack.swift; sourceTree = "<group>"; };
 		078292172283800F005E224D /* ATQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATQueue.swift; sourceTree = "<group>"; };
+		0782921922842BF8005E224D /* airplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplane.png; sourceTree = "<group>"; };
+		0782921B22843651005E224D /* AirportMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportMarker.swift; sourceTree = "<group>"; };
+		0782921F22845A2E005E224D /* AirportSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearchViewController.swift; sourceTree = "<group>"; };
+		0782922422845DCC005E224D /* AirportSearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AirportSearchViewController.storyboard; sourceTree = "<group>"; };
+		0782922622846047005E224D /* ic_action_flight_takeoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_action_flight_takeoff.png; sourceTree = "<group>"; };
+		0782922722846048005E224D /* ic_action_flight_land.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_action_flight_land.png; sourceTree = "<group>"; };
+		0782922D2284675E005E224D /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		0782922F22846782005E224D /* LoadingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingViewController.storyboard; sourceTree = "<group>"; };
+		07829231228469CE005E224D /* AirportSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearchViewModel.swift; sourceTree = "<group>"; };
+		078292342284950C005E224D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		078292362284A2E7005E224D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		078292382284A990005E224D /* AppCancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCancelButton.swift; sourceTree = "<group>"; };
 		133138F7BA474DAA43D17B02 /* Pods-Guestlogix AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guestlogix AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Guestlogix AppTests/Pods-Guestlogix AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		18773CBC28C6BDBF2FEFEA21 /* Pods-Guestlogix App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guestlogix App.release.xcconfig"; path = "Target Support Files/Pods-Guestlogix App/Pods-Guestlogix App.release.xcconfig"; sourceTree = "<group>"; };
 		5A17DA43752CA7AE779C92A4 /* Pods_Guestlogix_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guestlogix_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,8 +220,6 @@
 				078291CA228124C0005E224D /* Protocols */,
 				078291B62281234B005E224D /* Utils */,
 				0782918822811B1C005E224D /* AppDelegate.swift */,
-				0782918A22811B1C005E224D /* ViewController.swift */,
-				0782918C22811B1C005E224D /* Main.storyboard */,
 				0782918F22811B1D005E224D /* Assets.xcassets */,
 				0782919122811B1D005E224D /* LaunchScreen.storyboard */,
 				0782919422811B1D005E224D /* Info.plist */,
@@ -236,6 +250,7 @@
 		078291B62281234B005E224D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				078292342284950C005E224D /* R.generated.swift */,
 				078291C122812389005E224D /* Custom Views */,
 				078291B722812361005E224D /* AppUtility+String.swift */,
 				078291B822812361005E224D /* AppUtility+UIImage.swift */,
@@ -249,10 +264,11 @@
 		078291C122812389005E224D /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				0782922C22846753005E224D /* Loading View */,
 				078291C2228123A5005E224D /* CardView.swift */,
 				078291C4228123D5005E224D /* AppTextField.swift */,
 				078291C6228123EE005E224D /* AppButton.swift */,
-				078291C82281245B005E224D /* FAB.swift */,
+				078292382284A990005E224D /* AppCancelButton.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -261,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				078291CB228124D4005E224D /* ViewModelBased.swift */,
+				078292362284A2E7005E224D /* LoadingView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -306,6 +323,9 @@
 		078291DF22812A42005E224D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0782922722846048005E224D /* ic_action_flight_land.png */,
+				0782922622846047005E224D /* ic_action_flight_takeoff.png */,
+				0782921922842BF8005E224D /* airplane.png */,
 				078291EA22813249005E224D /* logo.png */,
 			);
 			path = Images;
@@ -324,6 +344,7 @@
 				078291FC22827A70005E224D /* Airport.swift */,
 				078291FE22827A7D005E224D /* Airline.swift */,
 				0782920022827A8E005E224D /* Route.swift */,
+				0782921B22843651005E224D /* AirportMarker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,6 +352,7 @@
 		078291E222812A99005E224D /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				0782922122845B57005E224D /* Search */,
 				078291E322812B00005E224D /* Map */,
 			);
 			path = Features;
@@ -368,7 +390,6 @@
 		078291F8228266BF005E224D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				078291F622826651005E224D /* MapViewModelSpec.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -397,6 +418,25 @@
 				078292172283800F005E224D /* ATQueue.swift */,
 			);
 			path = "Graphing Algorithms";
+			sourceTree = "<group>";
+		};
+		0782922122845B57005E224D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0782922422845DCC005E224D /* AirportSearchViewController.storyboard */,
+				0782921F22845A2E005E224D /* AirportSearchViewController.swift */,
+				07829231228469CE005E224D /* AirportSearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		0782922C22846753005E224D /* Loading View */ = {
+			isa = PBXGroup;
+			children = (
+				0782922D2284675E005E224D /* LoadingViewController.swift */,
+				0782922F22846782005E224D /* LoadingViewController.storyboard */,
+			);
+			path = "Loading View";
 			sourceTree = "<group>";
 		};
 		1FE1C1D7AA2C3FD627FA9978 /* Pods */ = {
@@ -430,11 +470,11 @@
 			buildConfigurationList = 078291AD22811B1D005E224D /* Build configuration list for PBXNativeTarget "Guestlogix App" */;
 			buildPhases = (
 				1CF0D8F2371B905060469017 /* [CP] Check Pods Manifest.lock */,
+				0782923322849405005E224D /* Run Script [R.Swift] */,
 				0782918122811B1C005E224D /* Sources */,
 				0782918222811B1C005E224D /* Frameworks */,
 				0782918322811B1C005E224D /* Resources */,
 				ABB568E76ECFBE74BFF0BA0B /* [CP] Embed Pods Frameworks */,
-				EAEF63C063D222677534880E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -534,12 +574,16 @@
 			files = (
 				078291F122816C16005E224D /* routes.csv in Resources */,
 				078291E722812B21005E224D /* MapViewController.storyboard in Resources */,
+				0782923022846782005E224D /* LoadingViewController.storyboard in Resources */,
 				078291F322816C16005E224D /* airports.csv in Resources */,
+				0782922522845DCC005E224D /* AirportSearchViewController.storyboard in Resources */,
+				0782922A22846048005E224D /* ic_action_flight_land.png in Resources */,
+				0782921A22842BF9005E224D /* airplane.png in Resources */,
 				078291EB22813249005E224D /* logo.png in Resources */,
 				0782919322811B1D005E224D /* LaunchScreen.storyboard in Resources */,
 				0782919022811B1D005E224D /* Assets.xcassets in Resources */,
-				0782918E22811B1C005E224D /* Main.storyboard in Resources */,
 				078291F222816C16005E224D /* airlines.csv in Resources */,
+				0782922922846048005E224D /* ic_action_flight_takeoff.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +604,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0782923322849405005E224D /* Run Script [R.Swift] */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "Run Script [R.Swift]";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		1CF0D8F2371B905060469017 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -676,28 +740,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Guestlogix App/Pods-Guestlogix App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EAEF63C063D222677534880E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Guestlogix App/Pods-Guestlogix App-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Guestlogix App/Pods-Guestlogix App-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EC4A0B9425010C440F1E3FE6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -727,20 +769,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078291C92281245B005E224D /* FAB.swift in Sources */,
+				078292352284950C005E224D /* R.generated.swift in Sources */,
 				078291D62281272F005E224D /* AppFlow.swift in Sources */,
 				0782920E228378EF005E224D /* Destination.swift in Sources */,
+				078292372284A2E7005E224D /* LoadingView.swift in Sources */,
 				078291DD22812858005E224D /* MapService.swift in Sources */,
 				078292042283729D005E224D /* Vertex.swift in Sources */,
+				0782921C22843651005E224D /* AirportMarker.swift in Sources */,
 				0782921622837E7D005E224D /* ATStack.swift in Sources */,
 				078291E822812B21005E224D /* MapViewController.swift in Sources */,
 				078292182283800F005E224D /* ATQueue.swift in Sources */,
 				078291BE22812361005E224D /* AppUtility+Color.swift in Sources */,
+				0782922E2284675E005E224D /* LoadingViewController.swift in Sources */,
 				0782920A22837890005E224D /* QueueItem.swift in Sources */,
 				07829206228372DB005E224D /* DirectedEdge.swift in Sources */,
 				0782920C228378AE005E224D /* SimplePriorityQueue.swift in Sources */,
 				078291C022812361005E224D /* AppUtility+UIImageView.swift in Sources */,
 				078291D8228127AC005E224D /* MapFlow.swift in Sources */,
+				078292392284A990005E224D /* AppCancelButton.swift in Sources */,
 				078291C5228123D5005E224D /* AppTextField.swift in Sources */,
 				078291BD22812361005E224D /* AppUtility+UIImage.swift in Sources */,
 				078291BF22812361005E224D /* AppUtility.swift in Sources */,
@@ -748,7 +794,8 @@
 				0782921422837E46005E224D /* BellmanFordShortestPath.swift in Sources */,
 				0782921022837953005E224D /* DijkstraShortestPath.swift in Sources */,
 				078291E922812B21005E224D /* MapViewModel.swift in Sources */,
-				0782918B22811B1C005E224D /* ViewController.swift in Sources */,
+				0782922022845A2E005E224D /* AirportSearchViewController.swift in Sources */,
+				07829232228469CE005E224D /* AirportSearchViewModel.swift in Sources */,
 				078291FD22827A70005E224D /* Airport.swift in Sources */,
 				0782921222837D33005E224D /* EdgeWeightedDirectedCycle.swift in Sources */,
 				0782920822837322005E224D /* EdgeWeightedDigraph.swift in Sources */,
@@ -770,7 +817,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				078291FB228267D7005E224D /* MapServiceSpec.swift in Sources */,
-				078291F722826651005E224D /* MapViewModelSpec.swift in Sources */,
 				0782919E22811B1D005E224D /* Guestlogix_AppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -799,14 +845,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0782918C22811B1C005E224D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0782918D22811B1C005E224D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0782919122811B1D005E224D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

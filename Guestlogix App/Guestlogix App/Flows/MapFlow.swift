@@ -32,13 +32,19 @@ class MapFlow: Flow {
         switch step {
         case .mapIsRequired:
             return self.showMapScreen()
-        default:
-            return .none
+        case .searchIsRequired:
+            return self.showSearchScreen()
         }
     }
     
     private func showMapScreen() -> FlowContributors {
         let viewController = MapViewController.instantiate(withViewModel: MapViewModel(), andServices: self.services)
+        self.rootViewController.pushViewController(viewController, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: viewController.viewModel))
+    }
+    
+    private func showSearchScreen() -> FlowContributors {
+        let viewController = AirportSearchViewController.instantiate(withViewModel: AirportSearchViewModel(), andServices: self.services)
         self.rootViewController.pushViewController(viewController, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: viewController.viewModel))
     }

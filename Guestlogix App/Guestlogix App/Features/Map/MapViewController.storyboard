@@ -20,7 +20,32 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5y-q1-PxM">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ax9-lE-hjj">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    </mapView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDh-5h-MlZ" customClass="AppButton" customModule="Guestlogix_App" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="547" width="275" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="aSG-wr-2Oj"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Search For Routes"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isActive" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Ax9-lE-hjj" firstAttribute="leading" secondItem="V5y-q1-PxM" secondAttribute="leading" id="Cg2-hZ-Ke1"/>
+                                    <constraint firstItem="Ax9-lE-hjj" firstAttribute="top" secondItem="V5y-q1-PxM" secondAttribute="top" id="NBM-Gj-5QE"/>
+                                    <constraint firstItem="ZDh-5h-MlZ" firstAttribute="leading" secondItem="V5y-q1-PxM" secondAttribute="leading" constant="50" id="b5S-kx-Ihf"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZDh-5h-MlZ" secondAttribute="trailing" constant="50" id="hDQ-bE-IYj"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZDh-5h-MlZ" secondAttribute="bottom" constant="50" id="lXq-m0-m9R"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ax9-lE-hjj" secondAttribute="trailing" id="px2-eJ-JSe"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ax9-lE-hjj" secondAttribute="bottom" id="qPY-Ku-Vjb"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,6 +57,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qYO-Xn-63i"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Ax9-lE-hjj" id="XAS-Lp-mep"/>
+                        <outlet property="searchRouteButton" destination="ZDh-5h-MlZ" id="ahL-hH-fJT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6n4-HD-3MX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

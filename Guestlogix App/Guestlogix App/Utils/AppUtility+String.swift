@@ -12,8 +12,4 @@ extension String {
     func trim() -> String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
-
-    var URLEscapedString: String {
-        return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-    }
 }

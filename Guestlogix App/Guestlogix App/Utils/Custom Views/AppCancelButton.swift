@@ -1,15 +1,15 @@
 //
-//  AppButton.swift
+//  AppCancelButton.swift
 //  Guestlogix App
 //
-//  Created by Adeyinka Adediji on 07/05/2019.
+//  Created by Adeyinka Adediji on 09/05/2019.
 //  Copyright © 2019 Adeyinka Adediji. All rights reserved.
 //
 
 import UIKit
 
 @IBDesignable
-public class AppButton: UIView {
+public class AppCancelButton: UIView {
     private let buttonLabel = UILabel()
     
     public override init(frame: CGRect) {
@@ -25,12 +25,6 @@ public class AppButton: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         updateView()
-    }
-    
-    @IBInspectable public var isActive: Bool = true {
-        didSet {
-            updateView()
-        }
     }
     
     @IBInspectable public var title: String = "BUTTON TEXT" {
@@ -54,8 +48,6 @@ public class AppButton: UIView {
         
         let layer = self.layer as! CAGradientLayer
         layer.cornerRadius = frame.height / 2
-        
-        backgroundColor =  isActive ? .primary : .primaryDisabled
         
         buttonLabel.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
         buttonLabel.text = title

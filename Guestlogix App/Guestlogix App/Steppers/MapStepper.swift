@@ -20,5 +20,9 @@ class MapStepper: Stepper {
     func mapIsRequired() {
         self.steps.accept(AppStep.mapIsRequired)
     }
+    
+    func searchIsRequired() {
+        self.steps.accept(AppStep.searchIsRequired)
+    }
 }
 

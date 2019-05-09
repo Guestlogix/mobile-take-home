@@ -19,36 +19,8 @@ class MapViewModel: ServicesViewModel, Stepper {
     public init() {
     }
     
-    
-    func getRoutes(from originAirport: Airport, to destinationAirport : Airport) {
-        let originIATA = originAirport.iata3
-        let destinationIATA = destinationAirport.iata3
-        
+    func showSearchView() {
+        steps.accept(AppStep.searchIsRequired)
     }
     
-    func q()  {
-        services.mapService
-            .getJourneyRoutes(from: "LOS", to: "123")
-            .subscribe(onNext: { (vertices) in
-
-            }, onError: { (_) in
-                
-            }, onCompleted: {
-            }) {
-                
-        }.disposed(by: disposeBag)
-        
-        /*
-        services.mapService.getAllAirports().subscribe(onNext: { (ports) in
-            print(ports)
-        }, onError: { (_) in
-            
-        }, onCompleted: {
-            
-        }) {
-            
-        }.disposed(by: disposeBag)
-        */
-    }
-
 }
