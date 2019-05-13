@@ -1,4 +1,72 @@
-# Guestlogix Take Home Test - Mobile
+# Ghestlogix iOS App
+
+The iOS  [Guestlogix](https://www.guestlogix.com) App
+
+
+## Getting Started 
+
+You'll need some tools first. Xcode 10.2 is required, as well as the command-line tools (you probably already have these installed). After installing Xcode, run the following command:
+
+```xcode-select --install```
+
+Right, next clone the repo as usual and cd into it. You'll need to install the dependencies. This command installs the tools required:
+
+```pod install```
+
+
+## Stack
+
+- **SkyFloatingLabelTextField** to cusotmize the textfields
+- **RMPickerViewController** to customize pickerController
+- **KRActivityIndicatorView** to customize loadings
+
+
+
+## Testing
+
+Functional testing (unit test and UI test) will be implemented using the native framework in Xcode
+
+### Running Tests
+
+To run tests in XCode:
+
+```
+Command + U
+```
+
+### Architecture 
+
+This project is using MVC architecture,  so you can find some folder separation following that  structure.
+
+#### Splash View Controller
+
+This controller loads the splash of the app and also it loads the airports and routes data
+
+#### Form View Controller
+
+This controller allows entering new data to the user. You have to ways to enter the data:
+
+1. Manually: using the airport code (e.g `BOG`)
+2. You can active a picker to load the data wih the method `openPickerViewController`.
+
+#### Map View Controller
+
+This controller search for the shortest route and display it into the map   
+
+### Algorithm
+
+The project is using Dijkstra’s Algorithm custom implementation base on graph theory 
+
+### To Improve 
+
+1. Implement Clean Architecture in  the project 
+2. Performace of the search route feature 
+3. The route array is not the best approcha to get the chapest path. Maybe I can find better ways like priority Queue
+
+
+
+
+# Origial Intructions -  Guestlogix Take Home Test - Mobile
 
 At Guestlogix we feel that putting developers on the spot with advanced algorithmic puzzles doesn’t exactly highlight one’s true skillset. The intention of this assessment is to see how you approach and tackle a problem in the real world, not quivering in front of a whiteboard.
 
