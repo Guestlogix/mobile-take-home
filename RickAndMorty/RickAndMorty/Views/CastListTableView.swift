@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CastListTableViewDelegate: class {
+    func didSelectCharacter(_ model: CharacterModel)
+}
+
 class CastListTableView: UITableView {
 
     var dataSourceValue = CharacterSegregationModel() {
@@ -15,6 +19,8 @@ class CastListTableView: UITableView {
             self.reloadData()
         }
     }
+    
+    weak var castListTableViewDelegate: CastListTableViewDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,7 +59,11 @@ extension CastListTableView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        episodeListDelegate?.didSelectEpisode(dataSourceValue[indexPath.row])
+        if indexPath.section == 0 {
+            castListTableViewDelegate?.didSelectCharacter(dataSourceValue.livingCharacters?[indexPath.row] ?? CharacterModel())
+        } else {
+            castListTableViewDelegate?.didSelectCharacter(dataSourceValue.deadCharacters?[indexPath.row] ?? CharacterModel())
+        }
     }
 }
 

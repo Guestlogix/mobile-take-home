@@ -9,11 +9,13 @@
 import UIKit
 
 class CastDetailViewController: UIViewController {
+    
+    var characterModel: CharacterModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
     

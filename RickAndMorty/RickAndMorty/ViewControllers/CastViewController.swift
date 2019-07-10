@@ -17,7 +17,7 @@ class CastViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        castListTableView.castListTableViewDelegate = self
         fetchCasts(castIds ?? "")
     }
     
@@ -46,4 +46,13 @@ class CastViewController: UIViewController {
     }
     */
 
+}
+
+
+extension CastViewController: CastListTableViewDelegate {
+    func didSelectCharacter(_ model: CharacterModel) {
+        let characterDetailViewController = CastDetailViewController.instantiateFromStoryboard()
+        characterDetailViewController.characterModel = model
+        self.navigationController?.pushViewController(characterDetailViewController, animated: true)
+    }
 }

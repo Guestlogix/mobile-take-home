@@ -12,6 +12,8 @@ class CharacterModel: Serializable {
     var characterName: String?
     var imageURL: String?
     var status: String?
+    var gender: String?
+    var species: String?
     
     private enum CodingKeys: String, CodingKey {
         case characterName = "name"
