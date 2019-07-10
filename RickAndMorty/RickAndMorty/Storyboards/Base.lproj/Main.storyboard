@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jFr-vb-mqK">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Episode View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="EpisodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="EpisodeViewController" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Caf-rE-Bf4" customClass="EpisodeListTableView" customModule="RickAndMorty" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Caf-rE-Bf4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4uN-U4-EkZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Caf-rE-Bf4" secondAttribute="bottom" id="A3j-IY-Yy0"/>
+                            <constraint firstItem="Caf-rE-Bf4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Vwu-8V-ing"/>
+                            <constraint firstItem="Caf-rE-Bf4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gU9-aW-3UW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SrI-Gk-bhl"/>
+                    <connections>
+                        <outlet property="episodeListTableView" destination="Caf-rE-Bf4" id="Y2S-Tv-gaS"/>
+                        <segue destination="lCz-r4-cK7" kind="show" id="Hcb-wE-oA5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="120.53571428571428"/>
+        </scene>
+        <!--Cast View Controller-->
+        <scene sceneID="jtG-0f-VDf">
+            <objects>
+                <viewController storyboardIdentifier="CastViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lCz-r4-cK7" customClass="CastViewController" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jj2-Zd-kKn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xmd-Ca-Z4L" customClass="CastListTableView" customModule="RickAndMorty" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xmd-Ca-Z4L" firstAttribute="trailing" secondItem="qu3-Bt-W5N" secondAttribute="trailing" id="NkJ-vS-CVH"/>
+                            <constraint firstItem="Xmd-Ca-Z4L" firstAttribute="top" secondItem="qu3-Bt-W5N" secondAttribute="top" id="Q8A-wd-M4w"/>
+                            <constraint firstAttribute="bottom" secondItem="Xmd-Ca-Z4L" secondAttribute="bottom" id="UFW-Ax-4JM"/>
+                            <constraint firstItem="Xmd-Ca-Z4L" firstAttribute="leading" secondItem="qu3-Bt-W5N" secondAttribute="leading" id="zks-Ih-Gd3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qu3-Bt-W5N"/>
+                    </view>
+                    <connections>
+                        <outlet property="castListTableView" destination="Xmd-Ca-Z4L" id="J0p-AJ-nMf"/>
+                        <segue destination="RuY-Tq-trd" kind="show" id="SNZ-mx-dA5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S5T-Hz-QB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1902.8985507246377" y="120.53571428571428"/>
+        </scene>
+        <!--Cast Detail View Controller-->
+        <scene sceneID="YLV-N7-dWU">
+            <objects>
+                <viewController storyboardIdentifier="CastDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RuY-Tq-trd" customClass="CastDetailViewController" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AQm-SC-7Ob">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dB6-Kn-CnL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="buB-uH-O7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2574" y="119"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Fq-EX-q1Y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jFr-vb-mqK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qyb-cj-9RG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kGL-tI-8Y5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BKd-AP-JF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="175" y="121"/>
+        </scene>
+    </scenes>
+</document>
