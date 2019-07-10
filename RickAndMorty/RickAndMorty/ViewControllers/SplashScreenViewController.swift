@@ -9,11 +9,17 @@
 import UIKit
 
 class SplashScreenViewController: UIViewController {
+    
+    let splashScreenViewModel = SplashScreenViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        splashScreenViewModel.getAllRequestURLs { (status) in
+            if status {
+                ServiceUrl.episodeDataURL = self.splashScreenViewModel.responseData?.episodes ?? ""
+            }
+        }
     }
     
     

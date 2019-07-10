@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SplashScreenViewModel: NSObject {
+class SplashScreenViewModel {
     var responseData: BaseAPIModel?
     
     func getAllRequestURLs(completionHandler: @escaping CompletionHandler) {
