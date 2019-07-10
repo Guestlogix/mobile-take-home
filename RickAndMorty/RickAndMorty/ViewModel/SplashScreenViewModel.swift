@@ -13,7 +13,7 @@ class SplashScreenViewModel {
     
     func getAllRequestURLs(completionHandler: @escaping CompletionHandler) {
         let url = ServiceUrl.baseURL
-        let baseService = BaseService.init(serviceType: .GET, serviceURL: url)
+        let baseService = BaseService(serviceType: .GET, serviceURL: url)
         baseService.startService(completionHandler: { (status, data) in
             if let responseData = CustomJSONDecoder.decodeResponseModelObject(model: BaseAPIModel.self, data: data) {
                 self.responseData = responseData

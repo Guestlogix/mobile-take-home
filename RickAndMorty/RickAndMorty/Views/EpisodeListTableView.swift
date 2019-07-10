@@ -9,12 +9,12 @@
 import UIKit
 
 protocol EpisodeListDelegate: class {
-    func didSelectEpisode(_ model: EpisodeModel)
+    func didSelectEpisode(_ model: EpisodeResultModel)
 }
 
 class EpisodeListTableView: UITableView {
 
-    var dataSourceValue = [EpisodeModel]() {
+    var dataSourceValue = [EpisodeResultModel]() {
         didSet {
             self.reloadData()
         }
@@ -32,6 +32,10 @@ class EpisodeListTableView: UITableView {
 }
 
 extension EpisodeListTableView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         episodeListDelegate?.didSelectEpisode(dataSourceValue[indexPath.row])
     }
@@ -39,14 +43,14 @@ extension EpisodeListTableView: UITableViewDelegate {
 
 extension EpisodeListTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return dataSourceValue.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Episode.episodeListCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Episode.episodeListCell, for: indexPath) as! EpisodeListTableViewCell
+        cell.configureCell(dataSourceValue[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }
-    
     
 }

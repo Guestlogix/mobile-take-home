@@ -11,4 +11,5 @@ import UIKit
 struct ServiceUrl {
     static var baseURL = "https://rickandmortyapi.com/api/"
     static var episodeDataURL = ""
+    static var characterDataURL = ""
 }

@@ -9,5 +9,27 @@
 import UIKit
 
 class EpisodeModel: Serializable {
+    var info: InfoModel?
+    var results: [EpisodeResultModel]?
+}
 
+class InfoModel: Serializable {
+    var count: Int?
+    var pages: Int?
+    var next: String?
+    var prev: String?
+}
+
+class EpisodeResultModel: Serializable {
+    var episodeId: Int?
+    var episodeName: String?
+    var episode: String?
+    var characters: [String]?
+    var date: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case episodeName = "name"
+        case episodeId = "id"
+        case date = "created"
+    }
 }

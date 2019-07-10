@@ -10,15 +10,16 @@ import UIKit
 
 class EpisodeListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var episodeNameLabel: UILabel!
+    @IBOutlet weak var episodeDateLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(_ model: EpisodeResultModel) {
+        episodeNameLabel.text = model.episodeName ?? ""
+        episodeDateLabel.text = model.date ?? ""
     }
     
 }

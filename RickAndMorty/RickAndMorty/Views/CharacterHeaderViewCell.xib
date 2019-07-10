@@ -12,14 +12,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CastListTableViewCell" id="KGk-i7-Jjw" customClass="CastListTableViewCell" customModule="RickAndMorty" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CharacterHeaderViewCell" customModule="RickAndMorty" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpj-E6-4XT">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wn-lh-elG">
                         <rect key="frame" x="15" y="6" width="290" height="31.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -27,15 +27,15 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="zpj-E6-4XT" secondAttribute="bottom" constant="6" id="0RJ-RZ-Ner"/>
-                    <constraint firstItem="zpj-E6-4XT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="BIP-Zx-5Ud"/>
-                    <constraint firstItem="zpj-E6-4XT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="Uuj-T9-QVj"/>
-                    <constraint firstAttribute="trailing" secondItem="zpj-E6-4XT" secondAttribute="trailing" constant="15" id="hZ5-SI-2lI"/>
+                    <constraint firstAttribute="bottom" secondItem="5wn-lh-elG" secondAttribute="bottom" constant="6" id="5Rc-1v-xK3"/>
+                    <constraint firstItem="5wn-lh-elG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="FBA-uU-0mq"/>
+                    <constraint firstItem="5wn-lh-elG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="Yhe-8D-ALU"/>
+                    <constraint firstAttribute="trailing" secondItem="5wn-lh-elG" secondAttribute="trailing" constant="15" id="yIj-PF-xqq"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="characterNameLabel" destination="zpj-E6-4XT" id="nIq-Dc-D9Q"/>
+                <outlet property="headerNameLabel" destination="5wn-lh-elG" id="OJm-Xm-m64"/>
             </connections>
         </tableViewCell>
     </objects>

@@ -10,6 +10,7 @@ import UIKit
 
 class Constants: NSObject {
     public static let kRequestTimeOut = 60
+    public static let kInitialNavigationController = "InitialNavigationController"
     public struct Storyboard {
         public static let mainStoryboard = "Main"
         public static let splashScreenStoryboard = "SplashScreen"
@@ -17,5 +18,10 @@ class Constants: NSObject {
     
     public struct Episode {
         public static let episodeListCell = "EpisodeListTableViewCell"
+    }
+    
+    public struct Character {
+        public static let characterListCell = "CastListTableViewCell"
+        public static let characterHeaderViewCell = "CharacterHeaderViewCell"
     }
 }
