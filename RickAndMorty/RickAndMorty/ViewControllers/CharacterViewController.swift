@@ -12,7 +12,7 @@ import UIKit
 class CharacterViewController: UIViewController, ErrorHandlingInUI {
 
     @IBOutlet weak var castListTableView: CastListTableView!
-    let charactersViewModel = CharactersViewModel()
+    var charactersViewModel = CharactersViewModel()
     
     var castIds: String?
     
@@ -27,12 +27,12 @@ class CharacterViewController: UIViewController, ErrorHandlingInUI {
     /// Api call for fetching all the characters associated with the episode
     ///
     /// - Parameter castIds: character IDs
-    private func fetchCasts(_ castIds: String) {
+    func fetchCasts(_ castIds: String) {
         let activityIndicator = ActivityIndicator(frame: CGRect.init(x: view.center.x, y: view.center.y, width: 60, height: 60))
         activityIndicator.start()
         view.addSubview(activityIndicator)
         
-        charactersViewModel.getCharactersFor(castIds) { (status) in
+        charactersViewModel.fetchCharactersFor(castIds) { (status) in
             if status {
                 self.castListTableView.dataSourceValue = self.charactersViewModel.finalResponse ?? CharacterSegregationModel()
                 activityIndicator.stop()

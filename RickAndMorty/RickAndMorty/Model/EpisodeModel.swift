@@ -34,4 +34,12 @@ class EpisodeResultModel: Serializable {
         case episodeType = "episode"
         case characterURLs = "characters"
     }
+    
+    init(episodeId: Int, episodeName: String, episodeType: String, characterURLs: [String], date: String) {
+        self.episodeId = episodeId
+        self.episodeName = episodeName
+        self.episodeType = episodeType
+        self.characterURLs = characterURLs
+        self.date = date
+    }
 }

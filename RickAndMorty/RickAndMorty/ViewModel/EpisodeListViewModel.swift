@@ -8,22 +8,45 @@
 
 import UIKit
 
-class EpisodeListViewModel: NSObject {
+protocol EpisodeListServiceProtocol {
+    func getEpisodes(completionHandler: @escaping (_ episodes: EpisodeModel) -> Void, failureHandler: @escaping (_ error: String) -> Void)
+}
+
+class EpisodeListService: EpisodeListServiceProtocol {
     
-    var responseData: EpisodeModel?
-    
-    func getEpisodes(completionHandler: @escaping CompletionHandler) {
+    func getEpisodes(completionHandler: @escaping (_ episodes: EpisodeModel) -> Void, failureHandler: @escaping (_ error: String) -> Void) {
         let url = ServiceUrl.episodeDataURL + "/"
         let baseService = BaseService(serviceType: .GET, serviceURL: url)
         baseService.startService(completionHandler: { (status, data) in
             if let responseData = CustomJSONDecoder.decodeResponseModelObject(model: EpisodeModel.self, data: data) {
-                self.responseData = responseData
-                completionHandler(true)
+                completionHandler(responseData)
             }
         }) { (status, errorValue) in
-            completionHandler(false)
+            failureHandler(errorValue ?? "Error")
         }
     }
+}
+
+/// Episode View Model
+class EpisodeListViewModel {
+    
+    private let episodeListService: EpisodeListServiceProtocol?
+    var responseData: EpisodeModel?
+    
+    init(episodeListService: EpisodeListServiceProtocol = EpisodeListService()) {
+        self.episodeListService = episodeListService
+    }
+    
+    func fetchEpisodes(completionHandler: @escaping CompletionHandler) {
+        episodeListService?.getEpisodes(completionHandler: { (result) in
+            self.responseData = result
+            completionHandler(true)
+        }, failureHandler: { (error) in
+            completionHandler(false)
+        })
+    }
+    
+    
     
     func getCharacterIds(_ characters: [String]) -> String {
         let characterIds = Array(Set(characters.map { (a) -> String in

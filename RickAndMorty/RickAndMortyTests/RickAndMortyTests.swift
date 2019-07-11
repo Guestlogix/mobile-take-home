@@ -10,11 +10,36 @@ import XCTest
 @testable import RickAndMorty
 
 class RickAndMortyTests: XCTestCase {
+    var episodeViewController: EpisodeViewController!
+    var characterViewController: CharacterViewController!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        episodeViewController = EpisodeViewController.instantiateFromStoryboard()
+        _ = episodeViewController.view
+        
+        characterViewController = CharacterViewController.instantiateFromStoryboard()
+        _ = characterViewController.view
     }
 
+    func testFakeServiceForFetchingEpisodes() {
+        let fakeEpisodeService = FakeEpisodeServiceCall()
+        let episodeViewModel = EpisodeListViewModel(episodeListService: fakeEpisodeService)
+        episodeViewController.episodeListViewModel = episodeViewModel
+        episodeViewController.fetchAllEpisodes()
+        
+        XCTAssertNotNil(episodeViewController.episodeListTableView.dataSourceValue)
+        
+    }
+    
+    func testFakeServiceForFetchingCharacters() {
+        let fakeCharacterService = FakeCharacterServiceCall()
+        let characterViewModel = CharactersViewModel(characterListService: fakeCharacterService)
+        characterViewController.charactersViewModel = characterViewModel
+        characterViewController.fetchCasts("1,3,4")
+        
+        XCTAssertNotNil(characterViewController.castListTableView.dataSourceValue)
+    }
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }

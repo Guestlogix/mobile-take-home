@@ -84,9 +84,13 @@ extension CastListTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Character.characterListCell, for: indexPath) as! CastListTableViewCell
         if indexPath.section == 0 {
-            cell.configureCell(dataSourceValue.livingCharacters?[indexPath.row] ?? CharacterModel())
+            if let data = dataSourceValue.livingCharacters?[indexPath.row] {
+                cell.configureCell(data)
+            }
         } else {
-            cell.configureCell(dataSourceValue.deadCharacters?[indexPath.row] ?? CharacterModel())
+            if let data = dataSourceValue.deadCharacters?[indexPath.row] {
+                cell.configureCell(data)
+            }
         }
         
         cell.selectionStyle = .none

@@ -22,6 +22,19 @@ class CharacterModel: Serializable {
         case gender = "gender"
         case species = "species"
     }
+    
+    init() {
+        
+    }
+    
+    convenience init(characterName: String, imageURL: String, status: String, gender: String, species: String) {
+        self.init()
+        self.characterName = characterName
+        self.imageURL = imageURL
+        self.status = status
+        self.gender = gender
+        self.species = species
+    }
 }
 
 class CharacterSegregationModel: NSObject {
