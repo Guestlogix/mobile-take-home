@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// This is the initial screen for loading all the URL before going to Episodes and Characters
 class SplashScreenViewController: UIViewController, ErrorHandlingInUI {
 
     let splashScreenViewModel = SplashScreenViewModel()
@@ -18,6 +19,7 @@ class SplashScreenViewController: UIViewController, ErrorHandlingInUI {
         fetchAllURLs()
     }
     
+    /// Fetch all the urls, such as for downloading episode and characters
     private func fetchAllURLs() {
         let activityIndicator = ActivityIndicator(frame: CGRect.init(x: view.center.x, y: view.center.y, width: 60, height: 60))
         activityIndicator.start()
@@ -31,13 +33,13 @@ class SplashScreenViewController: UIViewController, ErrorHandlingInUI {
 //                 navigate
                 self.navigateToEpisodeList()
             } else {
-//
                 activityIndicator.stop()
                 self.showAlert(title: "", message: Constants.initialScreenErrorMessage, viewController: self)
             }
         }
     }
     
+    /// Changing a root view controller
     private func navigateToEpisodeList() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let storyboard = UIStoryboard(name: Constants.Storyboard.mainStoryboard, bundle: nil)
@@ -47,6 +49,9 @@ class SplashScreenViewController: UIViewController, ErrorHandlingInUI {
         }, completion: nil)
     }
     
+    /// Insantiate the class
+    ///
+    /// - Returns: self
     class func instantiateFromStoryboard() -> SplashScreenViewController {
         let storyboard = UIStoryboard.init(name: Constants.Storyboard.splashScreenStoryboard, bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! SplashScreenViewController

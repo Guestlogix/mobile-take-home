@@ -17,6 +17,11 @@ class CharacterDetailTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    /// Configure cell
+    ///
+    /// - Parameters:
+    ///   - headerText: Main title
+    ///   - modelValue: Sub title
     func configureCell(_ headerText: String, _ modelValue: String) {
         headerTextLabel.text = headerText
         answerLabel.text = modelValue

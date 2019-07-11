@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="120.53571428571428"/>
         </scene>
-        <!--Cast View Controller-->
+        <!--Character View Controller-->
         <scene sceneID="jtG-0f-VDf">
             <objects>
-                <viewController storyboardIdentifier="CastViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lCz-r4-cK7" customClass="CastViewController" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CharacterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lCz-r4-cK7" customClass="CharacterViewController" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jj2-Zd-kKn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="1902.8985507246377" y="120.53571428571428"/>
         </scene>
-        <!--Cast Detail View Controller-->
+        <!--Character Detail View Controller-->
         <scene sceneID="YLV-N7-dWU">
             <objects>
-                <viewController storyboardIdentifier="CastDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RuY-Tq-trd" customClass="CastDetailViewController" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CharacterDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RuY-Tq-trd" customClass="CharacterDetailViewController" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AQm-SC-7Ob">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

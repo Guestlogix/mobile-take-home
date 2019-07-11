@@ -8,7 +8,8 @@
 
 import UIKit
 
-class CastViewController: UIViewController, ErrorHandlingInUI {
+/// Character listing screen
+class CharacterViewController: UIViewController, ErrorHandlingInUI {
 
     @IBOutlet weak var castListTableView: CastListTableView!
     let charactersViewModel = CharactersViewModel()
@@ -23,6 +24,9 @@ class CastViewController: UIViewController, ErrorHandlingInUI {
         fetchCasts(castIds ?? "")
     }
     
+    /// Api call for fetching all the characters associated with the episode
+    ///
+    /// - Parameter castIds: character IDs
     private func fetchCasts(_ castIds: String) {
         let activityIndicator = ActivityIndicator(frame: CGRect.init(x: view.center.x, y: view.center.y, width: 60, height: 60))
         activityIndicator.start()
@@ -40,17 +44,21 @@ class CastViewController: UIViewController, ErrorHandlingInUI {
         }
     }
     
-    class func instantiateFromStoryboard() -> CastViewController {
+    /// Insantiate the class
+    ///
+    /// - Returns: self
+    class func instantiateFromStoryboard() -> CharacterViewController {
         let storyboard = UIStoryboard.init(name: Constants.Storyboard.mainStoryboard, bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! CastViewController
+        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! CharacterViewController
     }
 
 }
 
 
-extension CastViewController: CastListTableViewDelegate {
+// MARK: - CastListTableViewDelegate
+extension CharacterViewController: CastListTableViewDelegate {
     func didSelectCharacter(_ model: CharacterModel) {
-        let characterDetailViewController = CastDetailViewController.instantiateFromStoryboard()
+        let characterDetailViewController = CharacterDetailViewController.instantiateFromStoryboard()
         characterDetailViewController.characterModel = model
         self.navigationController?.pushViewController(characterDetailViewController, animated: true)
     }

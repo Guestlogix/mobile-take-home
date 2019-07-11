@@ -8,7 +8,8 @@
 
 import UIKit
 
-class CastDetailViewController: UIViewController {
+/// Character detail screen
+class CharacterDetailViewController: UIViewController {
     
     @IBOutlet var castDetailTableView: CharacterDetailTableView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -24,6 +25,7 @@ class CastDetailViewController: UIViewController {
         loadProfileImage()
     }
     
+    /// Load profile image
     private func loadProfileImage() {
         if let profileUrlString = characterModel?.imageURL, let profileUrl = URL(string: profileUrlString) {
             profileImageView.load(url: profileUrl)
@@ -32,9 +34,12 @@ class CastDetailViewController: UIViewController {
         }
     }
     
-    class func instantiateFromStoryboard() -> CastDetailViewController {
+    /// Insantiate the class
+    ///
+    /// - Returns: self
+    class func instantiateFromStoryboard() -> CharacterDetailViewController {
         let storyboard = UIStoryboard.init(name: Constants.Storyboard.mainStoryboard, bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! CastDetailViewController
+        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! CharacterDetailViewController
     }
 
 }
