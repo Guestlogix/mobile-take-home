@@ -21,14 +21,25 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wn-lh-elG">
                         <rect key="frame" x="15" y="6" width="290" height="31.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQd-V7-6Ke">
+                        <rect key="frame" x="0.0" y="37.5" width="320" height="6"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="6" id="3hJ-IY-hM4"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="5wn-lh-elG" secondAttribute="bottom" constant="6" id="5Rc-1v-xK3"/>
+                    <constraint firstAttribute="bottom" secondItem="YQd-V7-6Ke" secondAttribute="bottom" id="BF5-8x-0ra"/>
                     <constraint firstItem="5wn-lh-elG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="FBA-uU-0mq"/>
+                    <constraint firstAttribute="trailing" secondItem="YQd-V7-6Ke" secondAttribute="trailing" id="FSA-RO-Bzv"/>
+                    <constraint firstItem="YQd-V7-6Ke" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="OCG-CC-JET"/>
+                    <constraint firstItem="YQd-V7-6Ke" firstAttribute="top" secondItem="5wn-lh-elG" secondAttribute="bottom" id="Ryq-jg-B1k"/>
                     <constraint firstItem="5wn-lh-elG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="Yhe-8D-ALU"/>
                     <constraint firstAttribute="trailing" secondItem="5wn-lh-elG" secondAttribute="trailing" constant="15" id="yIj-PF-xqq"/>
                 </constraints>

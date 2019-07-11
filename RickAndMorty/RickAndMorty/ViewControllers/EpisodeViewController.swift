@@ -16,6 +16,7 @@ class EpisodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Episodes"
         episodeListTableView.episodeListDelegate = self
         fetchAllEpisodes()
     }

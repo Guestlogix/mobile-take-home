@@ -11,7 +11,7 @@ import UIKit
 class EpisodeListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var episodeNameLabel: UILabel!
-    @IBOutlet weak var episodeDateLabel: UILabel!
+    @IBOutlet weak var episodeTypeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,7 +19,7 @@ class EpisodeListTableViewCell: UITableViewCell {
 
     func configureCell(_ model: EpisodeResultModel) {
         episodeNameLabel.text = model.episodeName ?? ""
-        episodeDateLabel.text = model.date ?? ""
+        episodeTypeLabel.text = model.episodeType ?? ""
     }
     
 }

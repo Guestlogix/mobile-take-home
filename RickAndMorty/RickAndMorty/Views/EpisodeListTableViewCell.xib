@@ -19,17 +19,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7nM-Ik-0VR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7nM-Ik-0VR">
+                        <rect key="frame" x="15" y="0.0" width="290" height="71.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrk-S7-1ad">
-                                <rect key="frame" x="0.0" y="0.0" width="155" height="71.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="246" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrk-S7-1ad">
+                                <rect key="frame" x="0.0" y="36" width="142.5" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45Z-IV-kgE">
-                                <rect key="frame" x="165" y="0.0" width="155" height="71.5"/>
+                                <rect key="frame" x="152.5" y="36" width="137.5" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,16 +38,16 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="7nM-Ik-0VR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9bT-Pr-xVQ"/>
+                    <constraint firstItem="7nM-Ik-0VR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="9bT-Pr-xVQ"/>
                     <constraint firstAttribute="bottom" secondItem="7nM-Ik-0VR" secondAttribute="bottom" id="Mic-oy-luN"/>
                     <constraint firstItem="7nM-Ik-0VR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lu1-K9-wHT"/>
-                    <constraint firstAttribute="trailing" secondItem="7nM-Ik-0VR" secondAttribute="trailing" id="mqw-Cb-OQV"/>
+                    <constraint firstAttribute="trailing" secondItem="7nM-Ik-0VR" secondAttribute="trailing" constant="15" id="mqw-Cb-OQV"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="episodeDateLabel" destination="45Z-IV-kgE" id="u6h-7k-pxq"/>
                 <outlet property="episodeNameLabel" destination="zrk-S7-1ad" id="7zT-tj-j79"/>
+                <outlet property="episodeTypeLabel" destination="45Z-IV-kgE" id="zFZ-xa-vFo"/>
             </connections>
             <point key="canvasLocation" x="47.826086956521742" y="44.196428571428569"/>
         </tableViewCell>

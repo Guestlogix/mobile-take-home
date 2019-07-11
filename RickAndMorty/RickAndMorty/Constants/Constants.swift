@@ -24,4 +24,8 @@ class Constants: NSObject {
         public static let characterListCell = "CastListTableViewCell"
         public static let characterHeaderViewCell = "CharacterHeaderViewCell"
     }
+    
+    public struct CharacterDetail {
+        public static let characterDetailCell = "CharacterDetailTableViewCell"
+    }
 }

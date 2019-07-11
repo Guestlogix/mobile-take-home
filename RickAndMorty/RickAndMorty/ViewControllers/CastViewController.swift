@@ -17,6 +17,8 @@ class CastViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Casts in Episode"
+        
         castListTableView.castListTableViewDelegate = self
         fetchCasts(castIds ?? "")
     }
@@ -35,16 +37,6 @@ class CastViewController: UIViewController {
         let storyboard = UIStoryboard.init(name: Constants.Storyboard.mainStoryboard, bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! CastViewController
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

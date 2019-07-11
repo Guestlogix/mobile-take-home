@@ -35,6 +35,9 @@
 		2BE5E63422D6701100305175 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE5E63322D6701100305175 /* CharacterModel.swift */; };
 		2BE5E63B22D6798100305175 /* CharacterHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE5E63922D6798100305175 /* CharacterHeaderViewCell.swift */; };
 		2BE5E63C22D6798100305175 /* CharacterHeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE5E63A22D6798100305175 /* CharacterHeaderViewCell.xib */; };
+		F6E866F022D70AEF00982B03 /* CharacterDetailTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E866EF22D70AEF00982B03 /* CharacterDetailTableView.swift */; };
+		F6E866F322D70B1900982B03 /* CharacterDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E866F122D70B1900982B03 /* CharacterDetailTableViewCell.swift */; };
+		F6E866F422D70B1900982B03 /* CharacterDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E866F222D70B1900982B03 /* CharacterDetailTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,9 @@
 		2BE5E63322D6701100305175 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		2BE5E63922D6798100305175 /* CharacterHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterHeaderViewCell.swift; sourceTree = "<group>"; };
 		2BE5E63A22D6798100305175 /* CharacterHeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterHeaderViewCell.xib; sourceTree = "<group>"; };
+		F6E866EF22D70AEF00982B03 /* CharacterDetailTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailTableView.swift; sourceTree = "<group>"; };
+		F6E866F122D70B1900982B03 /* CharacterDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailTableViewCell.swift; sourceTree = "<group>"; };
+		F6E866F222D70B1900982B03 /* CharacterDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +192,9 @@
 				2BE3CFB822D60EC5003CEEE4 /* CastListTableViewCell.xib */,
 				2BE5E63922D6798100305175 /* CharacterHeaderViewCell.swift */,
 				2BE5E63A22D6798100305175 /* CharacterHeaderViewCell.xib */,
+				F6E866EF22D70AEF00982B03 /* CharacterDetailTableView.swift */,
+				F6E866F122D70B1900982B03 /* CharacterDetailTableViewCell.swift */,
+				F6E866F222D70B1900982B03 /* CharacterDetailTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E866F422D70B1900982B03 /* CharacterDetailTableViewCell.xib in Resources */,
 				2BE5E63C22D6798100305175 /* CharacterHeaderViewCell.xib in Resources */,
 				2BE3CF9122D60ABD003CEEE4 /* LaunchScreen.storyboard in Resources */,
 				2BE3CFCA22D6269D003CEEE4 /* SplashScreen.storyboard in Resources */,
@@ -327,6 +337,7 @@
 				2BE3CFC222D618C1003CEEE4 /* ServiceUrl.swift in Sources */,
 				2BE3CFB922D60EC5003CEEE4 /* CastListTableViewCell.swift in Sources */,
 				2BE3CFB222D60CC3003CEEE4 /* Constants.swift in Sources */,
+				F6E866F022D70AEF00982B03 /* CharacterDetailTableView.swift in Sources */,
 				2BE5E63022D6629500305175 /* EpisodeListViewModel.swift in Sources */,
 				2BE5E63B22D6798100305175 /* CharacterHeaderViewCell.swift in Sources */,
 				2BE5E63422D6701100305175 /* CharacterModel.swift in Sources */,
@@ -338,6 +349,7 @@
 				2BE3CFCC22D626D4003CEEE4 /* SplashScreenViewController.swift in Sources */,
 				2BE3CF8722D60ABB003CEEE4 /* AppDelegate.swift in Sources */,
 				2BE3CFAB22D60BC7003CEEE4 /* EpisodeListTableView.swift in Sources */,
+				F6E866F322D70B1900982B03 /* CharacterDetailTableViewCell.swift in Sources */,
 				2BE3CFC422D61951003CEEE4 /* BaseService.swift in Sources */,
 				2BE3CFBC22D60F09003CEEE4 /* CastDetailViewController.swift in Sources */,
 				2BE3CFCE22D62A03003CEEE4 /* SplashScreenViewModel.swift in Sources */,
