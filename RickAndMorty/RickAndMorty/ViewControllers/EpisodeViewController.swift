@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EpisodeViewController: UIViewController {
+class EpisodeViewController: UIViewController, ErrorHandlingInUI {
 
     @IBOutlet weak var episodeListTableView: EpisodeListTableView!
     let episodeListViewModel = EpisodeListViewModel()
@@ -16,7 +16,7 @@ class EpisodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Episodes"
+        self.navigationItem.title = Constants.Episode.episodeTitle
         episodeListTableView.episodeListDelegate = self
         fetchAllEpisodes()
     }
@@ -31,7 +31,9 @@ class EpisodeViewController: UIViewController {
                 self.episodeListTableView.dataSourceValue = self.episodeListViewModel.responseData?.results ?? [EpisodeResultModel]()
                 activityIndicator.stop()
             } else {
-//                TODO - handle
+//                handle failure
+                activityIndicator.stop()
+                self.showAlert(title: "", message: Constants.Episode.episodeErrorMessage, viewController: self)
             }
         }
     }

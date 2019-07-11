@@ -17,7 +17,7 @@ class CastDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "Cast Detail"
+        self.navigationItem.title = Constants.CharacterDetail.characterDetailTitle
         
         castDetailTableView.dataSourceValue = characterModel ?? CharacterModel()
         

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SplashScreenViewController: UIViewController {
-    
+class SplashScreenViewController: UIViewController, ErrorHandlingInUI {
+
     let splashScreenViewModel = SplashScreenViewModel()
 
     override func viewDidLoad() {
@@ -19,7 +19,7 @@ class SplashScreenViewController: UIViewController {
     }
     
     private func fetchAllURLs() {
-        let activityIndicator = ActivityIndicator(frame: CGRect.init(x: view.frame.size.width/2, y: view.frame.size.height/2, width: 60, height: 60))
+        let activityIndicator = ActivityIndicator(frame: CGRect.init(x: view.center.x, y: view.center.y, width: 60, height: 60))
         activityIndicator.start()
         view.addSubview(activityIndicator)
         
@@ -31,8 +31,9 @@ class SplashScreenViewController: UIViewController {
 //                 navigate
                 self.navigateToEpisodeList()
             } else {
-//                TODO - remove
-//                self.navigateToEpisodeList()
+//
+                activityIndicator.stop()
+                self.showAlert(title: "", message: Constants.initialScreenErrorMessage, viewController: self)
             }
         }
     }

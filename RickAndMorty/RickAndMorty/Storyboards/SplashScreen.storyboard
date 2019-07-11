@@ -17,13 +17,25 @@
                     <view key="view" contentMode="scaleToFill" id="YVf-1t-GjQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GuestLogix Assignment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbw-dg-ZbT">
+                                <rect key="frame" x="50.5" y="197" width="313.5" height="35"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Sbw-dg-ZbT" firstAttribute="top" secondItem="7YN-1i-Eaf" secondAttribute="top" constant="153" id="MRh-6i-YnD"/>
+                            <constraint firstItem="Sbw-dg-ZbT" firstAttribute="centerX" secondItem="7YN-1i-Eaf" secondAttribute="centerX" id="gqC-QS-s81"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7YN-1i-Eaf"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afC-Xd-z5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="49" y="-231"/>
+            <point key="canvasLocation" x="47.826086956521742" y="-231.02678571428569"/>
         </scene>
     </scenes>
 </document>

@@ -51,7 +51,6 @@ class BaseService: NSObject {
     }
     
     func startService(completionHandler: @escaping SuccessClosure, failureHandler: @escaping FailureClosure) {
-//        TODO reachability
         
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = TimeInterval(Constants.kRequestTimeOut)

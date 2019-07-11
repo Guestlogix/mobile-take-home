@@ -79,10 +79,6 @@ class CustomJSONDecoder: JSONDecoder {
     }
 }
 
-protocol Activity {
-    
-}
-
 class ActivityIndicator: UIActivityIndicatorView {
     
     override init(frame: CGRect) {
@@ -102,5 +98,20 @@ class ActivityIndicator: UIActivityIndicatorView {
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+protocol ErrorHandlingInUI {
+    func showAlert(title: String?, message: String?, viewController: UIViewController)
+}
+
+extension ErrorHandlingInUI {
+    func showAlert(title: String?, message: String?, viewController: UIViewController) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        DispatchQueue.main.async {
+            viewController.present(alert, animated: true, completion: nil)
+        }
     }
 }
