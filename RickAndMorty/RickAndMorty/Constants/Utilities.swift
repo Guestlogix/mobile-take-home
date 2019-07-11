@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - For downloading image
 extension UIImageView {
     func load(url: URL) {
         let activityIndicator = ActivityIndicator(frame: CGRect.init(x: self.frame.size.width/2, y: self.frame.size.height/2, width: 20, height: 20))
@@ -26,24 +27,14 @@ extension UIImageView {
     }
 }
 
-class Utilities: NSObject {
-    
-    class func convertToDict(data: Data?) -> [String: AnyObject]? {
-        do {
-            if let data = data {
-                return try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: AnyObject]
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-        return nil
-    }
-    
-}
-
 class CustomJSONDecoder: JSONDecoder {
     
     /// Helps in decoding the data to model object array
+    ///
+    /// - Parameters:
+    ///   - model: Any Serializable Model
+    ///   - data: Data Object
+    /// - Returns: Generic Type array
     class func decodeResponseModelArrayObject<T: Serializable>(model: T.Type, data: Data?) -> [T]? {
         do {
             if let dataForParsing = data {
@@ -79,6 +70,7 @@ class CustomJSONDecoder: JSONDecoder {
     }
 }
 
+/// Activity Indicator class
 class ActivityIndicator: UIActivityIndicatorView {
     
     override init(frame: CGRect) {
@@ -102,10 +94,12 @@ class ActivityIndicator: UIActivityIndicatorView {
 }
 
 
+/// Error handling protocol
 protocol ErrorHandlingInUI {
     func showAlert(title: String?, message: String?, viewController: UIViewController)
 }
 
+// MARK: - Error handling detail
 extension ErrorHandlingInUI {
     func showAlert(title: String?, message: String?, viewController: UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

@@ -41,13 +41,10 @@ class BaseService: NSObject {
         super.init()
     }
     
-    convenience init(serviceType: ServiceType, serviceURL: String, requestData: Data? = nil) {
+    convenience init(serviceType: ServiceType, serviceURL: String) {
         self.init()
         self.serviceType = serviceType
         self.serviceURL = serviceURL
-        if let requestData = requestData, let body = Utilities.convertToDict(data: requestData) {
-            self.requestBody = body
-        }
     }
     
     func startService(completionHandler: @escaping SuccessClosure, failureHandler: @escaping FailureClosure) {
@@ -72,13 +69,6 @@ class BaseService: NSObject {
                 failureHandler(false, error.localizedDescription)
                 session.finishTasksAndInvalidate()
             } else if let httpResponse = response as? HTTPURLResponse {
-//                do {
-//                    if let data = data, let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
-//
-//                    } catch {
-//
-//                    }
-//                }
                 if httpResponse.statusCode != 200 {
                     
                 } else {
