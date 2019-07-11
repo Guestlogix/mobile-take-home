@@ -11,6 +11,7 @@ import UIKit
 class CastDetailViewController: UIViewController {
     
     @IBOutlet var castDetailTableView: CharacterDetailTableView!
+    @IBOutlet weak var profileImageView: UIImageView!
     var characterModel: CharacterModel?
 
     override func viewDidLoad() {
@@ -21,6 +22,13 @@ class CastDetailViewController: UIViewController {
         castDetailTableView.dataSourceValue = characterModel ?? CharacterModel()
     }
     
+    private func loadProfileImage() {
+        if let profileUrlString = characterModel?.imageURL, let profileUrl = URL(string: profileUrlString) {
+            profileImageView.load(url: profileUrl)
+            profileImageView.layer.cornerRadius = profileImageView.frame.size.width/2
+            profileImageView.clipsToBounds = true
+        }
+    }
     
     class func instantiateFromStoryboard() -> CastDetailViewController {
         let storyboard = UIStoryboard.init(name: Constants.Storyboard.mainStoryboard, bundle: nil)

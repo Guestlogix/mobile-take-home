@@ -127,6 +127,7 @@
                     </view>
                     <connections>
                         <outlet property="castDetailTableView" destination="Vah-d2-OCM" id="g0P-Aw-OfN"/>
+                        <outlet property="profileImageView" destination="5C2-qJ-LbY" id="f1N-p2-5zB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buB-uH-O7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
