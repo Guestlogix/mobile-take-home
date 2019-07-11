@@ -22,9 +22,14 @@ class EpisodeViewController: UIViewController {
     }
     
     private func fetchAllEpisodes() {
+        let activityIndicator = ActivityIndicator(frame: CGRect.init(x: view.frame.size.width/2, y: view.frame.size.height/2, width: 60, height: 60))
+        activityIndicator.start()
+        view.addSubview(activityIndicator)
+        
         episodeListViewModel.getEpisodes { (status) in
             if status {
                 self.episodeListTableView.dataSourceValue = self.episodeListViewModel.responseData?.results ?? [EpisodeResultModel]()
+                activityIndicator.stop()
             } else {
 //                TODO - handle
             }

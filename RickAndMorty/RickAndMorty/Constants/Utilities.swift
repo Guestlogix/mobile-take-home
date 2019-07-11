@@ -10,11 +10,15 @@ import UIKit
 
 extension UIImageView {
     func load(url: URL) {
+        let activityIndicator = ActivityIndicator(frame: CGRect.init(x: self.frame.size.width/2, y: self.frame.size.height/2, width: 20, height: 20))
+        activityIndicator.start()
+        self.addSubview(activityIndicator)
         DispatchQueue.global().async {
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self.image = image
+                        activityIndicator.stop()
                     }
                 }
             }
@@ -72,5 +76,31 @@ class CustomJSONDecoder: JSONDecoder {
             print(error)
             return nil
         }
+    }
+}
+
+protocol Activity {
+    
+}
+
+class ActivityIndicator: UIActivityIndicatorView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.frame = frame
+        self.style = .gray
+        self.hidesWhenStopped = true
+    }
+    
+    public func stop() {
+        self.stopAnimating()
+    }
+    
+    public func start() {
+        self.startAnimating()
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

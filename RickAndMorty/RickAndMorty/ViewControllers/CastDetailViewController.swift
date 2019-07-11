@@ -20,6 +20,8 @@ class CastDetailViewController: UIViewController {
         self.navigationItem.title = "Cast Detail"
         
         castDetailTableView.dataSourceValue = characterModel ?? CharacterModel()
+        
+        loadProfileImage()
     }
     
     private func loadProfileImage() {

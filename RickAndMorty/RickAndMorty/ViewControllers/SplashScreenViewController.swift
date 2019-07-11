@@ -19,11 +19,15 @@ class SplashScreenViewController: UIViewController {
     }
     
     private func fetchAllURLs() {
+        let activityIndicator = ActivityIndicator(frame: CGRect.init(x: view.frame.size.width/2, y: view.frame.size.height/2, width: 60, height: 60))
+        activityIndicator.start()
+        view.addSubview(activityIndicator)
+        
         splashScreenViewModel.getAllRequestURLs { (status) in
             if status {
                 ServiceUrl.episodeDataURL = self.splashScreenViewModel.responseData?.episodes ?? ""
                 ServiceUrl.characterDataURL = self.splashScreenViewModel.responseData?.characters ?? ""
-                
+                activityIndicator.stop()
 //                 navigate
                 self.navigateToEpisodeList()
             } else {
