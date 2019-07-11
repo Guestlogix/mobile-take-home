@@ -19,7 +19,7 @@ class CharacterViewController: UIViewController, ErrorHandlingInUI {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = Constants.Character.charactersTitle
-        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         castListTableView.castListTableViewDelegate = self
         fetchCasts(castIds ?? "")
     }

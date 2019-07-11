@@ -29,6 +29,8 @@ class CastListTableView: UITableView {
         
         self.delegate = self
         self.dataSource = self
+        
+        self.contentInset = UIEdgeInsets(top: -1, left: 0, bottom: 0, right: 0)
     }
     
 }
@@ -45,7 +47,10 @@ extension CastListTableView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30.0
+        if dataSourceValue.livingCharacters == nil && dataSourceValue.deadCharacters == nil {
+            return 0
+        }
+        return 30
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
