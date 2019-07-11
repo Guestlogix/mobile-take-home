@@ -13,7 +13,7 @@ class CharactersViewModel: NSObject {
     private var responseData: [CharacterModel]?
     var finalResponse: CharacterSegregationModel?
     
-    func getEpisodes(_ castIds: String, completionHandler: @escaping CompletionHandler) {
+    func getCharactersFor(_ castIds: String, completionHandler: @escaping CompletionHandler) {
         let url = ServiceUrl.characterDataURL + "/" + castIds
         let baseService = BaseService(serviceType: .GET, serviceURL: url)
         baseService.startService(completionHandler: { (status, data) in

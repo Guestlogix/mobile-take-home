@@ -17,6 +17,7 @@ class EpisodeViewController: UIViewController {
         super.viewDidLoad()
         
         episodeListTableView.episodeListDelegate = self
+        fetchAllEpisodes()
     }
     
     private func fetchAllEpisodes() {
@@ -39,7 +40,7 @@ class EpisodeViewController: UIViewController {
 
 extension EpisodeViewController: EpisodeListDelegate {
     func didSelectEpisode(_ model: EpisodeResultModel) {
-        let castIds = episodeListViewModel.getCharacterIds(model.characters ?? [])
+        let castIds = episodeListViewModel.getCharacterIds(model.characterURLs ?? [])
         print(castIds)
         
         let castViewController = CastViewController.instantiateFromStoryboard()

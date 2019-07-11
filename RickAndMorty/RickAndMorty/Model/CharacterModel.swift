@@ -18,6 +18,9 @@ class CharacterModel: Serializable {
     private enum CodingKeys: String, CodingKey {
         case characterName = "name"
         case imageURL = "image"
+        case status = "status"
+        case gender = "gender"
+        case species = "species"
     }
 }
 

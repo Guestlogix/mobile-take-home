@@ -28,7 +28,7 @@ class SplashScreenViewController: UIViewController {
                 self.navigateToEpisodeList()
             } else {
 //                TODO - remove
-                self.navigateToEpisodeList()
+//                self.navigateToEpisodeList()
             }
         }
     }

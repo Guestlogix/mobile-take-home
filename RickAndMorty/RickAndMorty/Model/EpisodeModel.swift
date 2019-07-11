@@ -23,13 +23,15 @@ class InfoModel: Serializable {
 class EpisodeResultModel: Serializable {
     var episodeId: Int?
     var episodeName: String?
-    var episode: String?
-    var characters: [String]?
+    var episodeType: String?
+    var characterURLs: [String]?
     var date: String?
     
     private enum CodingKeys: String, CodingKey {
         case episodeName = "name"
         case episodeId = "id"
         case date = "created"
+        case episodeType = "episode"
+        case characterURLs = "characters"
     }
 }

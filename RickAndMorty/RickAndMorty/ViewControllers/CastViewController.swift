@@ -22,9 +22,9 @@ class CastViewController: UIViewController {
     }
     
     private func fetchCasts(_ castIds: String) {
-        charactersViewModel.getEpisodes(castIds) { (status) in
+        charactersViewModel.getCharactersFor(castIds) { (status) in
             if status {
-                
+                self.castListTableView.dataSourceValue = self.charactersViewModel.finalResponse ?? CharacterSegregationModel()
             } else {
 //                TODO handle
             }

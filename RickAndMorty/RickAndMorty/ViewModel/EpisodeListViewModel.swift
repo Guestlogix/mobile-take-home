@@ -26,12 +26,12 @@ class EpisodeListViewModel: NSObject {
     }
     
     func getCharacterIds(_ characters: [String]) -> String {
-        let characterIds = characters.map { (a) -> String in
+        let characterIds = Array(Set(characters.map { (a) -> String in
             if let value = a.last {
                 return String(value)
             }
             return ""
-        }
+        }))
         return characterIds.joined(separator: ",")
     }
 }
