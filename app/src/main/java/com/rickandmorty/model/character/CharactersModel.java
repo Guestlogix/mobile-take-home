@@ -1,6 +1,9 @@
 package com.rickandmorty.model.character;
 
+import com.rickandmorty.utils.DateTimeUtil;
 import java.util.List;
+
+import static com.rickandmorty.utils.DateTimeUtil.DATE_MONTH_FULL_PATTERN;
 
 public class CharactersModel {
   private int id;
@@ -105,7 +108,7 @@ public class CharactersModel {
   }
 
   public String getCreated() {
-    return created;
+    return DateTimeUtil.convertServerTime(created, DATE_MONTH_FULL_PATTERN);
   }
 
   public void setCreated(String created) {
