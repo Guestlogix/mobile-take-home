@@ -1,0 +1,9 @@
+<resources>
+  <string name="app_name"><![CDATA[Rick & Morty]]></string>
+  <string name="no_internet_connection">No network available, please check your WiFi or Data connection</string>
+  <string name="rick_and_morty">Rick and Morty</string>
+  <string name="episode_characters">Episode characters</string>
+  <string name="error_loading_data">Facing some problem while getting data. Please try again.</string>
+  <string name="general_error_text">We are experiencing some technical difficulties, hence this service is temporarily unavailable. We apologise for the inconvenience.\n\nPlease try again.</string>
+  <string name="ok">OK</string>
+</resources>
