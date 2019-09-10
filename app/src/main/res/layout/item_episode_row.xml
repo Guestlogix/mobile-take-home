@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.guestlogix.takehome.models.Episode"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rv_episodes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvEpisode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{data.getEpisode()}"
+            tools:text="S02E10"
+            android:layout_marginEnd="@dimen/episode_row_spacing"
+            app:layout_constraintStart_toEndOf="@id/guidelineStart"
+            app:layout_constraintEnd_toStartOf="@id/tvCreated"
+            app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
+
+        <TextView
+            android:id="@+id/tvCreated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.getCreated()}"
+            tools:text="2017-11-10T12:56:35.875Z"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
+
+        <TextView
+            android:id="@+id/tvName"
+            tools:text="The Wedding Squanchers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{data.getName()}"
+            android:layout_marginTop="@dimen/episode_row_spacing"
+            app:layout_constraintStart_toEndOf="@id/guidelineStart"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintTop_toBottomOf="@id/tvEpisode"
+            app:layout_constraintBottom_toTopOf="@id/guidelineBottom"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/episode_row_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/episode_row_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/episode_row_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/episode_row_margin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

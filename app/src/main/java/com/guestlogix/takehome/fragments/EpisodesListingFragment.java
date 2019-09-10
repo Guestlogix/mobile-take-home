@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.guestlogix.takehome.R;
 import com.guestlogix.takehome.Utils.Optional;
+import com.guestlogix.takehome.databinding.ItemEpisodeRowBinding;
 import com.guestlogix.takehome.models.Episode;
 import com.guestlogix.takehome.network.NetworkState;
 import com.guestlogix.takehome.viewmodels.EpisodesListingViewModel;
@@ -79,13 +78,14 @@ public class EpisodesListingFragment extends Fragment {
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             if(viewType == TYPE_PROGRESS) {
-                ProgressBar pb = new ProgressBar(context);
-                return new NetworkStateItemViewHolder(pb);
+                return new NetworkStateItemViewHolder(
+                        LayoutInflater.from(context).inflate(R.layout.item_progress_row, parent, false)
+                );
 
             } else {
-                TextView tv = new TextView(context);
-                tv.setHeight(context.getResources().getDimensionPixelSize(R.dimen.row_height));
-                return new ArticleItemViewHolder(tv);
+                return new EpisodeItemViewHolder(
+                        ItemEpisodeRowBinding.inflate(LayoutInflater.from(context), parent, false)
+                );
             }
         }
 
@@ -95,8 +95,8 @@ public class EpisodesListingFragment extends Fragment {
          */
         @Override
         public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-            if(holder instanceof ArticleItemViewHolder) {
-                ((ArticleItemViewHolder)holder).bindTo(getItem(position));
+            if(holder instanceof EpisodeItemViewHolder) {
+                ((EpisodeItemViewHolder)holder).bindTo(getItem(position));
             } else {
                 ((NetworkStateItemViewHolder) holder).bindView(networkState);
             }
@@ -136,33 +136,29 @@ public class EpisodesListingFragment extends Fragment {
             }
         }
 
-        class ArticleItemViewHolder extends RecyclerView.ViewHolder {
+        class EpisodeItemViewHolder extends RecyclerView.ViewHolder {
 
-            private TextView textView;
-            ArticleItemViewHolder(TextView tv) {
-                super(tv);
-                this.textView = tv;
+            private ItemEpisodeRowBinding binding;
+            EpisodeItemViewHolder(ItemEpisodeRowBinding binding) {
+                super(binding.getRoot());
+                this.binding = binding;
             }
 
             void bindTo(Episode episode) {
-                textView.setText(episode.getEpisode());
+                binding.setData(episode);
             }
         }
 
         class NetworkStateItemViewHolder extends RecyclerView.ViewHolder {
 
-            private ProgressBar progressBar;
-            NetworkStateItemViewHolder(ProgressBar pb) {
+            private View progressView;
+            NetworkStateItemViewHolder(View pb) {
                 super(pb);
-                this.progressBar = pb;
+                this.progressView = pb;
             }
 
             void bindView(NetworkState networkState) {
-                if (networkState == NetworkState.LOADING) {
-                    progressBar.setVisibility(View.VISIBLE);
-                } else {
-                    progressBar.setVisibility(View.GONE);
-                }
+                progressView.setVisibility(networkState == NetworkState.LOADING ? View.VISIBLE : View.GONE);
             }
         }
     }
