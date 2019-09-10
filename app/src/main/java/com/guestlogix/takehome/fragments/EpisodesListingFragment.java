@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 import androidx.paging.PagedListAdapter;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -142,6 +143,15 @@ public class EpisodesListingFragment extends Fragment {
             EpisodeItemViewHolder(ItemEpisodeRowBinding binding) {
                 super(binding.getRoot());
                 this.binding = binding;
+
+
+
+                binding.getRoot().setOnClickListener(v -> Optional.ofNullable(getActivity())
+                        .map( activity -> Navigation.findNavController(activity, R.id.nav_host_fragment))
+                        .ifPresent(navController ->
+                                navController.navigate(R.id.charactersListFragment)
+                        )
+                );
             }
 
             void bindTo(Episode episode) {
