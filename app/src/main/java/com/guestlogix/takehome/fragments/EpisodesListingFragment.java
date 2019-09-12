@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.paging.PagedListAdapter;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -21,6 +22,7 @@ import com.guestlogix.takehome.databinding.ItemEpisodeRowBinding;
 import com.guestlogix.takehome.models.Episode;
 import com.guestlogix.takehome.network.NetworkState;
 import com.guestlogix.takehome.viewmodels.EpisodesListingViewModel;
+import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
 
 public class EpisodesListingFragment extends Fragment {
 
@@ -144,13 +146,12 @@ public class EpisodesListingFragment extends Fragment {
                 super(binding.getRoot());
                 this.binding = binding;
 
-
-
-                binding.getRoot().setOnClickListener(v -> Optional.ofNullable(getActivity())
-                        .map( activity -> Navigation.findNavController(activity, R.id.nav_host_fragment))
-                        .ifPresent(navController ->
-                                navController.navigate(R.id.charactersListFragment)
+                binding.getRoot().setOnClickListener(v ->
+                    findNavController().ifPresent(navController ->
+                        navController.navigate(
+                            EpisodesListingFragmentDirections.actionEpisodesListingFragmentToCharactersListFragment()
                         )
+                    )
                 );
             }
 
@@ -158,18 +159,11 @@ public class EpisodesListingFragment extends Fragment {
                 binding.setData(episode);
             }
         }
+    }
 
-        class NetworkStateItemViewHolder extends RecyclerView.ViewHolder {
-
-            private View progressView;
-            NetworkStateItemViewHolder(View pb) {
-                super(pb);
-                this.progressView = pb;
-            }
-
-            void bindView(NetworkState networkState) {
-                progressView.setVisibility(networkState == NetworkState.LOADING ? View.VISIBLE : View.GONE);
-            }
-        }
+    private Optional<NavController> findNavController() {
+        return Optional.ofNullable(getActivity()).map( activity ->
+                Navigation.findNavController(activity, R.id.nav_host_fragment)
+        );
     }
 }

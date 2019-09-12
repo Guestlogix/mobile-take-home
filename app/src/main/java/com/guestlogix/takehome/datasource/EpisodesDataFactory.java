@@ -1,5 +1,6 @@
 package com.guestlogix.takehome.datasource;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 import androidx.paging.DataSource;
 
@@ -11,11 +12,12 @@ public class EpisodesDataFactory extends DataSource.Factory {
         this.mutableLiveData = new MutableLiveData<>();
     }
 
+    @NonNull
     @Override
     public DataSource create() {
-        EpisodesDataSource feedDataSource = new EpisodesDataSource();
-        mutableLiveData.postValue(feedDataSource);
-        return feedDataSource;
+        EpisodesDataSource episodesDataSource = new EpisodesDataSource();
+        mutableLiveData.postValue(episodesDataSource);
+        return episodesDataSource;
     }
   
     public MutableLiveData<EpisodesDataSource> getMutableLiveData() {
