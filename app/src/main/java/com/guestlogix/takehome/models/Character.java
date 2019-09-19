@@ -1,5 +1,7 @@
 package com.guestlogix.takehome.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.JsonReader;
 
 import androidx.annotation.NonNull;
@@ -7,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil;
 
 import com.guestlogix.takehome.network.response.ObjectMappingFactory;
 
-public class Character {
+public class Character implements Parcelable {
 
     private String id;
     private String name;
@@ -41,6 +43,45 @@ public class Character {
         this.location = location;
         this.created = created;
         this.image = image;
+    }
+
+    public Character(Parcel parcel) {
+        this.id = parcel.readString();
+        this.name = parcel.readString();
+        this.status = parcel.readString();
+        this.species = parcel.readString();
+        this.type = parcel.readString();
+        this.gender = parcel.readString();
+        this.origin = parcel.readString();
+        this.location = parcel.readString();
+        this.created = parcel.readString();
+        this.image = parcel.readString();
+    }
+
+    public static final Creator<Character> CREATOR = new Creator<Character>() {
+        @Override
+        public Character createFromParcel(Parcel in) {
+            return new Character(in);
+        }
+
+        @Override
+        public Character[] newArray(int size) {
+            return new Character[size];
+        }
+    };
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(name);
+        dest.writeString(status);
+        dest.writeString(species);
+        dest.writeString(type);
+        dest.writeString(gender);
+        dest.writeString(origin);
+        dest.writeString(location);
+        dest.writeString(image);
+        dest.writeString(created);
     }
 
     public String getId() {
@@ -81,6 +122,11 @@ public class Character {
 
     public String getImage() {
         return image;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     @Override

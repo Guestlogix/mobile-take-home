@@ -18,16 +18,8 @@ public class ResultInfo {
         return count;
     }
 
-    public void setCount(int count) {
-        this.count = count;
-    }
-
     public int getPages() {
         return pages;
-    }
-
-    public void setPages(int pages) {
-        this.pages = pages;
     }
 
     public static class ResultInfoObjectMappingFactory implements ObjectMappingFactory<ResultInfo> {

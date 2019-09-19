@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -24,7 +23,7 @@ import com.guestlogix.takehome.viewmodels.CharactersListViewModel;
 import com.guestlogix.takehome.viewmodels.factory.CharactersListViewModelFactory;
 import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
 
-public class CharactersListFragment extends Fragment {
+public class CharactersListFragment extends BaseFragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -150,6 +149,13 @@ public class CharactersListFragment extends Fragment {
 
             void bindTo(Character character) {
                 binding.setData(character);
+                binding.getRoot().setOnClickListener(v ->
+                    findNavController().ifPresent(navController ->
+                        navController.navigate(
+                            CharactersListFragmentDirections.actionCharactersListFragmentToCharacterDetailFragment(character)
+                        )
+                    )
+                );
             }
         }
     }

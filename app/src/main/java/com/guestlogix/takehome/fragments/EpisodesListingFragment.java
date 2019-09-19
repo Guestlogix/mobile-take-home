@@ -7,10 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.paging.PagedListAdapter;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -24,7 +21,7 @@ import com.guestlogix.takehome.network.NetworkState;
 import com.guestlogix.takehome.viewmodels.EpisodesListingViewModel;
 import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
 
-public class EpisodesListingFragment extends Fragment {
+public class EpisodesListingFragment extends BaseFragment {
 
     public EpisodesListingFragment() {
     }
@@ -159,11 +156,5 @@ public class EpisodesListingFragment extends Fragment {
                 );
             }
         }
-    }
-
-    private Optional<NavController> findNavController() {
-        return Optional.ofNullable(getActivity()).map( activity ->
-                Navigation.findNavController(activity, R.id.nav_host_fragment)
-        );
     }
 }
