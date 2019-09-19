@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class UrlRequest {
 
         private Method method = null;
         private String apiPath = null;
-        private List<String> pathParams;
+        private String[] pathParams;
         private Map<String, String> queryParams;
 
         public UrlRequestBuilder method(Method method){
@@ -48,7 +49,7 @@ public class UrlRequest {
             return this;
         }
 
-        public UrlRequestBuilder pathParams(List<String> pathParams) {
+        public UrlRequestBuilder pathParams(String[] pathParams) {
             this.pathParams = pathParams;
             return this;
         }
@@ -64,9 +65,9 @@ public class UrlRequest {
             if(apiPath != null)
                 sb.append(apiPath);
 
-            if(pathParams != null && !pathParams.isEmpty()) {
+            if(pathParams != null && pathParams.length > 0) {
                 sb.append("/");
-                sb.append(pathParams.toString());
+                sb.append(Arrays.toString(pathParams));
             }
 
             if(queryParams != null && !queryParams.isEmpty()) {

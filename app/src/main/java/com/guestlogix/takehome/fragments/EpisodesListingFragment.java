@@ -145,18 +145,18 @@ public class EpisodesListingFragment extends Fragment {
             EpisodeItemViewHolder(ItemEpisodeRowBinding binding) {
                 super(binding.getRoot());
                 this.binding = binding;
-
-                binding.getRoot().setOnClickListener(v ->
-                    findNavController().ifPresent(navController ->
-                        navController.navigate(
-                            EpisodesListingFragmentDirections.actionEpisodesListingFragmentToCharactersListFragment()
-                        )
-                    )
-                );
             }
 
             void bindTo(Episode episode) {
                 binding.setData(episode);
+
+                binding.getRoot().setOnClickListener(v ->
+                    findNavController().ifPresent(navController ->
+                        navController.navigate(
+                            EpisodesListingFragmentDirections.actionEpisodesListingFragmentToCharactersListFragment(episode.getCharacters())
+                        )
+                    )
+                );
             }
         }
     }

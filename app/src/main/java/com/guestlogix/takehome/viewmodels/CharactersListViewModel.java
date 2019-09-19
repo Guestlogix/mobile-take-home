@@ -1,37 +1,48 @@
 package com.guestlogix.takehome.viewmodels;
 
-import androidx.arch.core.util.Function;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Transformations;
-import androidx.lifecycle.ViewModel;
-import androidx.paging.LivePagedListBuilder;
-import androidx.paging.PagedList;
+import android.util.JsonReader;
 
-import com.guestlogix.takehome.datasource.CharactersDataFactory;
-import com.guestlogix.takehome.datasource.CharactersDataSource;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
+
 import com.guestlogix.takehome.models.Character;
+import com.guestlogix.takehome.network.GuestlogixApi;
+import com.guestlogix.takehome.network.NetworkResponseListener;
 import com.guestlogix.takehome.network.NetworkState;
+import com.guestlogix.takehome.network.response.ArrayMappingFactory;
+
+import java.util.List;
 
 public class CharactersListViewModel extends ViewModel {
 
-    private LiveData<PagedList<Character>> characters;
-    private LiveData<NetworkState> networkState;
+    private MutableLiveData<List<Character>> characters = new MutableLiveData<>();
+    private MutableLiveData<NetworkState> networkState = new MutableLiveData<>();
 
-    public CharactersListViewModel() {
-        CharactersDataFactory feedDataFactory = new CharactersDataFactory();
-        networkState = Transformations.switchMap(feedDataFactory.getMutableLiveData(),
-            (Function<CharactersDataSource, LiveData<NetworkState>>) CharactersDataSource::getNetworkState);
+    public CharactersListViewModel(String[] characterIds) {
+        networkState.postValue(NetworkState.LOADING);
 
-        PagedList.Config pagedListConfig =
-            (new PagedList.Config.Builder())
-                .setEnablePlaceholders(false)
-                .setInitialLoadSizeHint(10)
-                .setPageSize(10).build();
+        GuestlogixApi.getAPI().getCharactersList(characterIds, new NetworkResponseListener() {
+            @Override
+            public void onResponse(JsonReader reader) {
+                try {
+                    List<Character> response = new ArrayMappingFactory<>(new Character.CharacterObjectMappingFactory()).instantiate(reader);
+                    characters.postValue(response);
+                    networkState.postValue(NetworkState.DONE);
+                } catch (Exception e) {
+                    networkState.postValue(NetworkState.ERROR);
+                    e.printStackTrace();
+                }
+            }
 
-        characters = new LivePagedListBuilder<Integer, Character>(feedDataFactory, pagedListConfig).build();
+            @Override
+            public void onFailure(String message) {
+                networkState.postValue(NetworkState.ERROR);
+            }
+        });
     }
 
-    public LiveData<PagedList<Character>> getCharacters() {
+    public MutableLiveData<List<Character>> getCharacters() {
         return characters;
     }
 

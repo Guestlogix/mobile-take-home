@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.paging.PagedListAdapter;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.guestlogix.takehome.R;
 import com.guestlogix.takehome.Utils.Optional;
 import com.guestlogix.takehome.databinding.ItemCharactersRowBinding;
-import com.guestlogix.takehome.databinding.ItemEpisodeRowBinding;
 import com.guestlogix.takehome.models.Character;
 import com.guestlogix.takehome.network.NetworkState;
 import com.guestlogix.takehome.viewmodels.CharactersListViewModel;
+import com.guestlogix.takehome.viewmodels.factory.CharactersListViewModelFactory;
 import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
 
 public class CharactersListFragment extends Fragment {
@@ -37,23 +37,27 @@ public class CharactersListFragment extends Fragment {
             rvCharacters.setAdapter(new CharactersListAdapter(context));
         });
 
-        CharactersListViewModel viewModel = ViewModelProviders.of(this).get(CharactersListViewModel.class);
+        CharactersListViewModelFactory factory = new CharactersListViewModelFactory(
+            CharactersListFragmentArgs.fromBundle(getArguments()).getViewArgs()
+        );
+        CharactersListViewModel viewModel = ViewModelProviders.of(this, factory).get(CharactersListViewModel.class);
+
         viewModel.getCharacters().observe(this, characters ->
-                Optional.ofNullable(rvCharacters.getAdapter())
-                        .map(adapter -> (CharactersListAdapter) adapter)
-                        .ifPresent(adapter -> adapter.submitList(characters))
+            Optional.ofNullable(rvCharacters.getAdapter())
+                .map(adapter -> (CharactersListAdapter) adapter)
+                .ifPresent(adapter -> adapter.submitList(characters))
         );
 
         viewModel.getNetworkState().observe(this, networkState ->
-                Optional.ofNullable(rvCharacters.getAdapter())
-                        .map(adapter -> (CharactersListAdapter) adapter)
-                        .ifPresent(adapter -> adapter.setNetworkState(networkState))
+            Optional.ofNullable(rvCharacters.getAdapter())
+                .map(adapter -> (CharactersListAdapter) adapter)
+                .ifPresent(adapter -> adapter.setNetworkState(networkState))
         );
 
         return rvCharacters;
     }
 
-    public class CharactersListAdapter extends PagedListAdapter<Character, RecyclerView.ViewHolder> {
+    public class CharactersListAdapter extends ListAdapter<Character, RecyclerView.ViewHolder> {
 
         private static final int TYPE_PROGRESS = 0;
         private static final int TYPE_ITEM = 1;

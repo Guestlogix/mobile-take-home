@@ -9,7 +9,7 @@
         android:id="@+id/episodesListingFragment"
         android:name="com.guestlogix.takehome.fragments.EpisodesListingFragment"
         android:label="Episodes"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_episodesListingFragment_to_charactersListFragment"
             app:destination="@id/charactersListFragment"
@@ -22,5 +22,8 @@
         android:id="@+id/charactersListFragment"
         android:name="com.guestlogix.takehome.fragments.CharactersListFragment"
         android:label="Characters"
-        tools:layout="@layout/fragment_characters_list" />
+        tools:layout="@layout/fragment_characters_list">
+        <argument
+            android:name="viewArgs"  app:argType="string[]" />
+    </fragment>
 </navigation>
