@@ -1,7 +1,11 @@
 package com.guestlogix.takehome.models;
 
+import android.util.JsonReader;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
+
+import com.guestlogix.takehome.network.response.ObjectMappingFactory;
 
 public class Character {
 
@@ -43,80 +47,40 @@ public class Character {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public String getSpecies() {
         return species;
-    }
-
-    public void setSpecies(String species) {
-        this.species = species;
     }
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public String getGender() {
         return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
     }
 
     public String getOrigin() {
         return origin;
     }
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
-
     public String getLocation() {
         return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
     public String getCreated() {
         return created;
     }
 
-    public void setCreated(String created) {
-        this.created = created;
-    }
-
     public String getImage() {
         return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     @Override
@@ -139,4 +103,88 @@ public class Character {
             return oldItem.equals(newItem);
         }
     };
+
+    public static class CharacterObjectMappingFactory implements ObjectMappingFactory<Character> {
+
+        @Override
+        public Character instantiate(JsonReader reader) throws Exception {
+            String id = null;
+            String name = null;
+            String status = null;
+            String species = null;
+            String type = null;
+            String gender = null;
+            String origin = null;
+            String location = null;
+            String image = null;
+            String created = null;
+
+            reader.beginObject();
+
+            while (reader.hasNext()) {
+                String key = reader.nextName();
+                switch (key) {
+                    case "id":
+                        id = reader.nextString();
+                        break;
+                    case "name":
+                        name = reader.nextString();
+                        break;
+                    case "status":
+                        status = reader.nextString();
+                        break;
+                    case "species":
+                        species = reader.nextString();
+                        break;
+                    case "type":
+                        type = reader.nextString();
+                        break;
+                    case "gender":
+                        gender = reader.nextString();
+                        break;
+                    case "origin":
+                        origin = readNameFromObject(reader);
+                        break;
+                    case "location":
+                        location = readNameFromObject(reader);
+                        break;
+                    case "image":
+                        image = reader.nextString();
+                        break;
+                    case "created":
+                        created = reader.nextString();
+                        break;
+                    default:
+                        reader.skipValue();
+                        break;
+                }
+            }
+
+            reader.endObject();
+
+            return new Character(id, name, status, species, type, gender, origin, location, image, created);
+        }
+
+        private String readNameFromObject(JsonReader reader) throws Exception {
+
+            String name = null;
+            reader.beginObject();
+
+            while (reader.hasNext()) {
+                String key = reader.nextName();
+                switch (key) {
+                    case "name":
+                        name = reader.nextString();
+                        break;
+                    default:
+                        reader.skipValue();
+                        break;
+                }
+            }
+
+            reader.endObject();
+
+            return name;
+        }
+    }
 }

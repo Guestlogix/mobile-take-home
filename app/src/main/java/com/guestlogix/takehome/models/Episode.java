@@ -1,7 +1,11 @@
 package com.guestlogix.takehome.models;
 
+import android.util.JsonReader;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
+
+import com.guestlogix.takehome.network.response.ObjectMappingFactory;
 
 public class Episode {
 
@@ -75,4 +79,42 @@ public class Episode {
             return oldItem.equals(newItem);
         }
     };
+
+    public static class EpisodeObjectMappingFactory implements ObjectMappingFactory<Episode> {
+
+        @Override
+        public Episode instantiate(JsonReader reader) throws Exception {
+            String id = null;
+            String name = null;
+            String episode = null;
+            String created = null;
+
+            reader.beginObject();
+
+            while (reader.hasNext()) {
+                String key = reader.nextName();
+                switch (key) {
+                    case "id":
+                        id = reader.nextString();
+                        break;
+                    case "name":
+                        name = reader.nextString();
+                        break;
+                    case "episode":
+                        episode = reader.nextString();
+                        break;
+                    case "created":
+                        created = reader.nextString();
+                        break;
+                    default:
+                        reader.skipValue();
+                        break;
+                }
+            }
+
+            reader.endObject();
+
+            return new Episode(id, name, episode, created);
+        }
+    }
 }
