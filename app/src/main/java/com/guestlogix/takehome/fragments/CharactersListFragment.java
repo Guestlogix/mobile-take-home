@@ -19,6 +19,7 @@ import com.guestlogix.takehome.Utils.Optional;
 import com.guestlogix.takehome.databinding.ItemCharactersRowBinding;
 import com.guestlogix.takehome.models.Character;
 import com.guestlogix.takehome.network.NetworkState;
+import com.guestlogix.takehome.network.imageloader.AssetManager;
 import com.guestlogix.takehome.viewmodels.CharactersListViewModel;
 import com.guestlogix.takehome.viewmodels.factory.CharactersListViewModelFactory;
 import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
@@ -149,6 +150,7 @@ public class CharactersListFragment extends BaseFragment {
 
             void bindTo(Character character) {
                 binding.setData(character);
+                AssetManager.getInstance().loadImage(character.getImage(), binding.ivCharacter);
                 binding.getRoot().setOnClickListener(v ->
                     findNavController().ifPresent(navController ->
                         navController.navigate(

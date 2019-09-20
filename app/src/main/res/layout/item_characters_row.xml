@@ -14,6 +14,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCharacter"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:srcCompat="@drawable/place_holder"
+            app:layout_constraintTop_toBottomOf="@id/guidelineTop"
+            app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart" />
+
         <TextView
             android:id="@+id/tvEpisode"
             android:layout_width="0dp"
@@ -21,7 +30,8 @@
             android:text="@{data.getName()}"
             tools:text="S02E10"
             android:layout_marginEnd="@dimen/episode_row_spacing"
-            app:layout_constraintStart_toEndOf="@id/guidelineStart"
+            android:layout_marginStart="@dimen/episode_row_spacing"
+            app:layout_constraintStart_toEndOf="@id/ivCharacter"
             app:layout_constraintEnd_toStartOf="@id/tvCreated"
             app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
 
@@ -41,7 +51,8 @@
             android:layout_height="wrap_content"
             android:text="@{data.getImage()}"
             android:layout_marginTop="@dimen/episode_row_spacing"
-            app:layout_constraintStart_toEndOf="@id/guidelineStart"
+            android:layout_marginStart="@dimen/episode_row_spacing"
+            app:layout_constraintStart_toEndOf="@id/ivCharacter"
             app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
             app:layout_constraintTop_toBottomOf="@id/tvEpisode"
             app:layout_constraintBottom_toTopOf="@id/guidelineBottom"/>
