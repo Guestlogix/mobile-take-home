@@ -105,7 +105,6 @@ public class CharactersListFragment extends BaseFragment {
             }
         }
 
-
         /*
          * Default method of RecyclerView.Adapter
          */
@@ -117,7 +116,6 @@ public class CharactersListFragment extends BaseFragment {
                 return TYPE_ITEM;
             }
         }
-
 
         private boolean hasExtraRow() {
             return networkState != null && networkState != NetworkState.DONE;

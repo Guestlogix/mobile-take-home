@@ -1,8 +1,5 @@
 package com.guestlogix.takehome.datasource;
 
-import android.util.JsonReader;
-import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 import androidx.paging.PageKeyedDataSource;
@@ -10,8 +7,9 @@ import androidx.paging.PageKeyedDataSource;
 import com.guestlogix.takehome.models.Episode;
 import com.guestlogix.takehome.models.EpisodeResponse;
 import com.guestlogix.takehome.network.GuestlogixApi;
-import com.guestlogix.takehome.network.NetworkResponseListener;
+import com.guestlogix.takehome.network.GuestlogixException;
 import com.guestlogix.takehome.network.NetworkState;
+import com.guestlogix.takehome.network.ResponseListener;
 
 public class EpisodesDataSource extends PageKeyedDataSource<Integer, Episode> {
 
@@ -30,24 +28,17 @@ public class EpisodesDataSource extends PageKeyedDataSource<Integer, Episode> {
                             @NonNull LoadInitialCallback<Integer, Episode> callback) {
 
         networkState.postValue(NetworkState.LOADING);
-        GuestlogixApi.getAPI().getEpisodesList(null, new NetworkResponseListener() {
+        GuestlogixApi.getAPI().getEpisodesList(null, new ResponseListener<EpisodeResponse>() {
             @Override
-            public void onResponse(JsonReader reader) {
-                try {
-                    EpisodeResponse response = new EpisodeResponse.EpisodeResponseObjectMappingFactory().instantiate(reader);
-                    Integer nextPage = response.getInfo().getCount() > 1 ? 2 : null;
-                    callback.onResult(response.getResults(), null, nextPage);
-                    networkState.postValue(NetworkState.DONE);
-                } catch (Exception e) {
-                    networkState.postValue(NetworkState.ERROR);
-                    e.printStackTrace();
-                }
+            public void onResponse(EpisodeResponse response) {
+                Integer nextPage = response.getInfo().getCount() > 1 ? 2 : null;
+                callback.onResult(response.getResults(), null, nextPage);
+                networkState.postValue(NetworkState.DONE);
             }
 
             @Override
-            public void onFailure(String message) {
+            public void onFailure(GuestlogixException exception) {
                 networkState.postValue(NetworkState.ERROR);
-                Log.e("test", message);
             }
         });
     }
@@ -65,11 +56,10 @@ public class EpisodesDataSource extends PageKeyedDataSource<Integer, Episode> {
 
         networkState.postValue(NetworkState.LOADING);
 
-        GuestlogixApi.getAPI().getEpisodesList(params.key, new NetworkResponseListener() {
+        GuestlogixApi.getAPI().getEpisodesList(params.key, new ResponseListener<EpisodeResponse>() {
             @Override
-            public void onResponse(JsonReader reader) {
+            public void onResponse(EpisodeResponse response) {
                 try {
-                    EpisodeResponse response = new EpisodeResponse.EpisodeResponseObjectMappingFactory().instantiate(reader);
                     Integer nextPage = response.getInfo().getPages() > params.key ? params.key+1 : null;
                     callback.onResult(response.getResults(), nextPage);
                     networkState.postValue(NetworkState.DONE);
@@ -80,9 +70,8 @@ public class EpisodesDataSource extends PageKeyedDataSource<Integer, Episode> {
             }
 
             @Override
-            public void onFailure(String message) {
+            public void onFailure(GuestlogixException message) {
                 networkState.postValue(NetworkState.ERROR);
-                Log.e("test", message);
             }
         });
     }

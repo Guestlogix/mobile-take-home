@@ -2,12 +2,11 @@ package com.guestlogix.takehome.network.imageloader;
 
 import android.graphics.Bitmap;
 import android.util.LruCache;
-import androidx.annotation.NonNull;
 
 public class ImageCache {
 
-    final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
-    final int cacheSize = maxMemory / 8;
+    private final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
+    private final int cacheSize = maxMemory / 8;
     private LruCache<String, Bitmap> bitmapCache;
 
     public ImageCache() {

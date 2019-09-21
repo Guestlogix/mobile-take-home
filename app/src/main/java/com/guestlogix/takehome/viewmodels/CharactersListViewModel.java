@@ -1,16 +1,14 @@
 package com.guestlogix.takehome.viewmodels;
 
-import android.util.JsonReader;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.guestlogix.takehome.models.Character;
 import com.guestlogix.takehome.network.GuestlogixApi;
-import com.guestlogix.takehome.network.NetworkResponseListener;
+import com.guestlogix.takehome.network.GuestlogixException;
 import com.guestlogix.takehome.network.NetworkState;
-import com.guestlogix.takehome.network.response.ArrayMappingFactory;
+import com.guestlogix.takehome.network.ResponseListener;
 
 import java.util.List;
 
@@ -22,21 +20,15 @@ public class CharactersListViewModel extends ViewModel {
     public CharactersListViewModel(String[] characterIds) {
         networkState.postValue(NetworkState.LOADING);
 
-        GuestlogixApi.getAPI().getCharactersList(characterIds, new NetworkResponseListener() {
+        GuestlogixApi.getAPI().getCharactersList(characterIds, new ResponseListener<List<Character>>() {
             @Override
-            public void onResponse(JsonReader reader) {
-                try {
-                    List<Character> response = new ArrayMappingFactory<>(new Character.CharacterObjectMappingFactory()).instantiate(reader);
-                    characters.postValue(response);
-                    networkState.postValue(NetworkState.DONE);
-                } catch (Exception e) {
-                    networkState.postValue(NetworkState.ERROR);
-                    e.printStackTrace();
-                }
+            public void onResponse(List<Character> response) {
+                characters.postValue(response);
+                networkState.postValue(NetworkState.DONE);
             }
 
             @Override
-            public void onFailure(String message) {
+            public void onFailure(GuestlogixException e) {
                 networkState.postValue(NetworkState.ERROR);
             }
         });

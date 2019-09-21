@@ -67,8 +67,6 @@ public class Episode {
         }
     };
 
-
-
     public static class EpisodeObjectMappingFactory implements ObjectMappingFactory<Episode> {
 
         @Override

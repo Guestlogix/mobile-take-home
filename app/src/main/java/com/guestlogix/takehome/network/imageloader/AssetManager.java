@@ -6,8 +6,8 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 
-import com.guestlogix.takehome.R;
 import com.guestlogix.takehome.Utils.Optional;
+import com.guestlogix.takehome.network.tasks.DownloadTask;
 
 import java.lang.ref.WeakReference;
 
@@ -28,23 +28,19 @@ public class AssetManager {
     }
 
     public void loadImage(String url, @NonNull ImageView imageView) {
-
-        if(Optional.ofNullable(imageView.getTag()).map(tag -> !tag.equals(url)).orElse(true)) {
-            imageView.setImageBitmap(null);
-            imageView.setImageResource(R.drawable.place_holder);
-            loadImage(url, imageView, new ImageLoader.ImageLoaderCallback() {
-                @Override
-                public void onBitmapLoaded(Bitmap bitmap) {
+        loadImage(url, imageView, new ImageLoader.ImageLoaderCallback() {
+            @Override
+            public void onBitmapLoaded(Bitmap bitmap) {
+                if (Optional.ofNullable(imageView.getTag()).map(tag -> tag.equals(url)).orElse(true)) {
                     imageView.setImageBitmap(bitmap);
-                    imageView.setTag(url);
                 }
+            }
 
-                @Override
-                public void onError(String message) {
+            @Override
+            public void onError(String message) {
 
-                }
-            });
-        }
+            }
+        });
     }
 
     public void loadImage(String url, @NonNull ImageView imageView, ImageLoader.ImageLoaderCallback callback) {

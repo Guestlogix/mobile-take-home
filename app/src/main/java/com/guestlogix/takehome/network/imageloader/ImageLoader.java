@@ -3,10 +3,13 @@ package com.guestlogix.takehome.network.imageloader;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.widget.ImageView;
 
 import com.guestlogix.takehome.R;
+import com.guestlogix.takehome.Utils.Optional;
+import com.guestlogix.takehome.network.GuestlogixException;
+import com.guestlogix.takehome.network.ResponseListener;
+import com.guestlogix.takehome.network.tasks.DownloadTask;
 
 public class ImageLoader {
 
@@ -29,31 +32,32 @@ public class ImageLoader {
 
         //if image found in cache notify observer with bitmap, otherwise start image download
         Bitmap cachedBitmap = imageCache.getBitmapFromMemCache(key);
-
         if (null != cachedBitmap) {
+            iv.setTag(url);
             imageLoaderCallback.onBitmapLoaded(cachedBitmap);
         } else {
-            DownloadTask task = new DownloadTask(iv.getWidth(), iv.getHeight(), new DownloadCallback<DownloadTask.Result>() {
+            if(Optional.ofNullable(iv.getTag()).map(tag -> !tag.equals(url)).orElse(true)) {
+                iv.setImageBitmap(null);
+                iv.setImageResource(R.drawable.place_holder);
+            }
 
-                @Override
-                public void updateFromDownload(DownloadTask.Result result) {
-                    if(result.resultValue != null) {
-                        imageLoaderCallback.onBitmapLoaded(result.resultValue);
-                        imageCache.addBitmapToMemoryCache(key, result.resultValue);
-                    } else {
-                        imageLoaderCallback.onError(result.exception);
+            iv.setTag(url);
+
+            DownloadTask task = new DownloadTask(
+                iv.getWidth(),
+                iv.getHeight(),
+                (ConnectivityManager) iv.getContext().getSystemService(Context.CONNECTIVITY_SERVICE),
+                new ResponseListener<Bitmap>() {
+                    @Override
+                    public void onResponse(Bitmap response) {
+
                     }
-                }
 
-                @Override
-                public NetworkInfo getActiveNetworkInfo() {
-                    ConnectivityManager connectivityManager =
-                        (ConnectivityManager) iv.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-                    return connectivityManager.getActiveNetworkInfo();
-                }
-            });
+                    @Override
+                    public void onFailure(GuestlogixException message) {
 
-            task.execute(url);
+                    }
+                });
 
             return task;
         }

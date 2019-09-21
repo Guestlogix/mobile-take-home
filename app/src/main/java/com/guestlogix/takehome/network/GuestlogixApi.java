@@ -3,7 +3,13 @@ package com.guestlogix.takehome.network;
 import android.content.Context;
 import android.net.ConnectivityManager;
 
+import com.guestlogix.takehome.models.Character;
+import com.guestlogix.takehome.models.EpisodeResponse;
+import com.guestlogix.takehome.network.response.ArrayMappingFactory;
+import com.guestlogix.takehome.network.tasks.ApiTask;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GuestlogixApi {
@@ -14,7 +20,7 @@ public class GuestlogixApi {
     private static GuestlogixApi API;
     private ConnectivityManager connectivityManager;
 
-    public GuestlogixApi(Context context) {
+    private GuestlogixApi(Context context) {
         connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
     }
 
@@ -28,7 +34,7 @@ public class GuestlogixApi {
         return API;
     }
 
-    public void getEpisodesList(Integer page, NetworkResponseListener listener) {
+    public void getEpisodesList(Integer page, ResponseListener<EpisodeResponse> listener) {
         UrlRequest.UrlRequestBuilder req = new UrlRequest.UrlRequestBuilder()
                             .method(Method.GET)
                             .apiPath(EPISODES_LIST);
@@ -37,10 +43,14 @@ public class GuestlogixApi {
             req.queryParams(getPagingParam(page));
         }
 
-        new NetworkTask(listener, connectivityManager).execute(req.build());
+        new ApiTask<>(
+            listener,
+            connectivityManager,
+            new EpisodeResponse.EpisodeResponseObjectMappingFactory()
+        ).execute(req.build());
     }
 
-    public void getCharactersList(String[] ids, NetworkResponseListener listener) {
+    public void getCharactersList(String[] ids, ResponseListener<List<Character>> listener) {
         UrlRequest.UrlRequestBuilder req = new UrlRequest.UrlRequestBuilder()
             .method(Method.GET)
             .apiPath(CHARACTERS_LIST);
@@ -49,7 +59,11 @@ public class GuestlogixApi {
             req.pathParams(ids);
         }
 
-        new NetworkTask(listener, connectivityManager).execute(req.build());
+        new ApiTask<>(
+            listener,
+            connectivityManager,
+            new ArrayMappingFactory<>(new Character.CharacterObjectMappingFactory())
+        ).execute(req.build());
     }
 
     private Map<String, String> getPagingParam(int page) {
