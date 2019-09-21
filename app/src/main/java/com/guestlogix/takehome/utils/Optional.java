@@ -1,4 +1,4 @@
-package com.guestlogix.takehome.Utils;
+package com.guestlogix.takehome.utils;
 
 import androidx.arch.core.util.Function;
 import androidx.core.util.Consumer;

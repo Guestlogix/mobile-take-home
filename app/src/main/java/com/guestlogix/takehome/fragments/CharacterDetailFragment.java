@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.guestlogix.takehome.R;
-import com.guestlogix.takehome.Utils.Optional;
+import com.guestlogix.takehome.utils.Optional;
 import com.guestlogix.takehome.binding.DataBindingComponentImpl;
 import com.guestlogix.takehome.databinding.FragmentCharactersDetailBinding;
 import com.guestlogix.takehome.network.imageloader.AssetManager;

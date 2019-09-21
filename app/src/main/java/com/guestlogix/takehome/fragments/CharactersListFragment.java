@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.guestlogix.takehome.R;
-import com.guestlogix.takehome.Utils.Optional;
+import com.guestlogix.takehome.utils.Optional;
 import com.guestlogix.takehome.databinding.ItemCharactersRowBinding;
 import com.guestlogix.takehome.models.Character;
 import com.guestlogix.takehome.network.NetworkState;

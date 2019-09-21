@@ -7,7 +7,7 @@ import android.util.JsonReader;
 import com.guestlogix.takehome.network.ErrorCode;
 import com.guestlogix.takehome.network.GuestlogixException;
 import com.guestlogix.takehome.network.ResponseListener;
-import com.guestlogix.takehome.network.response.ObjectMappingFactory;
+import com.guestlogix.takehome.network.response.ObjectFactory;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -15,13 +15,13 @@ import java.io.InputStreamReader;
 public class ApiTask<T> extends Task {
 
     private ResponseListener<T> callback;
-    private ObjectMappingFactory<T> objectMappingFactory;
+    private ObjectFactory<T> objectMappingFactory;
     private ConnectivityManager connectivityManager;
 
     public ApiTask(
         ResponseListener<T> callback,
         ConnectivityManager connectivityManager,
-        ObjectMappingFactory<T> objectMappingFactory
+        ObjectFactory<T> objectMappingFactory
     ) {
         this.objectMappingFactory = objectMappingFactory;
         this.callback = callback;

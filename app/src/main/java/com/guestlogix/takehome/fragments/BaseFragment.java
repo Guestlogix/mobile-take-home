@@ -6,7 +6,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.guestlogix.takehome.R;
-import com.guestlogix.takehome.Utils.Optional;
+import com.guestlogix.takehome.utils.Optional;
 
 /**
  * A simple {@link Fragment} subclass.

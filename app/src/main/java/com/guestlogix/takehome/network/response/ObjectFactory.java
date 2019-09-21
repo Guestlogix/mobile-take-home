@@ -2,6 +2,6 @@ package com.guestlogix.takehome.network.response;
 
 import android.util.JsonReader;
 
-public interface ObjectMappingFactory<T> {
+public interface ObjectFactory<T> {
     T instantiate(JsonReader reader) throws Exception;
 }

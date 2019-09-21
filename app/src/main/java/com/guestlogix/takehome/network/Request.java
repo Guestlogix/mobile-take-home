@@ -11,14 +11,14 @@ import java.util.Map;
 /**
  * Simple Network Request
  */
-public class UrlRequest {
+public class Request {
 
     private static final String BASE_URL = "https://rickandmortyapi.com/api/";
 
     private Method method;
     private String url;
 
-    private UrlRequest(@NonNull Method method, @NonNull String url) {
+    private Request(@NonNull Method method, @NonNull String url) {
         this.method = method;
         this.url = url;
     }
@@ -58,7 +58,7 @@ public class UrlRequest {
             return this;
         }
 
-        public UrlRequest build() {
+        public Request build() {
             StringBuilder sb = new StringBuilder(BASE_URL);
 
             if(apiPath != null)
@@ -86,7 +86,26 @@ public class UrlRequest {
                 }
             }
 
-            return new UrlRequest(method, sb.toString());
+            return new Request(method, sb.toString());
+        }
+    }
+
+    public static class ImageRequestBuilder {
+        private Method method = Method.GET;
+        private String url = null;
+
+        public ImageRequestBuilder method(Method method){
+            this.method = method;
+            return this;
+        }
+
+        public ImageRequestBuilder url(String url){
+            this.url = url;
+            return this;
+        }
+
+        public Request build() {
+            return new Request(method, url);
         }
     }
 }

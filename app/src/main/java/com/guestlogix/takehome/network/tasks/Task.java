@@ -4,7 +4,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 
-import com.guestlogix.takehome.network.UrlRequest;
+import com.guestlogix.takehome.network.Request;
 import com.guestlogix.takehome.network.ErrorCode;
 import com.guestlogix.takehome.network.GuestlogixException;
 
@@ -14,7 +14,7 @@ import java.net.HttpURLConnection;
 
 import javax.net.ssl.HttpsURLConnection;
 
-abstract class Task extends AsyncTask<UrlRequest, Integer, Void> {
+abstract class Task extends AsyncTask<Request, Integer, Void> {
 
     private static final int TIMEOUT = 5000;
 
@@ -37,9 +37,9 @@ abstract class Task extends AsyncTask<UrlRequest, Integer, Void> {
      * Defines work to perform on the background thread.
      */
     @Override
-    protected Void doInBackground(UrlRequest... requests) {
+    protected Void doInBackground(Request... requests) {
         if (!isCancelled() && requests != null && requests.length > 0) {
-            UrlRequest urlReq = requests[0];
+            Request urlReq = requests[0];
             try {
                 InputStream is = getResponseStream(urlReq);
                 onResponse(is);
@@ -56,7 +56,7 @@ abstract class Task extends AsyncTask<UrlRequest, Integer, Void> {
         super.onPostExecute(aVoid);
     }
 
-    private InputStream getResponseStream(UrlRequest req) throws IOException {
+    private InputStream getResponseStream(Request req) throws IOException {
         HttpURLConnection connection = (HttpURLConnection) req.getURL().openConnection();
         // Timeout for reading InputStream arbitrarily set to 3000ms.
         connection.setReadTimeout(TIMEOUT);

@@ -5,7 +5,9 @@ import android.net.ConnectivityManager;
 
 import com.guestlogix.takehome.models.Character;
 import com.guestlogix.takehome.models.EpisodeResponse;
-import com.guestlogix.takehome.network.response.ArrayMappingFactory;
+import com.guestlogix.takehome.network.response.CharacterObjectMappingFactory;
+import com.guestlogix.takehome.network.response.EpisodeResponseObjectMappingFactory;
+import com.guestlogix.takehome.network.response.ListFactory;
 import com.guestlogix.takehome.network.tasks.ApiTask;
 
 import java.util.HashMap;
@@ -35,7 +37,7 @@ public class GuestlogixApi {
     }
 
     public void getEpisodesList(Integer page, ResponseListener<EpisodeResponse> listener) {
-        UrlRequest.UrlRequestBuilder req = new UrlRequest.UrlRequestBuilder()
+        Request.UrlRequestBuilder req = new Request.UrlRequestBuilder()
                             .method(Method.GET)
                             .apiPath(EPISODES_LIST);
 
@@ -46,12 +48,12 @@ public class GuestlogixApi {
         new ApiTask<>(
             listener,
             connectivityManager,
-            new EpisodeResponse.EpisodeResponseObjectMappingFactory()
+            new EpisodeResponseObjectMappingFactory()
         ).execute(req.build());
     }
 
     public void getCharactersList(String[] ids, ResponseListener<List<Character>> listener) {
-        UrlRequest.UrlRequestBuilder req = new UrlRequest.UrlRequestBuilder()
+        Request.UrlRequestBuilder req = new Request.UrlRequestBuilder()
             .method(Method.GET)
             .apiPath(CHARACTERS_LIST);
 
@@ -62,7 +64,7 @@ public class GuestlogixApi {
         new ApiTask<>(
             listener,
             connectivityManager,
-            new ArrayMappingFactory<>(new Character.CharacterObjectMappingFactory())
+            new ListFactory<>(new CharacterObjectMappingFactory())
         ).execute(req.build());
     }
 

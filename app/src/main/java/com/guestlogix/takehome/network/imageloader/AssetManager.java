@@ -6,7 +6,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 
-import com.guestlogix.takehome.Utils.Optional;
+import com.guestlogix.takehome.utils.Optional;
 import com.guestlogix.takehome.network.tasks.DownloadTask;
 
 import java.lang.ref.WeakReference;

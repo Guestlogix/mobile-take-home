@@ -6,10 +6,11 @@ import android.net.ConnectivityManager;
 import android.widget.ImageView;
 
 import com.guestlogix.takehome.R;
-import com.guestlogix.takehome.Utils.Optional;
 import com.guestlogix.takehome.network.GuestlogixException;
+import com.guestlogix.takehome.network.Request;
 import com.guestlogix.takehome.network.ResponseListener;
 import com.guestlogix.takehome.network.tasks.DownloadTask;
+import com.guestlogix.takehome.utils.Optional;
 
 public class ImageLoader {
 
@@ -49,7 +50,11 @@ public class ImageLoader {
                 (ConnectivityManager) iv.getContext().getSystemService(Context.CONNECTIVITY_SERVICE),
                 new ResponseListener<Bitmap>() {
                     @Override
-                    public void onResponse(Bitmap response) {
+                    public void onResponse(Bitmap image) {
+                        if(image != null) {
+                            imageLoaderCallback.onBitmapLoaded(image);
+                            imageCache.addBitmapToMemoryCache(key, image);
+                        }
 
                     }
 
@@ -58,6 +63,7 @@ public class ImageLoader {
 
                     }
                 });
+            task.execute(new Request.ImageRequestBuilder().url(url).build());
 
             return task;
         }

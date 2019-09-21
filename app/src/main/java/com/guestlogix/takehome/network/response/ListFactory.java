@@ -5,10 +5,10 @@ import android.util.JsonReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArrayMappingFactory<T> implements ObjectMappingFactory<List<T>>{
-    private ObjectMappingFactory<T> objectMappingFactory;
+public class ListFactory<T> implements ObjectFactory<List<T>> {
+    private ObjectFactory<T> objectMappingFactory;
 
-    public ArrayMappingFactory(ObjectMappingFactory<T> objectMappingFactory) {
+    public ListFactory(ObjectFactory<T> objectMappingFactory) {
         this.objectMappingFactory = objectMappingFactory;
     }
 
