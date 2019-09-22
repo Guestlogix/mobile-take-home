@@ -2,9 +2,10 @@ package com.guestlogix.takehome.network.response;
 
 import android.util.JsonReader;
 
-import com.guestlogix.takehome.models.Episode;
+import com.guestlogix.takehome.data.Episode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class EpisodeObjectMappingFactory implements ObjectFactory<Episode> {
@@ -50,7 +51,6 @@ public class EpisodeObjectMappingFactory implements ObjectFactory<Episode> {
         }
 
         reader.endObject();
-
         return new Episode(id, name, episode, created, characters.toArray(new String[0]));
     }
 }

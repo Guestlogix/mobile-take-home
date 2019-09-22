@@ -42,4 +42,7 @@ dependencies {
     implementation 'androidx.paging:paging-runtime:2.1.0'
     implementation 'androidx.navigation:navigation-fragment:2.1.0'
     implementation 'androidx.navigation:navigation-ui:2.1.0'
+
+    implementation "androidx.room:room-runtime:2.2.0-rc01"
+    annotationProcessor "androidx.room:room-compiler:2.2.0-rc01"
 }

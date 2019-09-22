@@ -1,5 +1,7 @@
 package com.guestlogix.takehome.models;
 
+import com.guestlogix.takehome.data.Episode;
+
 import java.util.List;
 
 public class EpisodeResponse {

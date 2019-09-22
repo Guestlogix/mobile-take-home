@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.paging.PagedListAdapter;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -14,14 +15,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.guestlogix.takehome.R;
-import com.guestlogix.takehome.utils.Optional;
+import com.guestlogix.takehome.binding.DataBindingComponentImpl;
+import com.guestlogix.takehome.data.Episode;
+import com.guestlogix.takehome.databinding.FragmentMainBinding;
 import com.guestlogix.takehome.databinding.ItemEpisodeRowBinding;
-import com.guestlogix.takehome.models.Episode;
 import com.guestlogix.takehome.network.NetworkState;
-import com.guestlogix.takehome.viewmodels.EpisodesListingViewModel;
+import com.guestlogix.takehome.viewmodels.EpisodesViewModel;
+import com.guestlogix.takehome.viewmodels.ViewModelFactory;
 import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
 
 public class EpisodesListingFragment extends BaseFragment {
+
+    private EpisodesViewModel mEpisodesViewModel;
 
     public EpisodesListingFragment() {
     }
@@ -29,29 +34,32 @@ public class EpisodesListingFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        RecyclerView rvEpisodes = (RecyclerView) inflater.inflate(R.layout.fragment_main, container, false);
-
-        Optional.ofNullable(getContext()).ifPresent(context -> {
-            rvEpisodes.setLayoutManager(new LinearLayoutManager(getContext()));
-            rvEpisodes.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
-            rvEpisodes.setAdapter(new EpisodesListAdapter(context));
-        });
-
-        EpisodesListingViewModel viewModel = ViewModelProviders.of(this).get(EpisodesListingViewModel.class);
-        viewModel.getEpisodes().observe(this, episodes ->
-                Optional.ofNullable(rvEpisodes.getAdapter())
-                        .map(adapter -> (EpisodesListAdapter) adapter)
-                        .ifPresent(adapter -> adapter.submitList(episodes))
+        FragmentMainBinding binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_main,
+            container,
+            false,
+            new DataBindingComponentImpl(getViewLifecycleOwner())
         );
 
-        viewModel.getNetworkState().observe(this, networkState ->
-                Optional.ofNullable(rvEpisodes.getAdapter())
-                        .map(adapter -> (EpisodesListAdapter) adapter)
-                        .ifPresent(adapter -> adapter.setNetworkState(networkState))
-        );
+        // Use a Factory to inject dependencies into the ViewModel
+        ViewModelFactory factory = ViewModelFactory.getInstance(requireActivity().getApplication());
 
+        mEpisodesViewModel = ViewModelProviders.of(requireActivity(), factory).get(EpisodesViewModel.class);
 
-        return rvEpisodes;
+        binding.setViewmodel(mEpisodesViewModel);
+
+        binding.rvEpisodes.setLayoutManager(new LinearLayoutManager(requireContext()));
+        binding.rvEpisodes.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
+        binding.rvEpisodes.setAdapter(new EpisodesListAdapter(requireContext()));
+
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mEpisodesViewModel.start();
     }
 
     public class EpisodesListAdapter extends PagedListAdapter<Episode, RecyclerView.ViewHolder> {
@@ -69,7 +77,6 @@ public class EpisodesListingFragment extends BaseFragment {
             super(Episode.DIFF_CALLBACK);
             this.context = context;
         }
-
 
         /*
          * Default method of RecyclerView.Adapter
@@ -89,7 +96,6 @@ public class EpisodesListingFragment extends BaseFragment {
             }
         }
 
-
         /*
          * Default method of RecyclerView.Adapter
          */
@@ -102,7 +108,6 @@ public class EpisodesListingFragment extends BaseFragment {
             }
         }
 
-
         /*
          * Default method of RecyclerView.Adapter
          */
@@ -114,7 +119,6 @@ public class EpisodesListingFragment extends BaseFragment {
                 return TYPE_ITEM;
             }
         }
-
 
         private boolean hasExtraRow() {
             return networkState != null && networkState != NetworkState.DONE;
@@ -150,7 +154,7 @@ public class EpisodesListingFragment extends BaseFragment {
                 binding.getRoot().setOnClickListener(v ->
                     findNavController().ifPresent(navController ->
                         navController.navigate(
-                            EpisodesListingFragmentDirections.actionEpisodesListingFragmentToCharactersListFragment(episode.getCharacters())
+                            EpisodesListingFragmentDirections.actionEpisodesListingFragmentToCharactersListFragment(episode.getCharacterIds())
                         )
                     )
                 );

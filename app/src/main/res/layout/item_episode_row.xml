@@ -6,7 +6,7 @@
     <data>
         <variable
             name="data"
-            type="com.guestlogix.takehome.models.Episode"/>
+            type="com.guestlogix.takehome.data.Episode"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

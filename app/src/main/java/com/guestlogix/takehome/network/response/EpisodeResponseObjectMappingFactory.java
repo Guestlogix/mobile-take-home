@@ -2,7 +2,7 @@ package com.guestlogix.takehome.network.response;
 
 import android.util.JsonReader;
 
-import com.guestlogix.takehome.models.Episode;
+import com.guestlogix.takehome.data.Episode;
 import com.guestlogix.takehome.models.EpisodeResponse;
 import com.guestlogix.takehome.models.ResultInfo;
 

@@ -8,15 +8,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.guestlogix.takehome.R;
-import com.guestlogix.takehome.utils.Optional;
-import com.guestlogix.takehome.binding.DataBindingComponentImpl;
 import com.guestlogix.takehome.databinding.FragmentCharactersDetailBinding;
 import com.guestlogix.takehome.network.imageloader.AssetManager;
+import com.guestlogix.takehome.utils.Optional;
 import com.guestlogix.takehome.viewmodels.CharacterDetailViewModel;
 import com.guestlogix.takehome.viewmodels.factory.CharacterDetailViewModelFactory;
 
@@ -25,13 +22,8 @@ public class CharacterDetailFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        FragmentCharactersDetailBinding binding = DataBindingUtil.inflate(
-            inflater,
-            R.layout.fragment_characters_detail,
-            container,
-            false,
-            new DataBindingComponentImpl()
-        );
+
+        FragmentCharactersDetailBinding binding = FragmentCharactersDetailBinding.inflate(LayoutInflater.from(requireContext()));
 
         CharacterDetailViewModelFactory factory = new CharacterDetailViewModelFactory(
             CharacterDetailFragmentArgs.fromBundle(getArguments()).getViewArgs()
