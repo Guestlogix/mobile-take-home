@@ -4,4 +4,6 @@
     <dimen name="episode_row_margin">16dp</dimen>
     <dimen name="episode_row_spacing">5dp</dimen>
 
+    <dimen name="detail_vertical_spacing">5dp</dimen>
+
 </resources>
