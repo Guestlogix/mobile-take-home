@@ -29,4 +29,14 @@ public class EpisodesListBindings {
             }
         });
     }
+
+    @BindingAdapter("android:loading")
+    public void setLoading(RecyclerView listView, LiveData<Boolean> loading) {
+        loading.observe(lifecycle, isLoading -> {
+            EpisodesListingFragment.EpisodesListAdapter adapter = (EpisodesListingFragment.EpisodesListAdapter) listView.getAdapter();
+            if (adapter != null) {
+                adapter.setNetworkState(isLoading);
+            }
+        });
+    }
 }

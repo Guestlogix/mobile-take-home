@@ -19,7 +19,6 @@ import com.guestlogix.takehome.binding.DataBindingComponentImpl;
 import com.guestlogix.takehome.data.Episode;
 import com.guestlogix.takehome.databinding.FragmentMainBinding;
 import com.guestlogix.takehome.databinding.ItemEpisodeRowBinding;
-import com.guestlogix.takehome.network.NetworkState;
 import com.guestlogix.takehome.viewmodels.EpisodesViewModel;
 import com.guestlogix.takehome.viewmodels.ViewModelFactory;
 import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
@@ -56,19 +55,13 @@ public class EpisodesListingFragment extends BaseFragment {
         return binding.getRoot();
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        mEpisodesViewModel.start();
-    }
-
     public class EpisodesListAdapter extends PagedListAdapter<Episode, RecyclerView.ViewHolder> {
 
         private static final int TYPE_PROGRESS = 0;
         private static final int TYPE_ITEM = 1;
 
         private Context context;
-        private NetworkState networkState;
+        private boolean isLoading;
 
         /*
          * The DiffUtil is defined in the constructor
@@ -104,7 +97,7 @@ public class EpisodesListingFragment extends BaseFragment {
             if(holder instanceof EpisodeItemViewHolder) {
                 ((EpisodeItemViewHolder)holder).bindTo(getItem(position));
             } else {
-                ((NetworkStateItemViewHolder) holder).bindView(networkState);
+                ((NetworkStateItemViewHolder) holder).bindView(isLoading);
             }
         }
 
@@ -120,23 +113,27 @@ public class EpisodesListingFragment extends BaseFragment {
             }
         }
 
-        private boolean hasExtraRow() {
-            return networkState != null && networkState != NetworkState.DONE;
+        @Override
+        public int getItemCount() {
+            return hasExtraRow() ? super.getItemCount() + 1 : super.getItemCount();
         }
 
-        void setNetworkState(NetworkState newNetworkState) {
-            NetworkState previousState = this.networkState;
+        private boolean hasExtraRow() {
+            return isLoading;
+        }
+
+        public void setNetworkState(boolean isLoading) {
+            boolean previousState = this.isLoading;
             boolean previousExtraRow = hasExtraRow();
-            this.networkState = newNetworkState;
+            this.isLoading = isLoading;
             boolean newExtraRow = hasExtraRow();
+
             if (previousExtraRow != newExtraRow) {
                 if (previousExtraRow) {
-                    notifyItemRemoved(getItemCount());
+                    notifyItemRemoved(getItemCount()-1);
                 } else {
-                    notifyItemInserted(getItemCount());
+                    notifyItemInserted(getItemCount()+1);
                 }
-            } else if (newExtraRow && previousState != newNetworkState) {
-                notifyItemChanged(getItemCount() - 1);
             }
         }
 

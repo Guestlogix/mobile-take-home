@@ -1,6 +1,7 @@
 package com.guestlogix.takehome.data.source;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.MutableLiveData;
 import androidx.paging.PageKeyedDataSource;
 
 import com.guestlogix.takehome.data.Episode;
@@ -21,18 +22,22 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, Episode> im
 
     private Set<Integer> cachedPages = new HashSet<>();
 
+    public MutableLiveData<Boolean> isLoading = new MutableLiveData<>(false);
+
     // Prevent direct instantiation.
-    private EpisodesRepository(@NonNull EpisodesDataSource tasksRemoteDataSource,
-                               @NonNull EpisodesDataSource tasksLocalDataSource) {
-        mEpisodesRemoteDataSource = checkNotNull(tasksRemoteDataSource);
-        mEpisodesLocalDataSource = checkNotNull(tasksLocalDataSource);
+    private EpisodesRepository(@NonNull EpisodesDataSource episodesRemoteDataSource,
+                               @NonNull EpisodesDataSource episodesLocalDataSource) {
+        mEpisodesRemoteDataSource = checkNotNull(episodesRemoteDataSource);
+        mEpisodesLocalDataSource = checkNotNull(episodesLocalDataSource);
     }
 
     @Override
     public void loadInitial(@NonNull LoadInitialParams<Integer> params, @NonNull LoadInitialCallback<Integer, Episode> callback) {
+        isLoading.postValue(true);
         getEpisodes(1, new LoadEpisodesCallback() {
             @Override
             public void onEpisodesLoaded(List<Episode> episodes) {
+                isLoading.postValue(false);
                 callback.onResult(episodes, null, 2);
             }
 
@@ -50,15 +55,17 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, Episode> im
 
     @Override
     public void loadAfter(@NonNull LoadParams<Integer> params, @NonNull LoadCallback<Integer, Episode> callback) {
-        getEpisodes(0, new LoadEpisodesCallback() {
+        isLoading.postValue(true);
+        getEpisodes(params.key, new LoadEpisodesCallback() {
             @Override
             public void onEpisodesLoaded(List<Episode> episodes) {
+                isLoading.postValue(false);
                 callback.onResult(episodes, episodes.isEmpty() ? params.key : params.key+1);
             }
 
             @Override
             public void onDataNotAvailable() {
-
+                isLoading.postValue(false);
             }
         });
     }
@@ -66,16 +73,16 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, Episode> im
     /**
      * Returns the single instance of this class, creating it if necessary.
      *
-     * @param tasksRemoteDataSource the backend data source
-     * @param tasksLocalDataSource  the device storage data source
+     * @param episodesRemoteDataSource the backend data source
+     * @param episodesLocalDataSource  the device storage data source
      * @return the {@link EpisodesRepository} instance
      */
-    public static EpisodesRepository getInstance(EpisodesDataSource tasksRemoteDataSource,
-                                                 EpisodesDataSource tasksLocalDataSource) {
+    public static EpisodesRepository getInstance(EpisodesDataSource episodesRemoteDataSource,
+                                                 EpisodesDataSource episodesLocalDataSource) {
         if (INSTANCE == null) {
             synchronized (EpisodesRepository.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = new EpisodesRepository(tasksRemoteDataSource, tasksLocalDataSource);
+                    INSTANCE = new EpisodesRepository(episodesRemoteDataSource, episodesLocalDataSource);
                 }
             }
         }
@@ -91,7 +98,7 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, Episode> im
     }
 
     /**
-     * Gets tasks from cache, local data source (SQLite) or remote data source, whichever is
+     * Gets episodes from cache, local data source (SQLite) or remote data source, whichever is
      * available first.
      * <p>
      * Note: {@link LoadEpisodesCallback#onDataNotAvailable()} is fired if all data sources fail to
@@ -109,7 +116,8 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, Episode> im
             mEpisodesLocalDataSource.getEpisodes(page, new LoadEpisodesCallback() {
                 @Override
                 public void onEpisodesLoaded(List<Episode> episodes) {
-                    cachedPages.add(page);
+                    if(!episodes.isEmpty())
+                        cachedPages.add(page);
                     callback.onEpisodesLoaded(episodes);
                 }
 
@@ -161,9 +169,9 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, Episode> im
         });
     }
 
-    private void refreshLocalDataSource(List<Episode> tasks) {
-        for (Episode task : tasks) {
-            mEpisodesLocalDataSource.saveEpisode(task);
+    private void refreshLocalDataSource(List<Episode> episodes) {
+        for (Episode episode : episodes) {
+            mEpisodesLocalDataSource.saveEpisode(episode);
         }
     }
 }
