@@ -7,7 +7,7 @@
         <import type="android.text.TextUtils" />
         <variable
             name="character"
-            type="com.guestlogix.takehome.models.Character" />
+            type="com.guestlogix.takehome.data.Character" />
     </data>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

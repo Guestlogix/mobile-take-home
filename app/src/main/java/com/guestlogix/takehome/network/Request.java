@@ -1,10 +1,11 @@
 package com.guestlogix.takehome.network;
 
+import android.text.TextUtils;
+
 import androidx.annotation.NonNull;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -35,7 +36,7 @@ public class Request {
 
         private Method method = null;
         private String apiPath = null;
-        private String[] pathParams;
+        private String pathParams;
         private Map<String, String> queryParams;
 
         public UrlRequestBuilder method(Method method){
@@ -48,7 +49,7 @@ public class Request {
             return this;
         }
 
-        public UrlRequestBuilder pathParams(String[] pathParams) {
+        public UrlRequestBuilder pathParams(String pathParams) {
             this.pathParams = pathParams;
             return this;
         }
@@ -64,9 +65,9 @@ public class Request {
             if(apiPath != null)
                 sb.append(apiPath);
 
-            if(pathParams != null && pathParams.length > 0) {
+            if(!TextUtils.isEmpty(pathParams)) {
                 sb.append("/");
-                sb.append(Arrays.toString(pathParams));
+                sb.append(pathParams);
             }
 
             if(queryParams != null && !queryParams.isEmpty()) {

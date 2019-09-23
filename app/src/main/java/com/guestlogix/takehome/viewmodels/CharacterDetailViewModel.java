@@ -3,7 +3,7 @@ package com.guestlogix.takehome.viewmodels;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.guestlogix.takehome.models.Character;
+import com.guestlogix.takehome.data.Character;
 
 public class CharacterDetailViewModel extends ViewModel {
 

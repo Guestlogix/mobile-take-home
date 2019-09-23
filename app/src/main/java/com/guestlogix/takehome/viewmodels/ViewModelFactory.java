@@ -1,19 +1,3 @@
-/*
- *  Copyright 2017 Google Inc.
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- */
-
 package com.guestlogix.takehome.viewmodels;
 
 import android.annotation.SuppressLint;
@@ -24,6 +8,7 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.guestlogix.takehome.Injection;
+import com.guestlogix.takehome.data.source.CharactersRepository;
 import com.guestlogix.takehome.data.source.EpisodesRepository;
 
 /**
@@ -40,6 +25,7 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     private final Application mApplication;
 
     private final EpisodesRepository mEpisodesRepository;
+    private final CharactersRepository mCharactersRepository;
 
     public static ViewModelFactory getInstance(Application application) {
 
@@ -47,7 +33,9 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
             synchronized (ViewModelFactory.class) {
                 if (INSTANCE == null) {
                     INSTANCE = new ViewModelFactory(application,
-                            Injection.provideTasksRepository(application.getApplicationContext()));
+                            Injection.provideEpisodesRepository(application.getApplicationContext()),
+                            Injection.provideCharactersRepository(application.getApplicationContext())
+                        );
                 }
             }
         }
@@ -59,26 +47,24 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
         INSTANCE = null;
     }
 
-    private ViewModelFactory(Application application, EpisodesRepository repository) {
+    private ViewModelFactory(
+        Application application,
+        EpisodesRepository episodeRepository,
+        CharactersRepository charactersRepository
+    ) {
         mApplication = application;
-        mEpisodesRepository = repository;
+        mEpisodesRepository = episodeRepository;
+        mCharactersRepository = charactersRepository;
     }
 
     @Override
     public <T extends ViewModel> T create(Class<T> modelClass) {
-//        if (modelClass.isAssignableFrom(StatisticsViewModel.class)) {
-//            //noinspection unchecked
-//            return (T) new StatisticsViewModel(mApplication, mTasksRepository);
-//        } else if (modelClass.isAssignableFrom(TaskDetailViewModel.class)) {
-//            //noinspection unchecked
-//            return (T) new TaskDetailViewModel(mApplication, mTasksRepository);
-//        } else if (modelClass.isAssignableFrom(AddEditTaskViewModel.class)) {
-//            //noinspection unchecked
-//            return (T) new AddEditTaskViewModel(mApplication, mTasksRepository);
-//        } else
-        if (modelClass.isAssignableFrom(EpisodesViewModel.class)) {
+        if (modelClass.isAssignableFrom(CharactersListViewModel.class)) {
             //noinspection unchecked
-            return (T) new EpisodesViewModel(mApplication, mEpisodesRepository);
+            return (T) new CharactersListViewModel(mApplication, mCharactersRepository);
+        } else if (modelClass.isAssignableFrom(EpisodesListViewModel.class)) {
+            //noinspection unchecked
+            return (T) new EpisodesListViewModel(mApplication, mEpisodesRepository);
         }
         throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
     }

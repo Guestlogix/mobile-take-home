@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.guestlogix.takehome.models.Character;
+import com.guestlogix.takehome.data.Character;
 import com.guestlogix.takehome.viewmodels.CharacterDetailViewModel;
 
 public class CharacterDetailViewModelFactory implements ViewModelProvider.Factory {

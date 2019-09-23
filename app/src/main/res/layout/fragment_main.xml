@@ -2,10 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <import type="android.view.View" />
         <variable
             name="viewmodel"
-            type="com.guestlogix.takehome.viewmodels.EpisodesViewModel" />
+            type="com.guestlogix.takehome.viewmodels.EpisodesListViewModel" />
     </data>
 
     <androidx.recyclerview.widget.RecyclerView

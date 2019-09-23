@@ -19,19 +19,17 @@ import com.guestlogix.takehome.binding.DataBindingComponentImpl;
 import com.guestlogix.takehome.data.Episode;
 import com.guestlogix.takehome.databinding.FragmentMainBinding;
 import com.guestlogix.takehome.databinding.ItemEpisodeRowBinding;
-import com.guestlogix.takehome.viewmodels.EpisodesViewModel;
+import com.guestlogix.takehome.viewmodels.EpisodesListViewModel;
 import com.guestlogix.takehome.viewmodels.ViewModelFactory;
 import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
 
 public class EpisodesListingFragment extends BaseFragment {
 
-    private EpisodesViewModel mEpisodesViewModel;
-
     public EpisodesListingFragment() {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         FragmentMainBinding binding = DataBindingUtil.inflate(
             inflater,
@@ -44,7 +42,7 @@ public class EpisodesListingFragment extends BaseFragment {
         // Use a Factory to inject dependencies into the ViewModel
         ViewModelFactory factory = ViewModelFactory.getInstance(requireActivity().getApplication());
 
-        mEpisodesViewModel = ViewModelProviders.of(requireActivity(), factory).get(EpisodesViewModel.class);
+        EpisodesListViewModel mEpisodesViewModel = ViewModelProviders.of(requireActivity(), factory).get(EpisodesListViewModel.class);
 
         binding.setViewmodel(mEpisodesViewModel);
 
@@ -123,7 +121,6 @@ public class EpisodesListingFragment extends BaseFragment {
         }
 
         public void setNetworkState(boolean isLoading) {
-            boolean previousState = this.isLoading;
             boolean previousExtraRow = hasExtraRow();
             this.isLoading = isLoading;
             boolean newExtraRow = hasExtraRow();
@@ -151,7 +148,7 @@ public class EpisodesListingFragment extends BaseFragment {
                 binding.getRoot().setOnClickListener(v ->
                     findNavController().ifPresent(navController ->
                         navController.navigate(
-                            EpisodesListingFragmentDirections.actionEpisodesListingFragmentToCharactersListFragment(episode.getCharacterIds())
+                            EpisodesListingFragmentDirections.actionEpisodesListingFragmentToCharactersListFragment(episode.getCharacters())
                         )
                     )
                 );

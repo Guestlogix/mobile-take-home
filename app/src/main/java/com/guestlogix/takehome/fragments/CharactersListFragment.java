@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,13 +16,13 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.guestlogix.takehome.R;
-import com.guestlogix.takehome.utils.Optional;
+import com.guestlogix.takehome.binding.DataBindingComponentImpl;
+import com.guestlogix.takehome.data.Character;
+import com.guestlogix.takehome.databinding.FragmentCharactersListBinding;
 import com.guestlogix.takehome.databinding.ItemCharactersRowBinding;
-import com.guestlogix.takehome.models.Character;
-import com.guestlogix.takehome.network.NetworkState;
 import com.guestlogix.takehome.network.imageloader.AssetManager;
 import com.guestlogix.takehome.viewmodels.CharactersListViewModel;
-import com.guestlogix.takehome.viewmodels.factory.CharactersListViewModelFactory;
+import com.guestlogix.takehome.viewmodels.ViewModelFactory;
 import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
 
 public class CharactersListFragment extends BaseFragment {
@@ -29,32 +30,25 @@ public class CharactersListFragment extends BaseFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        RecyclerView rvCharacters = (RecyclerView) inflater.inflate(R.layout.fragment_characters_list, container, false);
-
-        Optional.ofNullable(getContext()).ifPresent(context -> {
-            rvCharacters.setLayoutManager(new LinearLayoutManager(getContext()));
-            rvCharacters.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
-            rvCharacters.setAdapter(new CharactersListAdapter(context));
-        });
-
-        CharactersListViewModelFactory factory = new CharactersListViewModelFactory(
-            CharactersListFragmentArgs.fromBundle(getArguments()).getViewArgs()
-        );
-        CharactersListViewModel viewModel = ViewModelProviders.of(this, factory).get(CharactersListViewModel.class);
-
-        viewModel.getCharacters().observe(this, characters ->
-            Optional.ofNullable(rvCharacters.getAdapter())
-                .map(adapter -> (CharactersListAdapter) adapter)
-                .ifPresent(adapter -> adapter.submitList(characters))
+        FragmentCharactersListBinding binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_characters_list,
+            container,
+            false,
+            new DataBindingComponentImpl(getViewLifecycleOwner())
         );
 
-        viewModel.getNetworkState().observe(this, networkState ->
-            Optional.ofNullable(rvCharacters.getAdapter())
-                .map(adapter -> (CharactersListAdapter) adapter)
-                .ifPresent(adapter -> adapter.setNetworkState(networkState))
-        );
+        binding.rvCharacters.setLayoutManager(new LinearLayoutManager(requireContext()));
+        binding.rvCharacters.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
+        binding.rvCharacters.setAdapter(new CharactersListAdapter(requireContext()));
 
-        return rvCharacters;
+        ViewModelFactory factory = ViewModelFactory.getInstance(requireActivity().getApplication());
+        CharactersListViewModel charactersViewModel = ViewModelProviders.of(requireActivity(), factory).get(CharactersListViewModel.class);
+        binding.setViewmodel(charactersViewModel);
+
+        charactersViewModel.loadCharacters(CharactersListFragmentArgs.fromBundle(getArguments()).getViewArgs());
+
+        return binding.getRoot();
     }
 
     public class CharactersListAdapter extends ListAdapter<Character, RecyclerView.ViewHolder> {
@@ -63,7 +57,7 @@ public class CharactersListFragment extends BaseFragment {
         private static final int TYPE_ITEM = 1;
 
         private Context context;
-        private NetworkState networkState;
+        private boolean isLoading;
 
         /*
          * The DiffUtil is defined in the constructor
@@ -117,23 +111,26 @@ public class CharactersListFragment extends BaseFragment {
             }
         }
 
-        private boolean hasExtraRow() {
-            return networkState != null && networkState != NetworkState.DONE;
+        @Override
+        public int getItemCount() {
+            return hasExtraRow() ? super.getItemCount() + 1 : super.getItemCount();
         }
 
-        void setNetworkState(NetworkState newNetworkState) {
-            NetworkState previousState = this.networkState;
+        private boolean hasExtraRow() {
+            return isLoading;
+        }
+
+        public void setNetworkState(boolean isLoading) {
             boolean previousExtraRow = hasExtraRow();
-            this.networkState = newNetworkState;
+            this.isLoading = isLoading;
             boolean newExtraRow = hasExtraRow();
+
             if (previousExtraRow != newExtraRow) {
                 if (previousExtraRow) {
-                    notifyItemRemoved(getItemCount());
+                    notifyItemRemoved(getItemCount()-1);
                 } else {
-                    notifyItemInserted(getItemCount());
+                    notifyItemInserted(getItemCount()+1);
                 }
-            } else if (newExtraRow && previousState != newNetworkState) {
-                notifyItemChanged(getItemCount() - 1);
             }
         }
 

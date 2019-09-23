@@ -2,7 +2,7 @@ package com.guestlogix.takehome.network.response;
 
 import android.util.JsonReader;
 
-import com.guestlogix.takehome.models.Character;
+import com.guestlogix.takehome.data.Character;
 
 public class CharacterObjectMappingFactory implements ObjectFactory<Character> {
 

@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.guestlogix.takehome.viewmodels.CharactersListViewModel" />
+    </data>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCharacters"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:data="@{viewmodel.characters}"
+        android:loading="@{viewmodel.isLoading}"/>
+</layout>

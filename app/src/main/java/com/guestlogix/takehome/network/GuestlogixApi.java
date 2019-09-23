@@ -3,7 +3,7 @@ package com.guestlogix.takehome.network;
 import android.content.Context;
 import android.net.ConnectivityManager;
 
-import com.guestlogix.takehome.models.Character;
+import com.guestlogix.takehome.data.Character;
 import com.guestlogix.takehome.models.EpisodeResponse;
 import com.guestlogix.takehome.network.response.CharacterObjectMappingFactory;
 import com.guestlogix.takehome.network.response.EpisodeResponseObjectMappingFactory;
@@ -52,7 +52,7 @@ public class GuestlogixApi {
         ).execute(req.build());
     }
 
-    public void getCharactersList(String[] ids, ResponseListener<List<Character>> listener) {
+    public void getCharactersList(String ids, ResponseListener<List<Character>> listener) {
         Request.UrlRequestBuilder req = new Request.UrlRequestBuilder()
             .method(Method.GET)
             .apiPath(CHARACTERS_LIST);

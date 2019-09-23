@@ -11,7 +11,7 @@ public class DataBindingComponentImpl implements DataBindingComponent {
         this.lifecycleOwner = lifecycleOwner;
     }
 
-    public EpisodesListBindings getEpisodesListBindings() {
-        return new EpisodesListBindings(lifecycleOwner);
+    public RecyclerViewBindings getRecyclerViewBindings() {
+        return new RecyclerViewBindings(lifecycleOwner);
     }
 }

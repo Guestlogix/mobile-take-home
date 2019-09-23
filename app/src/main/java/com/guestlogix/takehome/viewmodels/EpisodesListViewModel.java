@@ -20,12 +20,12 @@ import com.guestlogix.takehome.data.source.EpisodesRepository;
  * property changes. This is done by assigning a {@link Bindable} annotation to the property's
  * getter method.
  */
-public class EpisodesViewModel extends AndroidViewModel {
+public class EpisodesListViewModel extends AndroidViewModel {
 
     public LiveData<PagedList<Episode>> episodes;
     public LiveData<Boolean> isLoading;
 
-    public EpisodesViewModel(Application context, EpisodesRepository repository) {
+    EpisodesListViewModel(Application context, EpisodesRepository repository) {
 
         super(context);
 
