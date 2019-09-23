@@ -171,34 +171,4 @@ public final class Character implements Parcelable{
     public String getCreated() {
         return created;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this)
-            return true;
-
-        Character article = (Character) obj;
-        return article.id.equals(this.id) &&
-            article.name.equals(this.name) &&
-            article.status.equals(this.status) &&
-            article.species.equals(this.species) &&
-            article.type.equals(this.type) &&
-            article.gender.equals(this.gender) &&
-            article.origin.equals(this.origin) &&
-            article.location.equals(this.location) &&
-            article.image.equals(this.image) &&
-            article.created.equals(this.created);
-    }
-
-    public static DiffUtil.ItemCallback<Character> DIFF_CALLBACK = new DiffUtil.ItemCallback<Character>() {
-        @Override
-        public boolean areItemsTheSame(@NonNull Character oldItem, @NonNull Character newItem) {
-            return oldItem.id.equals(newItem.id);
-        }
-
-        @Override
-        public boolean areContentsTheSame(@NonNull Character oldItem, @NonNull Character newItem) {
-            return oldItem.equals(newItem);
-        }
-    };
 }

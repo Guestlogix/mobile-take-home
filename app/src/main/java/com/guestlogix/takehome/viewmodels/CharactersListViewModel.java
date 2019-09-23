@@ -9,15 +9,17 @@ import androidx.lifecycle.MutableLiveData;
 import com.guestlogix.takehome.data.Character;
 import com.guestlogix.takehome.data.source.CharactersDataSource;
 import com.guestlogix.takehome.data.source.CharactersRepository;
+import com.guestlogix.takehome.models.CharacterRowStub;
 import com.guestlogix.takehome.utils.DateUtils;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
 public class CharactersListViewModel extends AndroidViewModel {
 
-    public MutableLiveData<List<Character>> characters = new MutableLiveData<>(Collections.emptyList());
+    public MutableLiveData<List<CharacterRowStub>> characters = new MutableLiveData<>(Collections.emptyList());
     public LiveData<Boolean> isLoading;
 
     private CharactersRepository mRepository;
@@ -45,7 +47,19 @@ public class CharactersListViewModel extends AndroidViewModel {
                         return d1.compareTo(d2);
                 });
 
-                characters.postValue(response);
+                List<CharacterRowStub> stubs = new ArrayList<>();
+
+                for (Character c : response) {
+                    stubs.add(new CharacterRowStub(
+                        c.getName(),
+                        DateUtils.getFormattedDate(c.getCreated()),
+                        c.getStatus(),
+                        c.getImage(),
+                        c
+                    ));
+                }
+
+                characters.postValue(stubs);
             }
 
             @Override

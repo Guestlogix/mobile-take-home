@@ -5,14 +5,17 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.paging.PageKeyedDataSource;
 
 import com.guestlogix.takehome.data.Episode;
+import com.guestlogix.takehome.models.EpisodeRowStub;
+import com.guestlogix.takehome.utils.DateUtils;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import static androidx.core.util.Preconditions.checkNotNull;
 
-public class EpisodesRepository extends PageKeyedDataSource<Integer, Episode> implements EpisodesDataSource {
+public class EpisodesRepository extends PageKeyedDataSource<Integer, EpisodeRowStub> implements EpisodesDataSource {
 
     private volatile static EpisodesRepository INSTANCE = null;
 
@@ -32,13 +35,14 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, Episode> im
     }
 
     @Override
-    public void loadInitial(@NonNull LoadInitialParams<Integer> params, @NonNull LoadInitialCallback<Integer, Episode> callback) {
+    public void loadInitial(@NonNull LoadInitialParams<Integer> params, @NonNull LoadInitialCallback<Integer, EpisodeRowStub> callback) {
         isLoading.postValue(true);
         getEpisodes(1, new LoadEpisodesCallback() {
             @Override
             public void onEpisodesLoaded(List<Episode> episodes) {
                 isLoading.postValue(false);
-                callback.onResult(episodes, null, 2);
+
+                callback.onResult(getRowResult(episodes), null, 2);
             }
 
             @Override
@@ -48,19 +52,32 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, Episode> im
         });
     }
 
+    private List<EpisodeRowStub> getRowResult(List<Episode> episodes) {
+        List<EpisodeRowStub> result = new ArrayList<>();
+        for(Episode episode: episodes) {
+            result.add(new EpisodeRowStub(
+                episode.getName(),
+                episode.getEpisode(),
+                DateUtils.getFormattedDate(episode.getCreated()),
+                episode
+            ));
+        }
+        return result;
+    }
+
     @Override
-    public void loadBefore(@NonNull LoadParams<Integer> params, @NonNull LoadCallback<Integer, Episode> callback) {
+    public void loadBefore(@NonNull LoadParams<Integer> params, @NonNull LoadCallback<Integer, EpisodeRowStub> callback) {
 
     }
 
     @Override
-    public void loadAfter(@NonNull LoadParams<Integer> params, @NonNull LoadCallback<Integer, Episode> callback) {
+    public void loadAfter(@NonNull LoadParams<Integer> params, @NonNull LoadCallback<Integer, EpisodeRowStub> callback) {
         isLoading.postValue(true);
         getEpisodes(params.key, new LoadEpisodesCallback() {
             @Override
             public void onEpisodesLoaded(List<Episode> episodes) {
                 isLoading.postValue(false);
-                callback.onResult(episodes, episodes.isEmpty() ? params.key : params.key+1);
+                callback.onResult(getRowResult(episodes), episodes.isEmpty() ? params.key : params.key+1);
             }
 
             @Override

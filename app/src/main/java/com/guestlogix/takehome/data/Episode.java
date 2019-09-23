@@ -91,25 +91,4 @@ public final class Episode {
     public String[] getCharacterIds() {
         return characters.split(",");
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this)
-            return true;
-
-        Episode article = (Episode) obj;
-        return article.id.equals(this.id);
-    }
-
-    public static DiffUtil.ItemCallback<Episode> DIFF_CALLBACK = new DiffUtil.ItemCallback<Episode>() {
-        @Override
-        public boolean areItemsTheSame(@NonNull Episode oldItem, @NonNull Episode newItem) {
-            return oldItem.id.equals(newItem.id);
-        }
-
-        @Override
-        public boolean areContentsTheSame(@NonNull Episode oldItem, @NonNull Episode newItem) {
-            return oldItem.equals(newItem);
-        }
-    };
 }

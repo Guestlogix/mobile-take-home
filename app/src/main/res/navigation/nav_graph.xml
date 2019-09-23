@@ -9,7 +9,7 @@
         android:id="@+id/episodesListingFragment"
         android:name="com.guestlogix.takehome.fragments.EpisodesListingFragment"
         android:label="Episodes"
-        tools:layout="@layout/fragment_main">
+        tools:layout="@layout/fragment_episode_listing">
         <action
             android:id="@+id/action_episodesListingFragment_to_charactersListFragment"
             app:destination="@id/charactersListFragment"

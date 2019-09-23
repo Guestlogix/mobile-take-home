@@ -12,6 +12,7 @@ import androidx.paging.PagedList;
 import com.guestlogix.takehome.data.Episode;
 import com.guestlogix.takehome.data.factory.EpisodesDataFactory;
 import com.guestlogix.takehome.data.source.EpisodesRepository;
+import com.guestlogix.takehome.models.EpisodeRowStub;
 
 /**
  * Exposes the data to be used in the episode list screen.
@@ -22,7 +23,7 @@ import com.guestlogix.takehome.data.source.EpisodesRepository;
  */
 public class EpisodesListViewModel extends AndroidViewModel {
 
-    public LiveData<PagedList<Episode>> episodes;
+    public LiveData<PagedList<EpisodeRowStub>> episodes;
     public LiveData<Boolean> isLoading;
 
     EpisodesListViewModel(Application context, EpisodesRepository repository) {
@@ -37,7 +38,7 @@ public class EpisodesListViewModel extends AndroidViewModel {
                 .setInitialLoadSizeHint(20)
                 .setPageSize(20).build();
 
-        episodes = new LivePagedListBuilder<Integer, Episode>(new EpisodesDataFactory(repository), pagedListConfig).build();
+        episodes = new LivePagedListBuilder<Integer, EpisodeRowStub>(new EpisodesDataFactory(repository), pagedListConfig).build();
         isLoading = repository.isLoading;
     }
 

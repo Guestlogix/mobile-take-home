@@ -6,7 +6,7 @@
     <data>
         <variable
             name="data"
-            type="com.guestlogix.takehome.data.Character"/>
+            type="com.guestlogix.takehome.models.CharacterRowStub"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,15 +19,17 @@
             android:layout_width="75dp"
             android:layout_height="75dp"
             app:srcCompat="@drawable/place_holder"
+            android:url="@{data.image}"
             app:layout_constraintTop_toBottomOf="@id/guidelineTop"
             app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
             app:layout_constraintStart_toStartOf="@id/guidelineStart" />
 
         <TextView
-            android:id="@+id/tvEpisode"
+            style="@style/H2.Black.Bold"
+            android:id="@+id/tvName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{data.getName()}"
+            android:text="@{data.name}"
             tools:text="S02E10"
             android:layout_marginEnd="@dimen/episode_row_spacing"
             android:layout_marginStart="@dimen/episode_row_spacing"
@@ -36,25 +38,25 @@
             app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
 
         <TextView
+            style="@style/H3.Black"
             android:id="@+id/tvCreated"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{data.getCreated()}"
-            tools:text="2017-11-10T12:56:35.875Z"
+            android:text="@{data.created}"
             app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
             app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
 
         <TextView
-            android:id="@+id/tvName"
-            tools:text="The Wedding Squanchers"
+            style="@style/H2.Black.Bold"
+            android:id="@+id/tvStatus"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{data.getImage()}"
+            android:text="@{data.status}"
             android:layout_marginTop="@dimen/episode_row_spacing"
             android:layout_marginStart="@dimen/episode_row_spacing"
             app:layout_constraintStart_toEndOf="@id/ivCharacter"
             app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
-            app:layout_constraintTop_toBottomOf="@id/tvEpisode"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
             app:layout_constraintBottom_toTopOf="@id/guidelineBottom"/>
 
         <androidx.constraintlayout.widget.Guideline

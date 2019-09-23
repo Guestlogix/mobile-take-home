@@ -17,10 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.guestlogix.takehome.R;
 import com.guestlogix.takehome.binding.DataBindingComponentImpl;
-import com.guestlogix.takehome.data.Character;
 import com.guestlogix.takehome.databinding.FragmentCharactersListBinding;
 import com.guestlogix.takehome.databinding.ItemCharactersRowBinding;
-import com.guestlogix.takehome.network.imageloader.AssetManager;
+import com.guestlogix.takehome.models.CharacterRowStub;
 import com.guestlogix.takehome.viewmodels.CharactersListViewModel;
 import com.guestlogix.takehome.viewmodels.ViewModelFactory;
 import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
@@ -51,7 +50,7 @@ public class CharactersListFragment extends BaseFragment {
         return binding.getRoot();
     }
 
-    public class CharactersListAdapter extends ListAdapter<Character, RecyclerView.ViewHolder> {
+    public class CharactersListAdapter extends ListAdapter<CharacterRowStub, RecyclerView.ViewHolder> {
 
         private static final int TYPE_PROGRESS = 0;
         private static final int TYPE_ITEM = 1;
@@ -63,7 +62,7 @@ public class CharactersListFragment extends BaseFragment {
          * The DiffUtil is defined in the constructor
          */
         CharactersListAdapter(Context context) {
-            super(Character.DIFF_CALLBACK);
+            super(CharacterRowStub.DIFF_CALLBACK);
             this.context = context;
         }
 
@@ -81,7 +80,13 @@ public class CharactersListFragment extends BaseFragment {
 
             } else {
                 return new CharacterItemViewHolder(
-                    ItemCharactersRowBinding.inflate(LayoutInflater.from(context), parent, false)
+                    DataBindingUtil.inflate(
+                        LayoutInflater.from(context),
+                        R.layout.item_characters_row,
+                        parent,
+                        false,
+                        new DataBindingComponentImpl(getViewLifecycleOwner())
+                    )
                 );
             }
         }
@@ -143,13 +148,12 @@ public class CharactersListFragment extends BaseFragment {
                 this.binding = binding;
             }
 
-            void bindTo(Character character) {
+            void bindTo(CharacterRowStub character) {
                 binding.setData(character);
-                AssetManager.getInstance().loadImage(character.getImage(), binding.ivCharacter);
                 binding.getRoot().setOnClickListener(v ->
                     findNavController().ifPresent(navController ->
                         navController.navigate(
-                            CharactersListFragmentDirections.actionCharactersListFragmentToCharacterDetailFragment(character)
+                            CharactersListFragmentDirections.actionCharactersListFragmentToCharacterDetailFragment(character.getReference())
                         )
                     )
                 );

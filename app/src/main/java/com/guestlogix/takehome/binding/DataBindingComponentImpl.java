@@ -14,4 +14,8 @@ public class DataBindingComponentImpl implements DataBindingComponent {
     public RecyclerViewBindings getRecyclerViewBindings() {
         return new RecyclerViewBindings(lifecycleOwner);
     }
+
+    public ImageViewBindings getImageViewBindings() {
+        return new ImageViewBindings();
+    }
 }

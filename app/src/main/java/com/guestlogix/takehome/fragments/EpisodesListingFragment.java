@@ -16,9 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.guestlogix.takehome.R;
 import com.guestlogix.takehome.binding.DataBindingComponentImpl;
-import com.guestlogix.takehome.data.Episode;
-import com.guestlogix.takehome.databinding.FragmentMainBinding;
+import com.guestlogix.takehome.databinding.FragmentEpisodeListingBinding;
 import com.guestlogix.takehome.databinding.ItemEpisodeRowBinding;
+import com.guestlogix.takehome.models.EpisodeRowStub;
 import com.guestlogix.takehome.viewmodels.EpisodesListViewModel;
 import com.guestlogix.takehome.viewmodels.ViewModelFactory;
 import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
@@ -31,9 +31,9 @@ public class EpisodesListingFragment extends BaseFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        FragmentMainBinding binding = DataBindingUtil.inflate(
+        FragmentEpisodeListingBinding binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_main,
+            R.layout.fragment_episode_listing,
             container,
             false,
             new DataBindingComponentImpl(getViewLifecycleOwner())
@@ -53,7 +53,7 @@ public class EpisodesListingFragment extends BaseFragment {
         return binding.getRoot();
     }
 
-    public class EpisodesListAdapter extends PagedListAdapter<Episode, RecyclerView.ViewHolder> {
+    public class EpisodesListAdapter extends PagedListAdapter<EpisodeRowStub, RecyclerView.ViewHolder> {
 
         private static final int TYPE_PROGRESS = 0;
         private static final int TYPE_ITEM = 1;
@@ -65,7 +65,7 @@ public class EpisodesListingFragment extends BaseFragment {
          * The DiffUtil is defined in the constructor
          */
         EpisodesListAdapter(Context context) {
-            super(Episode.DIFF_CALLBACK);
+            super(EpisodeRowStub.DIFF_CALLBACK);
             this.context = context;
         }
 
@@ -142,13 +142,15 @@ public class EpisodesListingFragment extends BaseFragment {
                 this.binding = binding;
             }
 
-            void bindTo(Episode episode) {
+            void bindTo(EpisodeRowStub episode) {
                 binding.setData(episode);
 
                 binding.getRoot().setOnClickListener(v ->
                     findNavController().ifPresent(navController ->
                         navController.navigate(
-                            EpisodesListingFragmentDirections.actionEpisodesListingFragmentToCharactersListFragment(episode.getCharacters())
+                            EpisodesListingFragmentDirections.actionEpisodesListingFragmentToCharactersListFragment(
+                                episode.getReference().getCharacters()
+                            )
                         )
                     )
                 );
