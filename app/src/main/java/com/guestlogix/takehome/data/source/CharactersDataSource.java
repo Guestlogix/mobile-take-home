@@ -8,14 +8,14 @@ import java.util.List;
 
 public interface CharactersDataSource {
 
-    public interface LoadCharactersCallback {
+    interface LoadCharactersCallback {
 
         void onCharactersLoaded(List<Character> characters);
 
         void onDataNotAvailable();
     }
 
-    public interface GetCharacterCallback {
+    interface GetCharacterCallback {
 
         void onCharacterLoaded(Character episode);
 
@@ -32,5 +32,5 @@ public interface CharactersDataSource {
 
     void killCharacter(String id);
 
-    void getCharacter(@NonNull String taskId, @NonNull GetCharacterCallback callback);
+    void getCharacter(@NonNull String id, @NonNull GetCharacterCallback callback);
 }

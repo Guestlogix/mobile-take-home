@@ -24,17 +24,17 @@ public class CharactersLocalDataSource implements CharactersDataSource {
 
     // Prevent direct instantiation.
     private CharactersLocalDataSource(@NonNull AppExecutors appExecutors,
-                                      @NonNull CharactersDao tasksDao) {
+                                      @NonNull CharactersDao charactersDao) {
         mAppExecutors = appExecutors;
-        mCharactersDao = tasksDao;
+        mCharactersDao = charactersDao;
     }
 
     public static CharactersLocalDataSource getInstance(@NonNull AppExecutors appExecutors,
-                                                        @NonNull CharactersDao tasksDao) {
+                                                        @NonNull CharactersDao charactersDao) {
         if (INSTANCE == null) {
             synchronized (CharactersLocalDataSource.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = new CharactersLocalDataSource(appExecutors, tasksDao);
+                    INSTANCE = new CharactersLocalDataSource(appExecutors, charactersDao);
                 }
             }
         }
@@ -64,16 +64,15 @@ public class CharactersLocalDataSource implements CharactersDataSource {
 
 
     @Override
-    public void saveCharacter(@NonNull final Character task) {
-        checkNotNull(task);
-        Runnable saveRunnable = () -> mCharactersDao.insertCharacter(task);
+    public void saveCharacter(@NonNull final Character character) {
+        checkNotNull(character);
+        Runnable saveRunnable = () -> mCharactersDao.insertCharacter(character);
         mAppExecutors.diskIO().execute(saveRunnable);
     }
 
     @Override
     public void refreshCharacters() {
-        // Not required because the {@link CharactersRepository} handles the logic of refreshing the
-        // tasks from all the available data sources.
+        // Not required
     }
 
     @Override

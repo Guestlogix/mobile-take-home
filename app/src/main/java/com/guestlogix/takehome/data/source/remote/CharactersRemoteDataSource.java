@@ -52,7 +52,6 @@ public class CharactersRemoteDataSource implements CharactersDataSource {
     @Override
     public void refreshCharacters() {
         // Not required because the {@link CharactersRepository} handles the logic of refreshing the
-        // tasks from all the available data sources.
     }
 
     @Override
@@ -66,7 +65,7 @@ public class CharactersRemoteDataSource implements CharactersDataSource {
     }
 
     @Override
-    public void getCharacter(@NonNull String taskId, @NonNull GetCharacterCallback callback) {
+    public void getCharacter(@NonNull String Id, @NonNull GetCharacterCallback callback) {
 //        Not Required
     }
 }

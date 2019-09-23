@@ -44,14 +44,13 @@ public class EpisodesRemoteDataSource implements EpisodesDataSource {
     }
 
     @Override
-    public void saveEpisode(@NonNull Episode task) {
+    public void saveEpisode(@NonNull Episode episode) {
 //        Not Required
     }
 
     @Override
     public void refreshEpisodes() {
-        // Not required because the {@link EpisodesRepository} handles the logic of refreshing the
-        // tasks from all the available data sources.
+        // Not required
     }
 
     @Override

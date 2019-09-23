@@ -11,29 +11,29 @@ import java.util.List;
 
 
 /**
- * Data Access Object for the tasks table.
+ * Data Access Object for the Episodes table.
  */
 @Dao
 public interface EpisodesDao {
 
     /**
-     * Select all tasks from the tasks table.
+     * Select all Episodes from the Episodes table.
      *
-     * @return all tasks.
+     * @return all Episodes.
      */
     @Query("SELECT * FROM Episodes")
     List<Episode> getEpisodes();
 
     /**
-     * Insert a task in the database. If the task already exists, replace it.
+     * Insert a Episode in the database. If the Episode already exists, replace it.
      *
-     * @param episode the task to be inserted.
+     * @param episode the Episode to be inserted.
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertEpisode(Episode episode);
 
     /**
-     * Delete all tasks.
+     * Delete all Episodes.
      */
     @Query("DELETE FROM Episodes")
     void deleteEpisodes();

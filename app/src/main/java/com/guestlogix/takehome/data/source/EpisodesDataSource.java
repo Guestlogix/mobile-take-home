@@ -8,14 +8,14 @@ import java.util.List;
 
 public interface EpisodesDataSource {
 
-    public interface LoadEpisodesCallback {
+    interface LoadEpisodesCallback {
 
         void onEpisodesLoaded(List<Episode> episodes);
 
         void onDataNotAvailable();
     }
 
-    public interface GetEpisodeCallback {
+    interface GetEpisodeCallback {
 
         void onEpisodeLoaded(Episode episode);
 

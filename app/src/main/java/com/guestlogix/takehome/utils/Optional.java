@@ -35,7 +35,7 @@ public class Optional<T> {
      * @see #of(java.lang.Object)
      */
     public static <T> Optional<T> ofNullable(T value) {
-        return value == null ? Optional.<T>empty() : of(value);
+        return value == null ? Optional.empty() : of(value);
     }
 
     /**

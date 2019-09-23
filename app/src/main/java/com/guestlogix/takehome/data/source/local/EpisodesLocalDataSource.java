@@ -24,17 +24,17 @@ public class EpisodesLocalDataSource implements EpisodesDataSource {
 
     // Prevent direct instantiation.
     private EpisodesLocalDataSource(@NonNull AppExecutors appExecutors,
-            @NonNull EpisodesDao tasksDao) {
+            @NonNull EpisodesDao episodesDao) {
         mAppExecutors = appExecutors;
-        mEpisodesDao = tasksDao;
+        mEpisodesDao = episodesDao;
     }
 
     public static EpisodesLocalDataSource getInstance(@NonNull AppExecutors appExecutors,
-            @NonNull EpisodesDao tasksDao) {
+            @NonNull EpisodesDao episodesDao) {
         if (INSTANCE == null) {
             synchronized (EpisodesLocalDataSource.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = new EpisodesLocalDataSource(appExecutors, tasksDao);
+                    INSTANCE = new EpisodesLocalDataSource(appExecutors, episodesDao);
                 }
             }
         }
@@ -64,17 +64,16 @@ public class EpisodesLocalDataSource implements EpisodesDataSource {
 
 
     @Override
-    public void saveEpisode(@NonNull final Episode task) {
-        checkNotNull(task);
-        Runnable saveRunnable = () -> mEpisodesDao.insertEpisode(task);
+    public void saveEpisode(@NonNull final Episode episode) {
+        checkNotNull(episode);
+        Runnable saveRunnable = () -> mEpisodesDao.insertEpisode(episode);
         mAppExecutors.diskIO().execute(saveRunnable);
     }
 
     @Override
     public void refreshEpisodes() {
-        // Not required because the {@link EpisodesRepository} handles the logic of refreshing the
-        // tasks from all the available data sources.
-    }
+        // Not required
+     }
 
     @Override
     public void deleteAllEpisodes() {

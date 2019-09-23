@@ -10,7 +10,7 @@ import com.guestlogix.takehome.data.Character;
 import com.guestlogix.takehome.data.Episode;
 
 /**
- * The Room Database that contains the Task table.
+ * The Room Database that contains the Episode and Character table.
  */
 @Database(entities = {Episode.class, Character.class}, version = 1)
 public abstract class GuestlogixDatabase extends RoomDatabase {
