@@ -8,4 +8,6 @@
     <string name="species">Species :</string>
     <string name="status">Status :</string>
     <string name="type">Type :</string>
+
+    <string name="kill_button">Kill ☠️</string>
 </resources>

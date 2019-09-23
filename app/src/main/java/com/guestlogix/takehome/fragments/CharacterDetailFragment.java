@@ -17,7 +17,7 @@ import com.guestlogix.takehome.binding.DataBindingComponentImpl;
 import com.guestlogix.takehome.databinding.FragmentCharactersDetailBinding;
 import com.guestlogix.takehome.utils.Optional;
 import com.guestlogix.takehome.viewmodels.CharacterDetailViewModel;
-import com.guestlogix.takehome.viewmodels.factory.CharacterDetailViewModelFactory;
+import com.guestlogix.takehome.viewmodels.ViewModelFactory;
 
 public class CharacterDetailFragment extends Fragment {
 
@@ -33,10 +33,11 @@ public class CharacterDetailFragment extends Fragment {
             new DataBindingComponentImpl(getViewLifecycleOwner())
         );
 
-        CharacterDetailViewModelFactory factory = new CharacterDetailViewModelFactory(
-            CharacterDetailFragmentArgs.fromBundle(getArguments()).getViewArgs()
-        );
-        CharacterDetailViewModel viewModel = ViewModelProviders.of(this, factory).get(CharacterDetailViewModel.class);
+        ViewModelFactory factory = ViewModelFactory.getInstance(requireActivity().getApplication());
+        CharacterDetailViewModel viewModel = ViewModelProviders.of(requireActivity(), factory).get(CharacterDetailViewModel.class);
+        viewModel.loadCharacters(CharacterDetailFragmentArgs.fromBundle(getArguments()).getViewArgs());
+
+        binding.setVm(viewModel);
 
         viewModel.getCharacter().observe(this, character -> {
             Optional.ofNullable(((AppCompatActivity) requireActivity()).getSupportActionBar()).

@@ -82,6 +82,34 @@ public class CharactersLocalDataSource implements CharactersDataSource {
         mAppExecutors.diskIO().execute(deleteRunnable);
     }
 
+    @Override
+    public void killCharacter(String id) {
+        checkNotNull(id);
+        Runnable saveRunnable = () -> mCharactersDao.killCharacter(id);
+        mAppExecutors.diskIO().execute(saveRunnable);
+    }
+
+    /**
+     * Note: {@link GetCharacterCallback#onDataNotAvailable()} is fired if the {@link Character} isn't
+     * found.
+     */
+    @Override
+    public void getCharacter(@NonNull final String id, @NonNull final GetCharacterCallback callback) {
+        Runnable runnable = () -> {
+            final Character character = mCharactersDao.getCharacterById(id);
+
+            mAppExecutors.mainThread().execute(() -> {
+                if (character != null) {
+                    callback.onCharacterLoaded(character);
+                } else {
+                    callback.onDataNotAvailable();
+                }
+            });
+        };
+
+        mAppExecutors.diskIO().execute(runnable);
+    }
+
     @VisibleForTesting
     static void clearInstance() {
         INSTANCE = null;

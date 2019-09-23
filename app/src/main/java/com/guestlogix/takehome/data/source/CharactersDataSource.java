@@ -29,4 +29,8 @@ public interface CharactersDataSource {
     void refreshCharacters();
 
     void deleteAllCharacters();
+
+    void killCharacter(String id);
+
+    void getCharacter(@NonNull String taskId, @NonNull GetCharacterCallback callback);
 }

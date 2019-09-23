@@ -11,30 +11,45 @@ import java.util.List;
 
 
 /**
- * Data Access Object for the tasks table.
+ * Data Access Object for the characters table.
  */
 @Dao
 public interface CharactersDao {
 
     /**
-     * Select all tasks from the tasks table.
+     * Select all characters from the characters table.
      *
-     * @return all tasks.
+     * @return all characters.
      */
     @Query("SELECT * FROM Character")
     List<Character> getCharacters();
 
     /**
-     * Insert a task in the database. If the task already exists, replace it.
+     * Insert a character in the database. If the character already exists, replace it.
      *
-     * @param character the task to be inserted.
+     * @param character the character to be inserted.
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertCharacter(Character character);
 
     /**
-     * Delete all tasks.
+     * Delete all characters.
      */
     @Query("DELETE FROM Character")
     void deleteCharacters();
+
+    /**
+     * killCharacter.
+     */
+    @Query("UPDATE Character SET status = \"Dead\" WHERE id = :id")
+    void killCharacter(String id);
+
+    /**
+     * Select a character by id.
+     *
+     * @param id the character id.
+     * @return the character with characterId.
+     */
+    @Query("SELECT * FROM Character WHERE id = :id")
+    Character getCharacterById(String id);
 }

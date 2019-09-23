@@ -59,4 +59,14 @@ public class CharactersRemoteDataSource implements CharactersDataSource {
     public void deleteAllCharacters() {
 //        Not Required
     }
+
+    @Override
+    public void killCharacter(String id) {
+//        Not Required
+    }
+
+    @Override
+    public void getCharacter(@NonNull String taskId, @NonNull GetCharacterCallback callback) {
+//        Not Required
+    }
 }

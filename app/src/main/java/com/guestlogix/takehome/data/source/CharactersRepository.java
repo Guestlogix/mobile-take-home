@@ -144,6 +144,27 @@ public class CharactersRepository implements CharactersDataSource {
         mCachedCharacters.clear();
     }
 
+    @Override
+    public void killCharacter(String id) {
+        mCharactersLocalDataSource.killCharacter(id);
+        getCharacter(id, new GetCharacterCallback() {
+            @Override
+            public void onCharacterLoaded(Character character) {
+                mCachedCharacters.put(id, character);
+            }
+
+            @Override
+            public void onDataNotAvailable() {
+
+            }
+        });
+    }
+
+    @Override
+    public void getCharacter(@NonNull String id, @NonNull GetCharacterCallback callback) {
+        mCharactersLocalDataSource.getCharacter(id, callback);
+    }
+
     private void refreshCache(List<Character> characters) {
         for (Character character : characters) {
             mCachedCharacters.put(character.getId(), character);

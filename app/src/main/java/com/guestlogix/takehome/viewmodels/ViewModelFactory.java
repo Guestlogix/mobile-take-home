@@ -59,7 +59,10 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
 
     @Override
     public <T extends ViewModel> T create(Class<T> modelClass) {
-        if (modelClass.isAssignableFrom(CharactersListViewModel.class)) {
+        if (modelClass.isAssignableFrom(CharacterDetailViewModel.class)) {
+            //noinspection unchecked
+            return (T) new CharacterDetailViewModel(mApplication, mCharactersRepository);
+        } else if (modelClass.isAssignableFrom(CharactersListViewModel.class)) {
             //noinspection unchecked
             return (T) new CharactersListViewModel(mApplication, mCharactersRepository);
         } else if (modelClass.isAssignableFrom(EpisodesListViewModel.class)) {
