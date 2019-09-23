@@ -17,7 +17,7 @@ public interface CharactersDataSource {
 
     interface GetCharacterCallback {
 
-        void onCharacterLoaded(Character episode);
+        void onCharacterLoaded(Character character);
 
         void onDataNotAvailable();
     }
@@ -30,7 +30,7 @@ public interface CharactersDataSource {
 
     void deleteAllCharacters();
 
-    void killCharacter(String id);
+    void killCharacter(String id, @NonNull GetCharacterCallback callback);
 
     void getCharacter(@NonNull String id, @NonNull GetCharacterCallback callback);
 }

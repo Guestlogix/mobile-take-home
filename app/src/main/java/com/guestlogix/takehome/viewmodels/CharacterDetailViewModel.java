@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.guestlogix.takehome.data.Character;
+import com.guestlogix.takehome.data.source.CharactersDataSource;
 import com.guestlogix.takehome.data.source.CharactersRepository;
 
 public class CharacterDetailViewModel extends AndroidViewModel {
@@ -26,20 +27,18 @@ public class CharacterDetailViewModel extends AndroidViewModel {
         return character;
     }
 
-    public void killCharacter(Character character) {
-        mRepository.killCharacter(character.getId());
+    public void killCharacter(Character ref) {
+        mRepository.killCharacter(ref.getId(), new CharactersDataSource.GetCharacterCallback(){
 
-        this.character.postValue(new Character(
-            character.getId(),
-            character.getName(),
-            "Dead",
-            character.getSpecies(),
-            character.getType(),
-            character.getGender(),
-            character.getOrigin(),
-            character.getLocation(),
-            character.getImage(),
-            character.getCreated()
-        ));
+            @Override
+            public void onCharacterLoaded(Character updatedData) {
+                character.postValue(updatedData);
+            }
+
+            @Override
+            public void onDataNotAvailable() {
+
+            }
+        });
     }
 }

@@ -145,11 +145,11 @@ public class CharactersRepository implements CharactersDataSource {
     }
 
     @Override
-    public void killCharacter(String id) {
-        mCharactersLocalDataSource.killCharacter(id);
-        getCharacter(id, new GetCharacterCallback() {
+    public void killCharacter(String id, @NonNull GetCharacterCallback callback) {
+        mCharactersLocalDataSource.killCharacter(id, new GetCharacterCallback() {
             @Override
             public void onCharacterLoaded(Character character) {
+                callback.onCharacterLoaded(character);
                 mCachedCharacters.put(id, character);
             }
 

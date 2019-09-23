@@ -60,7 +60,7 @@ public class CharactersRemoteDataSource implements CharactersDataSource {
     }
 
     @Override
-    public void killCharacter(String id) {
+    public void killCharacter(String id, @NonNull GetCharacterCallback callback) {
 //        Not Required
     }
 
