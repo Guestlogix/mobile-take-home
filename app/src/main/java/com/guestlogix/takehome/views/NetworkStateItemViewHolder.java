@@ -15,7 +15,7 @@ public class NetworkStateItemViewHolder extends RecyclerView.ViewHolder {
         this.progressView = pb;
     }
 
-    public void bindView(boolean isLoading) {
-        progressView.setVisibility(isLoading ? View.VISIBLE : View.GONE);
+    public void bindView(NetworkState networkState) {
+        progressView.setVisibility(networkState == NetworkState.LOADING ? View.VISIBLE : View.GONE);
     }
 }

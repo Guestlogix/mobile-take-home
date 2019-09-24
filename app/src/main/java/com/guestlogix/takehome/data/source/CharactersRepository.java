@@ -6,6 +6,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.guestlogix.takehome.data.Character;
 import com.guestlogix.takehome.network.GuestlogixException;
+import com.guestlogix.takehome.network.NetworkState;
+import com.guestlogix.takehome.utils.SingleLiveEvent;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -24,7 +26,8 @@ public class CharactersRepository implements CharactersDataSource {
 
     Map<String, Character> mCachedCharacters = new LinkedHashMap<>();
 
-    public MutableLiveData<Boolean> isLoading = new MutableLiveData<>(false);
+    public MutableLiveData<NetworkState> isLoading = new MutableLiveData<>(NetworkState.DONE);
+    public SingleLiveEvent<GuestlogixException> error = new SingleLiveEvent<>();
 
     // Prevent direct instantiation.
     private CharactersRepository(@NonNull CharactersDataSource charactersRemoteDataSource,
@@ -88,7 +91,7 @@ public class CharactersRepository implements CharactersDataSource {
         if(pendingIds.isEmpty()) {
             callback.onCharactersLoaded(cachedList);
         } else {
-            isLoading.postValue(true);
+            isLoading.postValue(NetworkState.LOADING);
             mCharactersRemoteDataSource.getCharacters(pendingIds.toString(), new LoadCharactersCallback() {
                 @Override
                 public void onCharactersLoaded(List<Character> characters) {
@@ -96,13 +99,13 @@ public class CharactersRepository implements CharactersDataSource {
                     refreshLocalDataSource(characters);
 
                     characters.addAll(cachedList);
-                    isLoading.postValue(false);
+                    isLoading.postValue(NetworkState.DONE);
                     callback.onCharactersLoaded(characters);
                 }
 
                 @Override
                 public void onDataNotAvailable(GuestlogixException e) {
-                    isLoading.postValue(false);
+                    isLoading.postValue(NetworkState.ERROR);
                     callback.onDataNotAvailable(e);
                 }
             });
@@ -144,7 +147,7 @@ public class CharactersRepository implements CharactersDataSource {
 
             @Override
             public void onDataNotAvailable() {
-
+                callback.onDataNotAvailable();
             }
         });
     }

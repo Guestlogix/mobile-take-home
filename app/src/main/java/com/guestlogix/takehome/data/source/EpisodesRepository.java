@@ -7,7 +7,9 @@ import androidx.paging.PageKeyedDataSource;
 import com.guestlogix.takehome.data.Episode;
 import com.guestlogix.takehome.models.EpisodeRowStub;
 import com.guestlogix.takehome.network.GuestlogixException;
+import com.guestlogix.takehome.network.NetworkState;
 import com.guestlogix.takehome.utils.DateUtils;
+import com.guestlogix.takehome.utils.SingleLiveEvent;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -26,7 +28,8 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, EpisodeRowS
 
     private Set<Integer> cachedPages = new HashSet<>();
 
-    public MutableLiveData<Boolean> isLoading = new MutableLiveData<>(false);
+    public MutableLiveData<NetworkState> isLoading = new MutableLiveData<>(NetworkState.DONE);
+    public SingleLiveEvent<GuestlogixException> error = new SingleLiveEvent<>();
 
     // Prevent direct instantiation.
     private EpisodesRepository(@NonNull EpisodesDataSource episodesRemoteDataSource,
@@ -37,18 +40,18 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, EpisodeRowS
 
     @Override
     public void loadInitial(@NonNull LoadInitialParams<Integer> params, @NonNull LoadInitialCallback<Integer, EpisodeRowStub> callback) {
-        isLoading.postValue(true);
+        isLoading.postValue(NetworkState.LOADING);
         getEpisodes(1, new LoadEpisodesCallback() {
             @Override
             public void onEpisodesLoaded(List<Episode> episodes) {
-                isLoading.postValue(false);
-
+                isLoading.postValue(NetworkState.DONE);
                 callback.onResult(getRowResult(episodes), null, 2);
             }
 
             @Override
             public void onDataNotAvailable(GuestlogixException e) {
-
+                isLoading.postValue(NetworkState.ERROR);
+                error.postValue(e);
             }
         });
     }
@@ -73,17 +76,18 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, EpisodeRowS
 
     @Override
     public void loadAfter(@NonNull LoadParams<Integer> params, @NonNull LoadCallback<Integer, EpisodeRowStub> callback) {
-        isLoading.postValue(true);
+        isLoading.postValue(NetworkState.LOADING);
         getEpisodes(params.key, new LoadEpisodesCallback() {
             @Override
             public void onEpisodesLoaded(List<Episode> episodes) {
-                isLoading.postValue(false);
+                isLoading.postValue(NetworkState.DONE);
                 callback.onResult(getRowResult(episodes), episodes.isEmpty() ? params.key : params.key+1);
             }
 
             @Override
             public void onDataNotAvailable(GuestlogixException e) {
-                isLoading.postValue(false);
+                isLoading.postValue(NetworkState.ERROR);
+                error.postValue(e);
             }
         });
     }

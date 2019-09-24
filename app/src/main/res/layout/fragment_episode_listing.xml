@@ -13,5 +13,6 @@
         android:layout_height="match_parent"
         android:data="@{viewmodel.episodes}"
         android:loading="@{viewmodel.isLoading}"
+        android:error="@{viewmodel.error}"
         />
 </layout>

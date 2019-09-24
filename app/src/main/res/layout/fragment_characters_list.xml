@@ -12,5 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:data="@{viewmodel.characters}"
-        android:loading="@{viewmodel.isLoading}"/>
+        android:loading="@{viewmodel.isLoading}"
+        android:error="@{viewmodel.error}" />
 </layout>

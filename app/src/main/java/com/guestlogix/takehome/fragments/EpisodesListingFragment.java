@@ -19,6 +19,7 @@ import com.guestlogix.takehome.binding.DataBindingComponentImpl;
 import com.guestlogix.takehome.databinding.FragmentEpisodeListingBinding;
 import com.guestlogix.takehome.databinding.ItemEpisodeRowBinding;
 import com.guestlogix.takehome.models.EpisodeRowStub;
+import com.guestlogix.takehome.network.NetworkState;
 import com.guestlogix.takehome.viewmodels.EpisodesListViewModel;
 import com.guestlogix.takehome.viewmodels.ViewModelFactory;
 import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
@@ -66,7 +67,7 @@ public class EpisodesListingFragment extends BaseFragment {
         private static final int TYPE_ITEM = 1;
 
         private Context context;
-        private boolean isLoading;
+        private NetworkState networkState;
 
         /*
          * The DiffUtil is defined in the constructor
@@ -102,7 +103,7 @@ public class EpisodesListingFragment extends BaseFragment {
             if(holder instanceof EpisodeItemViewHolder) {
                 ((EpisodeItemViewHolder)holder).bindTo(getItem(position));
             } else {
-                ((NetworkStateItemViewHolder) holder).bindView(isLoading);
+                ((NetworkStateItemViewHolder) holder).bindView(networkState);
             }
         }
 
@@ -124,12 +125,12 @@ public class EpisodesListingFragment extends BaseFragment {
         }
 
         private boolean hasExtraRow() {
-            return isLoading;
+            return networkState == NetworkState.LOADING;
         }
 
-        public void setNetworkState(boolean isLoading) {
+        public void setNetworkState(NetworkState networkState) {
             boolean previousExtraRow = hasExtraRow();
-            this.isLoading = isLoading;
+            this.networkState = networkState;
             boolean newExtraRow = hasExtraRow();
 
             if (previousExtraRow != newExtraRow) {

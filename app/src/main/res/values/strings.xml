@@ -10,4 +10,13 @@
     <string name="type">Type :</string>
 
     <string name="kill_button">Kill ☠️</string>
+
+
+    <string name="episode_network_error">Unable to load episodes, please check your network connectivity</string>
+    <string name="episodes_data_error">Episodes data not available</string>
+
+    <string name="characters_network_error">Unable to load characters, please check your network connectivity</string>
+    <string name="characters_data_error">Characters data not available</string>
+
+    <string name="error_killing">Error Killing Character</string>
 </resources>
