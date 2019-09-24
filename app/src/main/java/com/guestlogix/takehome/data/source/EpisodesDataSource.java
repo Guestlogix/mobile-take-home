@@ -3,6 +3,7 @@ package com.guestlogix.takehome.data.source;
 import androidx.annotation.NonNull;
 
 import com.guestlogix.takehome.data.Episode;
+import com.guestlogix.takehome.network.GuestlogixException;
 
 import java.util.List;
 
@@ -12,21 +13,12 @@ public interface EpisodesDataSource {
 
         void onEpisodesLoaded(List<Episode> episodes);
 
-        void onDataNotAvailable();
-    }
-
-    interface GetEpisodeCallback {
-
-        void onEpisodeLoaded(Episode episode);
-
-        void onDataNotAvailable();
+        void onDataNotAvailable(GuestlogixException e);
     }
 
     void getEpisodes(int page, @NonNull LoadEpisodesCallback callback);
 
     void saveEpisode(@NonNull Episode episode);
-
-    void refreshEpisodes();
 
     void deleteAllEpisodes();
 }

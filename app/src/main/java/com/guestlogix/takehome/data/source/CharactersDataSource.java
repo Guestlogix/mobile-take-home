@@ -3,6 +3,7 @@ package com.guestlogix.takehome.data.source;
 import androidx.annotation.NonNull;
 
 import com.guestlogix.takehome.data.Character;
+import com.guestlogix.takehome.network.GuestlogixException;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface CharactersDataSource {
 
         void onCharactersLoaded(List<Character> characters);
 
-        void onDataNotAvailable();
+        void onDataNotAvailable(GuestlogixException e);
     }
 
     interface GetCharacterCallback {
@@ -25,8 +26,6 @@ public interface CharactersDataSource {
     void getCharacters(String characterIds, @NonNull LoadCharactersCallback callback);
 
     void saveCharacter(@NonNull Character character);
-
-    void refreshCharacters();
 
     void deleteAllCharacters();
 

@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData;
 import androidx.paging.PagedList;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.guestlogix.takehome.data.Episode;
 import com.guestlogix.takehome.fragments.CharactersListFragment;
 import com.guestlogix.takehome.fragments.EpisodesListingFragment;
 import com.guestlogix.takehome.models.CharacterRowStub;
@@ -16,7 +15,7 @@ import com.guestlogix.takehome.utils.Optional;
 import java.util.List;
 
 /**
- * Contains {@link BindingAdapter}s for the {@link Episode} list.
+ * Contains {@link BindingAdapter}s for the list.
  */
 public class RecyclerViewBindings {
 

@@ -6,6 +6,7 @@ import androidx.paging.PageKeyedDataSource;
 
 import com.guestlogix.takehome.data.Episode;
 import com.guestlogix.takehome.models.EpisodeRowStub;
+import com.guestlogix.takehome.network.GuestlogixException;
 import com.guestlogix.takehome.utils.DateUtils;
 
 import java.util.ArrayList;
@@ -46,7 +47,7 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, EpisodeRowS
             }
 
             @Override
-            public void onDataNotAvailable() {
+            public void onDataNotAvailable(GuestlogixException e) {
 
             }
         });
@@ -81,7 +82,7 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, EpisodeRowS
             }
 
             @Override
-            public void onDataNotAvailable() {
+            public void onDataNotAvailable(GuestlogixException e) {
                 isLoading.postValue(false);
             }
         });
@@ -118,7 +119,7 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, EpisodeRowS
      * Gets episodes from cache, local data source (SQLite) or remote data source, whichever is
      * available first.
      * <p>
-     * Note: {@link LoadEpisodesCallback#onDataNotAvailable()} is fired if all data sources fail to
+     * Note: {@link LoadEpisodesCallback#onDataNotAvailable(GuestlogixException)} is fired if all data sources fail to
      * get the data.
      */
     @Override
@@ -139,7 +140,7 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, EpisodeRowS
                 }
 
                 @Override
-                public void onDataNotAvailable() {
+                public void onDataNotAvailable(GuestlogixException e) {
                     getEpisodesFromRemoteDataSource(page, callback);
                 }
             });
@@ -151,11 +152,6 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, EpisodeRowS
         checkNotNull(episode);
         mEpisodesRemoteDataSource.saveEpisode(episode);
         mEpisodesLocalDataSource.saveEpisode(episode);
-    }
-
-    @Override
-    public void refreshEpisodes() {
-        cachedPages.clear();
     }
 
     @Override
@@ -180,8 +176,8 @@ public class EpisodesRepository extends PageKeyedDataSource<Integer, EpisodeRowS
             }
 
             @Override
-            public void onDataNotAvailable() {
-                callback.onDataNotAvailable();
+            public void onDataNotAvailable(GuestlogixException e) {
+                callback.onDataNotAvailable(e);
             }
         });
     }

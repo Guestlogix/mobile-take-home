@@ -8,7 +8,7 @@ import com.guestlogix.takehome.models.ResultInfo;
 
 import java.util.List;
 
-public class EpisodeResponseObjectMappingFactory implements ObjectFactory<EpisodeResponse> {
+public class EpisodeResponseParsingFactory implements ObjectFactory<EpisodeResponse> {
 
     @Override
     public EpisodeResponse instantiate(JsonReader reader) throws Exception {
@@ -21,10 +21,10 @@ public class EpisodeResponseObjectMappingFactory implements ObjectFactory<Episod
             String key = reader.nextName();
             switch (key) {
                 case "info":
-                    info = new ResultInfoObjectMappingFactory().instantiate(reader);
+                    info = new ResultInfoParsingFactory().instantiate(reader);
                     break;
                 case "results":
-                    results = new ListFactory<>(new EpisodeObjectMappingFactory()).instantiate(reader);
+                    results = new ListFactory<>(new EpisodeParsingFactory()).instantiate(reader);
                     break;
                 default:
                     reader.skipValue();

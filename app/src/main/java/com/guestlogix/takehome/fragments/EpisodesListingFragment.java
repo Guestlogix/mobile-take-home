@@ -25,8 +25,7 @@ import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
 
 public class EpisodesListingFragment extends BaseFragment {
 
-    public EpisodesListingFragment() {
-    }
+    private EpisodesListViewModel mEpisodesViewModel;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -41,14 +40,22 @@ public class EpisodesListingFragment extends BaseFragment {
 
         // Use a Factory to inject dependencies into the ViewModel
         ViewModelFactory factory = ViewModelFactory.getInstance(requireActivity().getApplication());
-
-        EpisodesListViewModel mEpisodesViewModel = ViewModelProviders.of(requireActivity(), factory).get(EpisodesListViewModel.class);
+        mEpisodesViewModel = ViewModelProviders.of(requireActivity(), factory).get(EpisodesListViewModel.class);
 
         binding.setViewmodel(mEpisodesViewModel);
 
         binding.rvEpisodes.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.rvEpisodes.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
         binding.rvEpisodes.setAdapter(new EpisodesListAdapter(requireContext()));
+
+
+        mEpisodesViewModel.navigateToCharacterList.observe(this, characters ->
+            findNavController().ifPresent(navController ->
+                navController.navigate(
+                    EpisodesListingFragmentDirections.actionEpisodesListingFragmentToCharactersListFragment(characters)
+                )
+            )
+        );
 
         return binding.getRoot();
     }
@@ -147,11 +154,7 @@ public class EpisodesListingFragment extends BaseFragment {
 
                 binding.getRoot().setOnClickListener(v ->
                     findNavController().ifPresent(navController ->
-                        navController.navigate(
-                            EpisodesListingFragmentDirections.actionEpisodesListingFragmentToCharactersListFragment(
-                                episode.getReference().getCharacters()
-                            )
-                        )
+                        mEpisodesViewModel.onEpisodeClicked(episode)
                     )
                 );
             }

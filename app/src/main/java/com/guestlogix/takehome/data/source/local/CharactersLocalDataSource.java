@@ -5,6 +5,8 @@ import androidx.annotation.VisibleForTesting;
 
 import com.guestlogix.takehome.data.Character;
 import com.guestlogix.takehome.data.source.CharactersDataSource;
+import com.guestlogix.takehome.network.ErrorCode;
+import com.guestlogix.takehome.network.GuestlogixException;
 import com.guestlogix.takehome.utils.AppExecutors;
 
 import java.util.List;
@@ -42,7 +44,7 @@ public class CharactersLocalDataSource implements CharactersDataSource {
     }
 
     /**
-     * Note: {@link LoadCharactersCallback#onDataNotAvailable()} is fired if the database doesn't exist
+     * Note: {@link LoadCharactersCallback#onDataNotAvailable(GuestlogixException)}  is fired if the database doesn't exist
      * or the table is empty.
      */
     @Override
@@ -52,7 +54,7 @@ public class CharactersLocalDataSource implements CharactersDataSource {
             mAppExecutors.mainThread().execute(() -> {
                 if (episodes.isEmpty()) {
                     // This will be called if the table is new or just empty.
-                    callback.onDataNotAvailable();
+                    callback.onDataNotAvailable(new GuestlogixException("No data avilable", ErrorCode.DB_ERROR));
                 } else {
                     callback.onCharactersLoaded(episodes);
                 }
@@ -68,11 +70,6 @@ public class CharactersLocalDataSource implements CharactersDataSource {
         checkNotNull(character);
         Runnable saveRunnable = () -> mCharactersDao.insertCharacter(character);
         mAppExecutors.diskIO().execute(saveRunnable);
-    }
-
-    @Override
-    public void refreshCharacters() {
-        // Not required
     }
 
     @Override

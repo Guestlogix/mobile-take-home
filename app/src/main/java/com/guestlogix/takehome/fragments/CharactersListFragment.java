@@ -26,6 +26,8 @@ import com.guestlogix.takehome.views.NetworkStateItemViewHolder;
 
 public class CharactersListFragment extends BaseFragment {
 
+    private CharactersListViewModel charactersViewModel;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -42,10 +44,18 @@ public class CharactersListFragment extends BaseFragment {
         binding.rvCharacters.setAdapter(new CharactersListAdapter(requireContext()));
 
         ViewModelFactory factory = ViewModelFactory.getInstance(requireActivity().getApplication());
-        CharactersListViewModel charactersViewModel = ViewModelProviders.of(requireActivity(), factory).get(CharactersListViewModel.class);
+        charactersViewModel = ViewModelProviders.of(requireActivity(), factory).get(CharactersListViewModel.class);
         binding.setViewmodel(charactersViewModel);
 
         charactersViewModel.loadCharacters(CharactersListFragmentArgs.fromBundle(getArguments()).getViewArgs());
+
+        charactersViewModel.navigateToCharacterDetail.observe(this, character ->
+            findNavController().ifPresent(navController ->
+                navController.navigate(
+                    CharactersListFragmentDirections.actionCharactersListFragmentToCharacterDetailFragment(character)
+                )
+            )
+        );
 
         return binding.getRoot();
     }
@@ -151,11 +161,7 @@ public class CharactersListFragment extends BaseFragment {
             void bindTo(CharacterRowStub character) {
                 binding.setData(character);
                 binding.getRoot().setOnClickListener(v ->
-                    findNavController().ifPresent(navController ->
-                        navController.navigate(
-                            CharactersListFragmentDirections.actionCharactersListFragmentToCharacterDetailFragment(character.getReference())
-                        )
-                    )
+                    charactersViewModel.onCharacterClicked(character)
                 );
             }
         }

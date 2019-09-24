@@ -5,6 +5,8 @@ import androidx.annotation.VisibleForTesting;
 
 import com.guestlogix.takehome.data.Episode;
 import com.guestlogix.takehome.data.source.EpisodesDataSource;
+import com.guestlogix.takehome.network.ErrorCode;
+import com.guestlogix.takehome.network.GuestlogixException;
 import com.guestlogix.takehome.utils.AppExecutors;
 
 import java.util.List;
@@ -42,7 +44,7 @@ public class EpisodesLocalDataSource implements EpisodesDataSource {
     }
 
     /**
-     * Note: {@link LoadEpisodesCallback#onDataNotAvailable()} is fired if the database doesn't exist
+     * Note: {@link LoadEpisodesCallback#onDataNotAvailable(GuestlogixException)} is fired if the database doesn't exist
      * or the table is empty.
      */
     @Override
@@ -52,7 +54,7 @@ public class EpisodesLocalDataSource implements EpisodesDataSource {
             mAppExecutors.mainThread().execute(() -> {
                 if (episodes.isEmpty()) {
                     // This will be called if the table is new or just empty.
-                    callback.onDataNotAvailable();
+                    callback.onDataNotAvailable(new GuestlogixException("No Data found", ErrorCode.DB_ERROR));
                 } else {
                     callback.onEpisodesLoaded(episodes);
                 }
@@ -69,11 +71,6 @@ public class EpisodesLocalDataSource implements EpisodesDataSource {
         Runnable saveRunnable = () -> mEpisodesDao.insertEpisode(episode);
         mAppExecutors.diskIO().execute(saveRunnable);
     }
-
-    @Override
-    public void refreshEpisodes() {
-        // Not required
-     }
 
     @Override
     public void deleteAllEpisodes() {

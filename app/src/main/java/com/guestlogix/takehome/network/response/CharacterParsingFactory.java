@@ -4,7 +4,7 @@ import android.util.JsonReader;
 
 import com.guestlogix.takehome.data.Character;
 
-public class CharacterObjectMappingFactory implements ObjectFactory<Character> {
+public class CharacterParsingFactory implements ObjectFactory<Character> {
 
     @Override
     public Character instantiate(JsonReader reader) throws Exception {

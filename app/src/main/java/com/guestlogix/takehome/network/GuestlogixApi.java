@@ -5,8 +5,8 @@ import android.net.ConnectivityManager;
 
 import com.guestlogix.takehome.data.Character;
 import com.guestlogix.takehome.models.EpisodeResponse;
-import com.guestlogix.takehome.network.response.CharacterObjectMappingFactory;
-import com.guestlogix.takehome.network.response.EpisodeResponseObjectMappingFactory;
+import com.guestlogix.takehome.network.response.CharacterParsingFactory;
+import com.guestlogix.takehome.network.response.EpisodeResponseParsingFactory;
 import com.guestlogix.takehome.network.response.ListFactory;
 import com.guestlogix.takehome.network.tasks.ApiTask;
 
@@ -48,7 +48,7 @@ public class GuestlogixApi {
         new ApiTask<>(
             listener,
             connectivityManager,
-            new EpisodeResponseObjectMappingFactory()
+            new EpisodeResponseParsingFactory()
         ).execute(req.build());
     }
 
@@ -64,7 +64,7 @@ public class GuestlogixApi {
         new ApiTask<>(
             listener,
             connectivityManager,
-            new ListFactory<>(new CharacterObjectMappingFactory())
+            new ListFactory<>(new CharacterParsingFactory())
         ).execute(req.build());
     }
 

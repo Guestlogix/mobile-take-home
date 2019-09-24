@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class EpisodeObjectMappingFactory implements ObjectFactory<Episode> {
+public class EpisodeParsingFactory implements ObjectFactory<Episode> {
 
     @Override
     public Episode instantiate(JsonReader reader) throws Exception {

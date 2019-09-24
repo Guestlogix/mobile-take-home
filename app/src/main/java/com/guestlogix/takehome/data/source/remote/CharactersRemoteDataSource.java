@@ -25,7 +25,7 @@ public class CharactersRemoteDataSource implements CharactersDataSource {
     private CharactersRemoteDataSource() {}
 
     /**
-     * Note: {@link LoadCharactersCallback#onDataNotAvailable()} is never fired. In a real remote data
+     * Note: {@link LoadCharactersCallback#onDataNotAvailable(GuestlogixException)}  is never fired. In a real remote data
      * source implementation, this would be fired if the server can't be contacted or the server
      * returns an error.
      */
@@ -38,8 +38,8 @@ public class CharactersRemoteDataSource implements CharactersDataSource {
             }
 
             @Override
-            public void onFailure(GuestlogixException exception) {
-                callback.onDataNotAvailable();
+            public void onFailure(GuestlogixException e) {
+                callback.onDataNotAvailable(e);
             }
         });
     }
@@ -47,11 +47,6 @@ public class CharactersRemoteDataSource implements CharactersDataSource {
     @Override
     public void saveCharacter(@NonNull Character task) {
 //        Not Required
-    }
-
-    @Override
-    public void refreshCharacters() {
-        // Not required because the {@link CharactersRepository} handles the logic of refreshing the
     }
 
     @Override

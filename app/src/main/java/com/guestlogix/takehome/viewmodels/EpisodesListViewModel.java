@@ -2,29 +2,21 @@ package com.guestlogix.takehome.viewmodels;
 
 import android.app.Application;
 
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.paging.LivePagedListBuilder;
 import androidx.paging.PagedList;
 
-import com.guestlogix.takehome.data.Episode;
 import com.guestlogix.takehome.data.factory.EpisodesDataFactory;
 import com.guestlogix.takehome.data.source.EpisodesRepository;
 import com.guestlogix.takehome.models.EpisodeRowStub;
+import com.guestlogix.takehome.utils.SingleLiveEvent;
 
-/**
- * Exposes the data to be used in the episode list screen.
- * <p>
- * {@link BaseObservable} implements a listener registration mechanism which is notified when a
- * property changes. This is done by assigning a {@link Bindable} annotation to the property's
- * getter method.
- */
 public class EpisodesListViewModel extends AndroidViewModel {
 
     public LiveData<PagedList<EpisodeRowStub>> episodes;
     public LiveData<Boolean> isLoading;
+    public SingleLiveEvent<String> navigateToCharacterList = new SingleLiveEvent<>();
 
     EpisodesListViewModel(Application context, EpisodesRepository repository) {
 
@@ -42,4 +34,7 @@ public class EpisodesListViewModel extends AndroidViewModel {
         isLoading = repository.isLoading;
     }
 
+    public void onEpisodeClicked(EpisodeRowStub episode) {
+        navigateToCharacterList.postValue(episode.getReference().getCharacters());
+    }
 }

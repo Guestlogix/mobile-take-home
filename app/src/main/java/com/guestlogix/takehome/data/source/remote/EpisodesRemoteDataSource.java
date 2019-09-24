@@ -24,7 +24,7 @@ public class EpisodesRemoteDataSource implements EpisodesDataSource {
     private EpisodesRemoteDataSource() {}
 
     /**
-     * Note: {@link LoadEpisodesCallback#onDataNotAvailable()} is never fired. In a real remote data
+     * Note: {@link LoadEpisodesCallback#onDataNotAvailable(GuestlogixException)}  is never fired. In a real remote data
      * source implementation, this would be fired if the server can't be contacted or the server
      * returns an error.
      */
@@ -37,8 +37,8 @@ public class EpisodesRemoteDataSource implements EpisodesDataSource {
             }
 
             @Override
-            public void onFailure(GuestlogixException exception) {
-                callback.onDataNotAvailable();
+            public void onFailure(GuestlogixException e) {
+                callback.onDataNotAvailable(e);
             }
         });
     }
@@ -46,11 +46,6 @@ public class EpisodesRemoteDataSource implements EpisodesDataSource {
     @Override
     public void saveEpisode(@NonNull Episode episode) {
 //        Not Required
-    }
-
-    @Override
-    public void refreshEpisodes() {
-        // Not required
     }
 
     @Override

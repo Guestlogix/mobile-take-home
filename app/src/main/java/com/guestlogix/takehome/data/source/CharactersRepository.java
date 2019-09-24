@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.MutableLiveData;
 
 import com.guestlogix.takehome.data.Character;
+import com.guestlogix.takehome.network.GuestlogixException;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -21,16 +22,7 @@ public class CharactersRepository implements CharactersDataSource {
 
     private final CharactersDataSource mCharactersLocalDataSource;
 
-    /**
-     * This variable has package local visibility so it can be accessed from tests.
-     */
     Map<String, Character> mCachedCharacters = new LinkedHashMap<>();
-
-    /**
-     * Marks the cache as invalid, to force an update the next time data is requested. This variable
-     * has package local visibility so it can be accessed from tests.
-     */
-    private boolean mCacheIsDirty = false;
 
     public MutableLiveData<Boolean> isLoading = new MutableLiveData<>(false);
 
@@ -72,7 +64,7 @@ public class CharactersRepository implements CharactersDataSource {
      * Gets characters from cache, local data source (SQLite) or remote data source, whichever is
      * available first.
      * <p>
-     * Note: {@link LoadCharactersCallback#onDataNotAvailable()} is fired if all data sources fail to
+     * Note: {@link LoadCharactersCallback#onDataNotAvailable(GuestlogixException)}  is fired if all data sources fail to
      * get the data.
      */
     @Override
@@ -108,8 +100,8 @@ public class CharactersRepository implements CharactersDataSource {
                 }
 
                 @Override
-                public void onDataNotAvailable() {
-                    callback.onDataNotAvailable();
+                public void onDataNotAvailable(GuestlogixException e) {
+                    callback.onDataNotAvailable(e);
                 }
             });
         }
@@ -126,11 +118,6 @@ public class CharactersRepository implements CharactersDataSource {
             mCachedCharacters = new LinkedHashMap<>();
         }
         mCachedCharacters.put(character.getId(), character);
-    }
-
-    @Override
-    public void refreshCharacters() {
-        mCacheIsDirty = true;
     }
 
     @Override
@@ -169,7 +156,6 @@ public class CharactersRepository implements CharactersDataSource {
         for (Character character : characters) {
             mCachedCharacters.put(character.getId(), character);
         }
-        mCacheIsDirty = false;
     }
 
     private void refreshLocalDataSource(List<Character> characters) {

@@ -4,7 +4,7 @@ import android.util.JsonReader;
 
 import com.guestlogix.takehome.models.ResultInfo;
 
-public class ResultInfoObjectMappingFactory implements ObjectFactory<ResultInfo> {
+public class ResultInfoParsingFactory implements ObjectFactory<ResultInfo> {
 
     @Override
     public ResultInfo instantiate(JsonReader reader) throws Exception {

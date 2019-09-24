@@ -10,7 +10,9 @@ import com.guestlogix.takehome.data.Character;
 import com.guestlogix.takehome.data.source.CharactersDataSource;
 import com.guestlogix.takehome.data.source.CharactersRepository;
 import com.guestlogix.takehome.models.CharacterRowStub;
+import com.guestlogix.takehome.network.GuestlogixException;
 import com.guestlogix.takehome.utils.DateUtils;
+import com.guestlogix.takehome.utils.SingleLiveEvent;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,6 +23,7 @@ public class CharactersListViewModel extends AndroidViewModel {
 
     public MutableLiveData<List<CharacterRowStub>> characters = new MutableLiveData<>(Collections.emptyList());
     public LiveData<Boolean> isLoading;
+    public final SingleLiveEvent<Character> navigateToCharacterDetail = new SingleLiveEvent<>();
 
     private CharactersRepository mRepository;
 
@@ -63,9 +66,14 @@ public class CharactersListViewModel extends AndroidViewModel {
             }
 
             @Override
-            public void onDataNotAvailable() {
+            public void onDataNotAvailable(GuestlogixException e) {
 
             }
         });
+    }
+
+
+    public void onCharacterClicked(CharacterRowStub character) {
+        navigateToCharacterDetail.postValue(character.getReference());
     }
 }
