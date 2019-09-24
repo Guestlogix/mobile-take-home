@@ -88,6 +88,7 @@ public class CharactersRepository implements CharactersDataSource {
         if(pendingIds.isEmpty()) {
             callback.onCharactersLoaded(cachedList);
         } else {
+            isLoading.postValue(true);
             mCharactersRemoteDataSource.getCharacters(pendingIds.toString(), new LoadCharactersCallback() {
                 @Override
                 public void onCharactersLoaded(List<Character> characters) {
@@ -95,12 +96,13 @@ public class CharactersRepository implements CharactersDataSource {
                     refreshLocalDataSource(characters);
 
                     characters.addAll(cachedList);
-
+                    isLoading.postValue(false);
                     callback.onCharactersLoaded(characters);
                 }
 
                 @Override
                 public void onDataNotAvailable(GuestlogixException e) {
+                    isLoading.postValue(false);
                     callback.onDataNotAvailable(e);
                 }
             });

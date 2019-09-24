@@ -21,7 +21,7 @@ import java.util.List;
 
 public class CharactersListViewModel extends AndroidViewModel {
 
-    public MutableLiveData<List<CharacterRowStub>> characters = new MutableLiveData<>(Collections.emptyList());
+    public SingleLiveEvent<List<CharacterRowStub>> characters = new SingleLiveEvent<>();
     public LiveData<Boolean> isLoading;
     public final SingleLiveEvent<Character> navigateToCharacterDetail = new SingleLiveEvent<>();
 

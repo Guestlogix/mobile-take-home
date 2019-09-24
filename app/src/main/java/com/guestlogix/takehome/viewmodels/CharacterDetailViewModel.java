@@ -8,10 +8,11 @@ import androidx.lifecycle.MutableLiveData;
 import com.guestlogix.takehome.data.Character;
 import com.guestlogix.takehome.data.source.CharactersDataSource;
 import com.guestlogix.takehome.data.source.CharactersRepository;
+import com.guestlogix.takehome.utils.SingleLiveEvent;
 
 public class CharacterDetailViewModel extends AndroidViewModel {
 
-    private MutableLiveData<Character> character = new MutableLiveData<>();
+    private SingleLiveEvent<Character> character = new SingleLiveEvent<>();
     private CharactersRepository mRepository;
 
     public CharacterDetailViewModel(Application context, CharactersRepository repository) {

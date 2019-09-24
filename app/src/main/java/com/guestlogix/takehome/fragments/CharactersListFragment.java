@@ -110,7 +110,7 @@ public class CharactersListFragment extends BaseFragment {
             if (holder instanceof CharacterItemViewHolder) {
                 ((CharacterItemViewHolder) holder).bindTo(getItem(position));
             } else {
-                ((NetworkStateItemViewHolder) holder).bindView(false);
+                ((NetworkStateItemViewHolder) holder).bindView(isLoading);
             }
         }
 
